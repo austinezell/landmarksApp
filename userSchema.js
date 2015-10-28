@@ -26,4 +26,8 @@ UserSchema.methods.validPassword = function(password) {
   return this.hash === hash;
 };
 
+User.methods.validateEmail = function(email) {
+  return /(\w+\.)*\w+@(\w+\.)+\w+/.test(email)
+}
+
 module.exports = mongoose.model('User', UserSchema)
