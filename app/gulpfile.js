@@ -1,0 +1,78 @@
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var bower = require('bower');
+var concat = require('gulp-concat');
+var sass = require('gulp-sass');
+var minifyCss = require('gulp-minify-css');
+var rename = require('gulp-rename');
+var sh = require('shelljs');
+var babel = require('gulp-babel');
+
+
+var dirs = {
+  src: {
+    js: "src/js/**/*.js",
+    scss: "src/scss/**/*.scss",
+    html: "src/templates/**/*.html"
+  },
+  out: {
+    html: 'public/html',
+    css: 'public/css',
+    js: 'public/js'
+  }
+}
+gulp.task('default', ['sass', 'scripts', 'templates']);
+
+gulp.task('sass', function(done) {
+  gulp.src(dirs.src.scss)
+    .pipe(sass())
+    .on('error', sass.logError)
+    .pipe(gulp.dest(dirs.out.css))
+    .pipe(minifyCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(gulp.dest(dirs.out.css))
+    .on('end', done);
+});
+
+gulp.task('scripts', function(){
+  return gulp.src(dirs.src.js)
+    .pipe(babel())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest(dirs.out.js))
+    .pipe(rename('all.min.js'))
+    .pipe(gulp.dest(dirs.out.js));
+})
+
+gulp.task('templates', function(){
+  return gulp.src(dirs.src.html)
+    .pipe(gulp.dest(dirs.out.html))
+})
+
+gulp.task('watch', function() {
+  gulp.watch(dirs.src.html, ['templates']);
+  gulp.watch(dirs.src.scss, ['sass']);
+  gulp.watch(dirs.src.js, ['scripts']);
+});
+
+
+gulp.task('install', ['git-check'], function() {
+  return bower.commands.install()
+    .on('log', function(data) {
+      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
+    });
+});
+
+gulp.task('git-check', function(done) {
+  if (!sh.which('git')) {
+    console.log(
+      '  ' + gutil.colors.red('Git is not installed.'),
+      '\n  Git, the version control system, is required to download Ionic.',
+      '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
+      '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
+    );
+    process.exit(1);
+  }
+  done();
+});
