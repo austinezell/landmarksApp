@@ -26,14 +26,12 @@ router.post('/login', function(req, res, next){
   User.findOne({username: req.body.username}, function(err, user){
     if(err){
       res.send(err)
-    }else if(!user){
-      res.send('user not found')
-    }
-    else if(user.validPassword(req.body.password)){
+    }else if(!user || !user.validPassword(req.body.password)){
+      res.send('Invalid login credentials')
+    }else{
       var jwt = user.generateJWT()
       res.send(jwt)
     }
-
   })
 })
 
