@@ -1,14 +1,13 @@
-#!/usr/bin/env node
-
+#!/usr/bin/env nod
 /**
  * Module dependencies.
  */
-
+require('dotenv').load();
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
 require('mongoose')
-.connect('mongodb://localhost/test')
+.connect(process.env.MONGO_URL)
 /**
  * Get port from environment and store in Express.
  */

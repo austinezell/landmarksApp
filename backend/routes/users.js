@@ -13,16 +13,30 @@ router.post('/create', function(req, res, next) {
   user.email= req.body.email;
   user.setPassword(req.body.password);
 
-  user.save(function(error, data){
-    if(error){
-      res.send(error)
+  user.save(function(err, data){
+    if(err){
+      res.send(err)
     }
-    res.send(data)
+    var jwt = user.generateJWT()
+    res.send(jwt)
   })
 });
 
 router.post('/login', function(req, res, next){
+  User.findOne({username: req.body.username}, function(err, user){
+    if(err){
+      res.send(err)
+    }else if(!user){
+      res.send('user not found')
+    }
+    else if(user.validPassword(req.body.password)){
+      var jwt = user.generateJWT()
+      res.send(jwt)
+    }
 
+  })
 })
+
+
 
 module.exports = router;
