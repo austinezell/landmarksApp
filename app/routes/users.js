@@ -32,8 +32,35 @@ router.post('/login', function(req, res, next){
       res.send(jwt)
     }
   })
+});
+
+router.post('/favorites/:uid/:lid', function (req, res){
+  console.log('here',req.params.uid)
+  User.findById(req.params.uid, function (err,user){
+    if(err){
+      res.send(err)
+    }else{
+      console.log(req.params.lid)
+      user.favorites.push(req.params.lid);
+      user.save();
+      res.send(user)
+    }
+  })
 })
 
+router.post('/visited/:uid/:lid', function (req, res){
+  console.log('here',req.params.uid)
+  User.findById(req.params.uid, function (err,user){
+    if(err){
+      res.send(err)
+    }else{
+      console.log(req.params.lid)
+      user.visited.push(req.params.lid);
+      user.save();
+      res.send(user)
+    }
+  })
+})
 
 
 module.exports = router;
