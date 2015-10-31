@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userSchema.js')
+var auth = require('../config/auth.js');
 
 
 /* GET users listing. */
@@ -34,7 +35,7 @@ router.post('/login', function(req, res, next){
   })
 });
 
-router.post('/favorites/:uid/:lid', function (req, res){
+router.post('/favorites/:uid/:lid', auth, function (req, res){
   console.log('here',req.params.uid)
   User.findById(req.params.uid, function (err,user){
     if(err){
@@ -48,7 +49,7 @@ router.post('/favorites/:uid/:lid', function (req, res){
   })
 })
 
-router.post('/visited/:uid/:lid', function (req, res){
+router.post('/visited/:uid/:lid', auth, function (req, res){
   console.log('here',req.params.uid)
   User.findById(req.params.uid, function (err,user){
     if(err){
