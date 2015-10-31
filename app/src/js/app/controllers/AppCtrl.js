@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+var app = angular.module('landmarksApp')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
   $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
   $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
@@ -69,6 +69,7 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
+<<<<<<< HEAD:app/src/js/app/controllers.js
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.locations = [
@@ -84,3 +85,5 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
 });
+=======
+>>>>>>> cb5d7c71a7800d14b990713de7baaa9995021478:app/src/js/app/controllers/AppCtrl.js
