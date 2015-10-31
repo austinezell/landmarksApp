@@ -115,7 +115,9 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 angular.module('starter.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
   $scope.stateSwitch = "Create Account";
+  $scope.stateMessage = "Do you need an Account?";
   $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
+  $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -128,7 +130,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function ($scope
   $scope.registerState = function () {
     $scope.Login = !$scope.Login;
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
-    console.log($scope.Login);
+    $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
   };
 
   // Create the login modal that we will use later
