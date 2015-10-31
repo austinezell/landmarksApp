@@ -15,6 +15,53 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+#loginForm {
+  background-color: #FBF8E7;
+  border: 2px solid grey; }
+  #loginForm .list {
+    background-color: #FBF8E7; }
+    #loginForm .list button {
+      background-color: #F16156;
+      box-shadow: 0px 5px 5px #888888;
+      color: white; }
+    #loginForm .list button::active {
+      background-color: #F16156; }
+    #loginForm .list a {
+      color: #CAE8DC; }
+    #loginForm .list label {
+      background-color: #FBF8E7; }
+
+#loginForm::after {
+  content: "";
+  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
+
+#iconRow {
+  margin-top: 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+
+#californiaIcon {
+  height: 50px;
+  width: 50px; }
+
+#stateChange {
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+  #stateChange button {
+    background-color: #CAE8DC;
+    border: 0px;
+    color: black;
+    border-radius: 5px; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

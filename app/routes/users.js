@@ -23,6 +23,10 @@ router.post('/create', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next){
+  if(!req.body.username || !req.body.password){
+    return res.status(400).json({message: 'Missing required fields username and password.'});
+  }
+
   User.findOne({username: req.body.username}, function(err, user){
     if(err){
       res.send(err)

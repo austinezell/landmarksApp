@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 'use strict';
 
-angular.module('starter', ['ionic', 'starter.controllers']).run(function ($ionicPlatform) {
+angular.module('starter', ['ionic', 'starter.controllers']).constant('tokenStorageKey', 'my-token').run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -61,8 +61,61 @@ angular.module('starter', ['ionic', 'starter.controllers']).run(function ($ionic
 });
 'use strict';
 
-angular.module('starter.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+var app = angular.module('starter');
 
+app.factory('auth', function ($window, $http, tokenStorageKey) {
+  var auth = {};
+
+  auth.saveToken = function (token) {
+    $window.localStorage[tokenStorageKey] = token;
+  };
+
+  auth.getToken = function () {
+    return $window.localStorage[tokenStorageKey];
+  };
+
+  auth.isLoggedIn = function () {
+    var token = auth.getToken();
+    if (token) {
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload.exp > Date.now() / 1000;
+    } else {
+      return false;
+    }
+  };
+
+  auth.currentUser = function () {
+    if (auth.isLoggedIn()) {
+      var token = auth.getToken();
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload.username;
+    }
+  };
+
+  auth.register = function (user) {
+    return $http.post('/users/register', user).success(function (data) {
+      auth.saveToken(data.token);
+    });
+  };
+
+  auth.login = function (user) {
+    return $http.post('/users/login', user).success(function (data) {
+      auth.saveToken(data.token);
+    });
+  };
+
+  auth.logout = function () {
+    $window.localStorage.removeItem(tokenStorageKey);
+  };
+
+  return auth;
+});
+'use strict';
+
+angular.module('starter.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
+  $scope.Login = true;
+  $scope.stateSwitch = "Create Account";
+  $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -71,7 +124,12 @@ angular.module('starter.controllers', []).controller('AppCtrl', function ($scope
   //});
 
   // Form data for the login modal
-  $scope.loginData = {};
+
+  $scope.registerState = function () {
+    $scope.Login = !$scope.Login;
+    $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
+    console.log($scope.Login);
+  };
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('html/login.html', {
@@ -87,12 +145,25 @@ angular.module('starter.controllers', []).controller('AppCtrl', function ($scope
 
   // Open the login modal
   $scope.login = function () {
+    console.log("yes");
     $scope.modal.show();
   };
 
+  $scope.register = function (user) {
+    auth.register(user).success(function (data) {
+      console.log(data);
+    });
+  };
+
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function () {
+  $scope.doLogin = function (user) {
+    var loginData = $scope.loginData;
     console.log('Doing login', $scope.loginData);
+    auth.login(loginData).success(function (data) {
+      console.log(data);
+    }).error(function (err) {
+      console.log(err);
+    });
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
