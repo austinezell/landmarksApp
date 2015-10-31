@@ -38,6 +38,32 @@ router.post('/login', function(req, res, next){
   })
 });
 
+router.post('/register', function(req, res, next){
+  console.log(req.body);
+  if(!req.body.username || !req.body.password){
+    return res.status(400).json({message: 'Missing required fields username and password.'});
+  }
+
+  var user = new User();
+  user.fullName = req.body.fullName;
+  user.email = req.body.email;
+  user.username = req.body.username;
+  user.setPassword(req.body.password);
+
+  console.log('user:', user);
+
+  user.save(function(err, user){
+    console.log('save cb:', err || user);
+    if(err){
+      return res.status(400).json({message: "error encountered"})
+    }else if(!user || !user.validPassword(req.body.password)){
+      res.send('Invalid login credentials')
+    }else{
+      return res.json({token: user.generateJWT()})
+    }
+  })
+});
+
 router.post('/favorites/:uid/:lid', function (req, res){
   console.log('here',req.params.uid)
   User.findById(req.params.uid, function (err,user){

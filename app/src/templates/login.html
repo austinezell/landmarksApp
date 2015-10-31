@@ -6,7 +6,7 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <form id="loginForm">
+    <div id="loginForm">
       <div class="list">
         <label ng-show="!Login" class="item item-input">
           <span class="input-label">Full Name</span>
@@ -25,8 +25,8 @@
           <input type="password" ng-model="user.password">
         </label>
         <label class="item">
-          <button ng-show="Login" ng-click="doLogin(user)" class="button button-block button-positive" type="submit">Log in</button>
-          <button ng-show="!Login" ng-click="register(user)" class="button button-block">Register</button>
+          <button ng-if="Login" ng-click="doLogin(user)" class="button button-block button-positive">Log in</button>
+          <button ng-if="!Login" ng-click="register(user)" class="button button-block">Register</button>
         </label>
       </div>
       <div id="stateChange" class="row">
@@ -36,6 +36,6 @@
       <div id="iconRow" class="row">
         <img id="californiaIcon" src="../assets/026905-glossy-black-3d-button-icon-culture-state-california.png" alt="">
       </div>
-    </form>
+    </div>
   </ion-content>
 </ion-modal-view>

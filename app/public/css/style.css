@@ -43,7 +43,7 @@ $dark:                            #444 !default;
   z-index: -1; }
 
 #iconRow {
-  margin-top: 20px;
+  margin-top: 10px;
   display: inline-block;
   width: 100%;
   text-align: center; }

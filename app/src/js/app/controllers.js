@@ -34,24 +34,28 @@ angular.module('starter.controllers', [])
 
   // Open the login modal
   $scope.login = function() {
-    console.log("yes");
     $scope.modal.show();
   };
 
   $scope.register = function(user){
+    console.log("register");
     auth.register(user)
     .success(function(data){
-      console.log(data);
+      $scope.doLogin(user);
+      $scope.user = {};
+    })
+    .error(function(err){
+      console.log(err);
     })
   }
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function(user) {
-    var loginData = $scope.loginData;
-    console.log('Doing login', $scope.loginData);
-    auth.login(loginData)
+    console.log("login");
+    auth.login(user)
     .success(function(data){
       console.log(data);
+      console.log("ok");
     })
     .error(function(err){
       console.log(err);

@@ -7,3 +7,4 @@ plugins/
 public/vendor/
 .env
 public/lib
+.DS_Store
