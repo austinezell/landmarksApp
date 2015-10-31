@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('starter');
+var app = angular.module('landmarksApp');
 
 app.factory('auth', function($window, $http, tokenStorageKey) {
   var auth = {};

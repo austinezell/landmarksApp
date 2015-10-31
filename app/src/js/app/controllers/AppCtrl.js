@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+var app = angular.module('landmarksApp')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
   $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
   $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
@@ -69,18 +69,3 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-
-});

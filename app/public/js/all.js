@@ -6,7 +6,11 @@
 // 'starter.controllers' is found in controllers.js
 'use strict';
 
-angular.module('starter', ['ionic', 'starter.controllers']).constant('tokenStorageKey', 'my-token').run(function ($ionicPlatform) {
+var app = angular.module('landmarksApp', ['ionic']);
+
+app.constant('tokenStorageKey', 'my-token');
+
+app.run(function ($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,7 +23,9 @@ angular.module('starter', ['ionic', 'starter.controllers']).constant('tokenStora
       StatusBar.styleDefault();
     }
   });
-}).config(function ($stateProvider, $urlRouterProvider) {
+});
+
+app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('app', {
     url: '/app',
     abstract: true,
@@ -55,67 +61,24 @@ angular.module('starter', ['ionic', 'starter.controllers']).constant('tokenStora
         controller: 'PlaylistCtrl'
       }
     }
+  }).state('app.landing', {
+    url: '/landing',
+    views: {
+      'menuContent': {
+        templateUrl: "../html/landing.html",
+        controller: 'LandingCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/landing');
 });
 'use strict';
 
-var app = angular.module('starter');
+var app = angular.module('landmarksApp');
 
-app.factory('auth', function ($window, $http, tokenStorageKey) {
-  var auth = {};
-
-  auth.saveToken = function (token) {
-    $window.localStorage[tokenStorageKey] = token;
-  };
-
-  auth.getToken = function () {
-    return $window.localStorage[tokenStorageKey];
-  };
-
-  auth.isLoggedIn = function () {
-    var token = auth.getToken();
-    if (token) {
-      var payload = JSON.parse($window.atob(token.split('.')[1]));
-      return payload.exp > Date.now() / 1000;
-    } else {
-      return false;
-    }
-  };
-
-  auth.currentUser = function () {
-    if (auth.isLoggedIn()) {
-      var token = auth.getToken();
-      var payload = JSON.parse($window.atob(token.split('.')[1]));
-      return payload.username;
-    }
-  };
-
-  auth.register = function (user) {
-    return $http.post('/users/register', user).success(function (data) {
-      auth.saveToken(data.token);
-    });
-  };
-
-  auth.login = function (user) {
-    return $http.post('/users/login', user).success(function (data) {
-      auth.saveToken(data.token);
-    });
-  };
-
-  auth.logout = function () {
-    $window.localStorage.removeItem(tokenStorageKey);
-  };
-
-  return auth;
-});
-'use strict';
-
-angular.module('starter.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
+app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.stateSwitch = "Create Account";
-  $scope.stateMessage = "Do you need an Account?";
   $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
   $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
   // With the new view caching in Ionic, Controllers are only called
@@ -176,6 +139,72 @@ angular.module('starter.controllers', []).controller('AppCtrl', function ($scope
       $scope.closeLogin();
     }, 1000);
   };
-}).controller('PlaylistsCtrl', function ($scope) {
+});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('LandingCtrl', function ($scope, $stateParams) {});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('PlaylistsCtrl', function ($scope) {
   $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
-}).controller('PlaylistCtrl', function ($scope, $stateParams) {});
+});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.factory('auth', function ($window, $http, tokenStorageKey) {
+  var auth = {};
+
+  auth.saveToken = function (token) {
+    $window.localStorage[tokenStorageKey] = token;
+  };
+
+  auth.getToken = function () {
+    return $window.localStorage[tokenStorageKey];
+  };
+
+  auth.isLoggedIn = function () {
+    var token = auth.getToken();
+    if (token) {
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload.exp > Date.now() / 1000;
+    } else {
+      return false;
+    }
+  };
+
+  auth.currentUser = function () {
+    if (auth.isLoggedIn()) {
+      var token = auth.getToken();
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload.username;
+    }
+  };
+
+  auth.register = function (user) {
+    return $http.post('/users/register', user).success(function (data) {
+      auth.saveToken(data.token);
+    });
+  };
+
+  auth.login = function (user) {
+    return $http.post('/users/login', user).success(function (data) {
+      auth.saveToken(data.token);
+    });
+  };
+
+  auth.logout = function () {
+    $window.localStorage.removeItem(tokenStorageKey);
+  };
+
+  return auth;
+});
