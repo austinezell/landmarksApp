@@ -69,6 +69,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'LandingCtrl'
       }
     }
+  }).state('app.map', {
+    url: '/map',
+    views: {
+      'menuContent': {
+        templateUrl: "../html/map.html",
+        controller: 'MapCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
@@ -79,8 +87,8 @@ var app = angular.module('landmarksApp');
 
 app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
-  $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
+  $scope.isLoggedIn = false;
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -90,11 +98,12 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 
   // Form data for the login modal
 
-  $scope.registerState = function () {
+  ($scope.registerState = function () {
     $scope.Login = !$scope.Login;
+    $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
     $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
-  };
+  })();
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('html/login.html', {
@@ -127,6 +136,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.doLogin = function (user) {
     console.log("login");
     auth.login(user).success(function (data) {
+      $scope.isLoggedIn = true;
       console.log(data);
       console.log("ok");
     }).error(function (err) {
@@ -139,11 +149,6 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
       $scope.closeLogin();
     }, 1000);
   };
-<<<<<<< HEAD
-}).controller('PlaylistsCtrl', function ($scope) {
-  $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
-}).controller('PlaylistCtrl', function ($scope, $stateParams) {});
-=======
 });
 'use strict';
 
@@ -154,13 +159,35 @@ app.controller('LandingCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
+app.controller('MapCtrl', function ($scope, $stateParams) {
+  $scope.$on('$ionicView.enter', function () {
+    detectBrowser();
+  });
+
+  function detectBrowser() {
+    var useragent = navigator.userAgent;
+    var mapdiv = document.getElementById("map");
+
+    if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
+      mapdiv.style.width = '100%';
+      mapdiv.style.height = '100%';
+    } else {
+      mapdiv.style.width = '600px';
+      mapdiv.style.height = '800px';
+    }
+  }
+});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
 app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
 'use strict';
 
 var app = angular.module('landmarksApp');
 
 app.controller('PlaylistsCtrl', function ($scope) {
-  $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
+  $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
 });
 'use strict';
 
@@ -213,4 +240,3 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   return auth;
 });
->>>>>>> cb5d7c71a7800d14b990713de7baaa9995021478

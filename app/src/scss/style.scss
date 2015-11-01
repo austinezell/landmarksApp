@@ -20,6 +20,7 @@ $secondary: #FBF8E7;
 $tertiary: #EDD8A9;
 $highlight: #F16156;
 $cool: #CAE8DC;
+$green: #4c653b;
 
 #loginForm{
   background-color: $secondary;
@@ -79,6 +80,24 @@ $cool: #CAE8DC;
   }
 }
 
+#hamburgerMenu{
+  color: $secondary;
+}
+
+.locations * {
+  display: inline-block;
+  p{
+    margin-left: 15px;
+  }
+  img{
+    margin-left: 1vw;
+  }
+}
+
+.landmarkIcon{
+  height: 30px;
+  width: 30px;
+}
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css

@@ -71,8 +71,8 @@
   &.item-light {
     @include item-style($item-light-bg, $item-light-border, $item-light-text);
   }
-  &.item-stable {
-    @include item-style($item-stable-bg, $item-stable-border, $item-stable-text);
+  &.item-california {
+    @include item-style($item-california-bg, $item-california-border, $item-california-text);
   }
   &.item-positive {
     @include item-style($item-positive-bg, $item-positive-border, $item-positive-text);
@@ -95,6 +95,8 @@
   &.item-dark {
     @include item-style($item-dark-bg, $item-dark-border, $item-dark-text);
   }
+
+
 
   &[ng-click]:hover {
     cursor: pointer;
@@ -143,6 +145,9 @@
   }
   &.item-dark {
     @include item-active-style($item-dark-active-bg, $item-dark-active-border);
+  }
+  &.item-california {
+    @include item-active-style($tertiary, $green);
   }
 }
 

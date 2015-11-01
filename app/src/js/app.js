@@ -79,6 +79,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller: 'LandingCtrl'
       }
     }
+  })
+  .state('app.map', {
+    url: '/map',
+    views: {
+      'menuContent': {
+        templateUrl: "../html/map.html",
+        controller: 'MapCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
