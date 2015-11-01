@@ -99,6 +99,11 @@ $green: #4c653b;
   width: 30px;
 }
 
+#map{
+  width: 100vw;
+  height: 50vh;
+}
+
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
