@@ -162,7 +162,6 @@
 
 .button-icon {
   @include transition(opacity .1s);
-  color: white;
   padding: 0 6px;
   min-width: initial;
   border-color: transparent;

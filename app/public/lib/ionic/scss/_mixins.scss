@@ -92,8 +92,8 @@
 // --------------------------------------------------
 
 @mixin item-style($bg-color, $border-color, $color) {
-  background-color: $bg-color;
   border-color: $border-color;
+  background-color: $bg-color;
   color: $color;
 }
 

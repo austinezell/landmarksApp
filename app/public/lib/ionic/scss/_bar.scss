@@ -23,7 +23,7 @@
   border-top: 1px solid transparent;
   border-bottom: 1px solid $bar-default-border;
 
-  background-color: $primary;
+  background-color: $bar-default-bg;
 
   /* border-width: 1px will actually create 2 device pixels on retina */
   /* this nifty trick sets an actual 1px border on hi-res displays */
@@ -73,9 +73,9 @@
     }
   }
   &.bar-stable {
-    @include bar-style($primary, $bar-stable-border, $secondary);
+    @include bar-style($bar-stable-bg, $bar-stable-border, $bar-stable-text);
     &.bar-footer{
-      background-image: linear-gradient(180deg, $primary, $bar-stable-border 50%, transparent 50%);
+      background-image: linear-gradient(180deg, $bar-stable-border, $bar-stable-border 50%, transparent 50%);
     }
   }
   &.bar-positive {
@@ -123,7 +123,6 @@
 
   // Title inside of a bar is centered
   .title {
-    color: $secondary;
     position: absolute;
 
     top: 0;
@@ -292,7 +291,7 @@
 }
 .bar-stable {
   .button {
-    @include button-style($bar-stable-bg, $bar-stable-border, $bar-stable-active-bg, $bar-stable-active-border, $light);
+    @include button-style($bar-stable-bg, $bar-stable-border, $bar-stable-active-bg, $bar-stable-active-border, $bar-stable-text);
     @include button-clear($bar-stable-text, $bar-title-font-size);
   }
 }
@@ -341,8 +340,6 @@
 
 // Header at top
 .bar-header {
-  background-color: $primary;
-  color: white;
   top: 0;
   border-top-width: 0;
   border-bottom-width: 1px;
@@ -404,3 +401,4 @@
 .nav-bar-tabs-top .bar {
   background-image: none;
 }
+
