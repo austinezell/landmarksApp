@@ -156,6 +156,7 @@ var app = angular.module('landmarksApp');
 
 app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
   $scope.$on('$ionicView.enter', function () {
+    $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
     initialize();
   });
   function initialize() {
@@ -241,9 +242,7 @@ app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('PlaylistsCtrl', function ($scope) {
-  $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
-});
+app.controller('PlaylistsCtrl', function ($scope) {});
 'use strict';
 
 var app = angular.module('landmarksApp');
