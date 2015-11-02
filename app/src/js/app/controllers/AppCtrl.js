@@ -38,6 +38,10 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     $scope.modal.show();
   };
 
+  $scope.logout = function() {
+    auth.logout();
+  };
+
   $scope.register = function(user){
     console.log("register");
     auth.register(user)
@@ -56,6 +60,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     auth.login(user)
     .success(function(data){
       $scope.isLoggedIn = true;
+      swal({   title: "Success!",   text: "Successfully Authenticated",   type: "success", timer: 1000, showConfirmButton: false });
       console.log(data);
       console.log("ok");
     })
