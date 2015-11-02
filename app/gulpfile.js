@@ -11,7 +11,7 @@ var babel = require('gulp-babel');
 
 var dirs = {
   src: {
-    lib: "src/lib/*"
+    lib: "src/lib/**/*",
     js: "src/js/**/*.js",
     scss: "src/scss/**/*.scss",
     html: "src/templates/**/*.html"
