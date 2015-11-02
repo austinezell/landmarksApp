@@ -73,9 +73,9 @@
     }
   }
   &.bar-stable {
-    @include bar-style($primary, $bar-stable-border, $secondary);
+    @include bar-style($bar-stable-bg, $bar-stable-border, $bar-stable-text);
     &.bar-footer{
-      background-image: linear-gradient(180deg, $primary, $bar-stable-border 50%, transparent 50%);
+      background-image: linear-gradient(180deg, $bar-stable-border, $bar-stable-border 50%, transparent 50%);
     }
   }
   &.bar-positive {
@@ -401,3 +401,4 @@
 .nav-bar-tabs-top .bar {
   background-image: none;
 }
+

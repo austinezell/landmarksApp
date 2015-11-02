@@ -1,0 +1,3261 @@
+{
+  "landmarks": [{
+    "name": "Argonaut Mine",
+    "location": "38°21′53″N 120°47′14″W"
+  }, {
+    "name": "Big Bar",
+    "location": "38°18′43″N 120°43′12″W"
+  }, {
+    "name": "Butte Store",
+    "location": "38°19′32″N 120°44′07″W"
+  }, {
+    "name": "Chaw'se Roundhouse",
+    "location": "38°25′27″N 120°38′36″W"
+  }, {
+    "name": "Clinton",
+    "location": "38°22′34″N 120°40′06″W"
+  }, {
+    "name": "Community Methodist Church of Ione",
+    "location": "38°21′00″N 120°55′58″W"
+  }, {
+    "name": "D'Agostini Winery",
+    "location": "38°31′59″N 120°45′18″W"
+  }, {
+    "name": "D. Stewart Co. Store",
+    "location": "38°21′10″N 120°55′59″W"
+  }, {
+    "name": "Drytown",
+    "location": "38°26′28″N 120°51′16″W"
+  }, {
+    "name": "Irishtown",
+    "location": "38°23′20″N 120°40′29″W"
+  }, {
+    "name": "Jackson Gate",
+    "location": "38°22′05″N 120°46′32″W"
+  }, {
+    "name": "Kennedy Mine",
+    "location": "38°21′53″N 120°47′14″W"
+  }, {
+    "name": "Kirkwood's",
+    "location": "38°42′10″N 120°04′21″W"
+  }, {
+    "name": "Knight Foundry",
+    "location": "38°23′36″N 120°47′01″W"
+  }, {
+    "name": "Lancha Plana",
+    "location": "38°13′29″N 120°54′07″W"
+  }, {
+    "name": "Maiden's Grave",
+    "location": "38°37′54″N 120°10′16″W"
+  }, {
+    "name": "Middle Bar",
+    "location": "Middle Bar Rd at Mokelumne River"
+  }, {
+    "name": "Old Emigrant Road",
+    "location": "38°42′11″N 120°02′11″W"
+  }, {
+    "name": "Oleta (Old Fiddletown)",
+    "location": "38°30′14″N 120°45′20″W"
+  }, {
+    "name": "Pioneer Hall",
+    "location": "38°20′57″N 120°46′27″W"
+  }, {
+    "name": "Plymouth Trading Post",
+    "location": "On Main St., between Mill & Mineral Sts."
+  }, {
+    "name": "Preston Castle",
+    "location": "38°21′40″N 120°56′09″W"
+  }, {
+    "name": "Site of the first amateur astronomical observatory of record in California",
+    "location": "38°26′34″N 120°37′53″W"
+  }, {
+    "name": "Site of Jackson's Pioneer Jewish Synagogue",
+    "location": "38°21′04″N 120°46′24″W"
+  }, {
+    "name": "Sutter Creek",
+    "location": "38°23′35″N 120°48′09″W"
+  }, {
+    "name": "Volcano",
+    "location": "38°26′35″N 120°37′51″W"
+  }, {
+    "name": "Colusa County Courthouse",
+    "location": "39°12′50″N 122°00′31″W"
+  }, {
+    "name": "Letts Valley",
+    "location": "Letts Lake Campground"
+  }, {
+    "name": "Swift's Stone Corral",
+    "location": "Just south of Maxwell-Sites Rd."
+  }, {
+    "name": "Alvarado Adobe",
+    "location": "San Pablo Blvd. & Church Ln."
+  }, {
+    "name": "Captain Pedro Fages Trail",
+    "location": "856 Danville Blvd."
+  }, {
+    "name": "Castro Home",
+    "location": "9800 San Pablo Ave."
+  }, {
+    "name": "Don Fernando Pacheco Adobe",
+    "location": "37°59′46″N 122°02′33″W"
+  }, {
+    "name": "Don Salvio Pacheco Adobe",
+    "location": "37°58′35″N 122°02′16″W"
+  }, {
+    "name": "East Brother Light Station",
+    "location": "37°57′48″N 122°26′00″W"
+  }, {
+    "name": "John Muir home",
+    "location": "37°59′29″N 122°08′00″W"
+  }, {
+    "name": "Mount Diablo",
+    "location": "37°52′54″N 121°54′51″W"
+  }, {
+    "name": "Mount Diablo coal field",
+    "location": "37°57′01″N 121°51′25″W"
+  }, {
+    "name": "The Old Homestead",
+    "location": "38°03′18″N 122°13′16″W"
+  }, {
+    "name": "Richmond Shipyards District",
+    "location": "37°54′22″N 122°21′53″W"
+  }, {
+    "name": "Site of Giant Powder Company",
+    "location": "37°59′32″N 122°21′19″W"
+  }, {
+    "name": "Site of the murder of Dr. John Marsh",
+    "location": "38°00′19″N 122°05′15″W"
+  }, {
+    "name": "Vicente Martinez Adobe",
+    "location": "37°59′32″N 122°07′51″W"
+  }, {
+    "name": "Coloma Road-Coloma",
+    "location": "38°48′08″N 120°53′34″W"
+  }, {
+    "name": "Coloma Road-Rescue",
+    "location": "38°42′40″N 120°57′07″W"
+  }, {
+    "name": "Condemned Bar",
+    "location": "Folsom Lake State Recreation Area"
+  }, {
+    "name": "Diamond Springs",
+    "location": "38°41′41″N 120°48′54″W"
+  }, {
+    "name": "El Dorado",
+    "location": "38°40′58″N 120°50′52″W"
+  }, {
+    "name": "El Dorado-Nevada House (Mud Springs) - Overland Pony Express Route in California",
+    "location": "Pleasant Valley Rd. near Church St."
+  }, {
+    "name": "Friday's Station - Overland Pony Express Route in California",
+    "location": "38°57′51″N 119°56′21″W"
+  }, {
+    "name": "Georgetown",
+    "location": "38°54′24″N 120°50′20″W"
+  }, {
+    "name": "Gold discovery site",
+    "location": "38°48′00″N 120°53′48″W"
+  }, {
+    "name": "Greenwood",
+    "location": "38°53′48″N 120°54′46″W"
+  }, {
+    "name": "Hangman's Tree",
+    "location": "38°43′42″N 120°48′09″W"
+  }, {
+    "name": "Marshall's Blacksmith Shop",
+    "location": "State Hwy 193"
+  }, {
+    "name": "Marshall Monument",
+    "location": "38°47′48″N 120°53′40″W"
+  }, {
+    "name": "Methodist Episcopal Church",
+    "location": "38°43′40″N 120°47′40″W"
+  }, {
+    "name": "Moore's (Riverton) - Overland Pony Express Route in California",
+    "location": "38°46′16″N 120°26′57″W"
+  }, {
+    "name": "Mormon Island",
+    "location": "38°42′13″N 121°07′03″W"
+  }, {
+    "name": "Mormon Tavern - Overland Pony Express Route in California",
+    "location": "38°39′22″N 121°03′35″W"
+  }, {
+    "name": "Negro Hill",
+    "location": "Folsom Lake State Recreation Area"
+  }, {
+    "name": "Old Dry Higgins-Old Hangtown",
+    "location": "38°43′47″N 120°47′57″W"
+  }, {
+    "name": "Placerville - Overland Pony Express Route in California",
+    "location": "38°43′40″N 120°48′12″W"
+  }, {
+    "name": "Pleasant Grove House - Overland Pony Express Route in California",
+    "location": "38°41′53″N 121°01′14″W"
+  }, {
+    "name": "Salmon Falls",
+    "location": "38°45′29″N 121°03′30″W"
+  }, {
+    "name": "Shingle Springs",
+    "location": "38°39′57″N 120°55′34″W"
+  }, {
+    "name": "Site of California's First Grange Hall",
+    "location": "38°50′38″N 121°00′54″W"
+  }, {
+    "name": "Sportsman's Hall - Overland Pony Express Route in California",
+    "location": "38°45′00″N 120°36′41″W"
+  }, {
+    "name": "Strawberry Valley House - Overland Pony Express Route in California",
+    "location": "38°47′44″N 120°08′54″W"
+  }, {
+    "name": "Studebaker's Shop",
+    "location": "38°43′46″N 120°47′51″W"
+  }, {
+    "name": "Wakamatsu Tea and Silk Farm Colony",
+    "location": "Gold Trails Elementary School, 889 Cold Springs Rd."
+  }, {
+    "name": "Yank's Station - Overland Pony Express Route in California",
+    "location": "38°51′22″N 120°00′47″W"
+  }, {
+    "name": "Camp Pilot Knob",
+    "location": "32°45′03″N 114°45′17″W"
+  }, {
+    "name": "Camp Salvation",
+    "location": "32°40′12″N 115°29′36″W"
+  }, {
+    "name": "Charley's World of Lost Art",
+    "location": "32°43′51″N 114°43′37″W"
+  }, {
+    "name": "Fort Yuma",
+    "location": "32°43′54″N 114°36′56″W"
+  }, {
+    "name": "Hernando de Alarcón Expedition",
+    "location": "32°44′15″N 114°43′00″W"
+  }, {
+    "name": "Mission Puerto de Purísima Concepción",
+    "location": "Fort Yuma"
+  }, {
+    "name": "Mountain Springs Station",
+    "location": "32°39′33″N 116°05′59″W"
+  }, {
+    "name": "Picacho Mines",
+    "location": "32°58′19″N 114°38′07″W"
+  }, {
+    "name": "Plank Road",
+    "location": "32°42′37″N 114°55′22″W"
+  }, {
+    "name": "Fort Romualdo Pacheco",
+    "location": "32°50′50″N 115°40′58″W"
+  }, {
+    "name": "Site of Mission San Pedro y San Pablo de Bicuñer",
+    "location": "32°48′59″N 114°30′54″W"
+  }, {
+    "name": "Tecolote Rancho Site",
+    "location": "32°48′00″N 115°25′18″W"
+  }, {
+    "name": "Tumco Mines",
+    "location": "Gold Rack Ranch Rd."
+  }, {
+    "name": "Yuha Well",
+    "location": "32°46′25″N 115°40′13″W"
+  }, {
+    "name": "Arcata and Mad River Rail Road Company",
+    "location": "330 Railroad Ave."
+  }, {
+    "name": "California's First Drilled Oil Wells",
+    "location": "40°19′28″N 124°17′13″W"
+  }, {
+    "name": "Camp Curtis",
+    "location": "40°53′28″N 124°04′46″W"
+  }, {
+    "name": "Centerville Beach Cross",
+    "location": "40°34′11″N 124°21′06″W"
+  }, {
+    "name": "City of Eureka",
+    "location": "40°48′13″N 124°09′59″W"
+  }, {
+    "name": "Ferndale",
+    "location": "40°34′36″N 124°15′48″W"
+  }, {
+    "name": "Fort Humboldt",
+    "location": "40°46′37″N 124°11′20″W"
+  }, {
+    "name": "Humboldt Harbor Historical District",
+    "location": "40°45′14″N 124°12′55″W"
+  }, {
+    "name": "Jacoby Building",
+    "location": "8th & H (SE Corner)"
+  }, {
+    "name": "The Old Arrow Tree",
+    "location": "40°52′01″N 123°57′01″W"
+  }, {
+    "name": "Old Indian Village of Tsurai",
+    "location": "41°03′34″N 124°08′35″W"
+  }, {
+    "name": "Town of Trinidad",
+    "location": "41°03′33″N 124°08′35″W"
+  }, {
+    "name": "Trinidad Head",
+    "location": "41°03′16″N 124°09′03″W"
+  }, {
+    "name": "Alameda Terminal of the First Transcontinental Railroad",
+    "location": "37°48′53″N 122°19′02″W"
+  }, {
+    "name": "Berkeley City Club",
+    "location": "37°52′03″N 122°15′46″W"
+  }, {
+    "name": "Camino of Rancho San Antonio",
+    "location": "37°49′28″N 122°15′32″W"
+  }, {
+    "name": "Site of the China Clipper flight departure",
+    "location": "Alameda Naval Air Station"
+  }, {
+    "name": "Church of St. James the Apostle",
+    "location": "37°47′30″N 122°14′46″W"
+  }, {
+    "name": "Coast Guard Lightship WLV 605",
+    "location": "37°47′44″N 122°16′50″W"
+  }, {
+    "name": "Concannon Vineyard",
+    "location": "37°40′00″N 121°44′23″W"
+  }, {
+    "name": "Croll Building",
+    "location": "37°46′18″N 122°16′36″W"
+  }, {
+    "name": "Estudillo Home",
+    "location": "37°43′24″N 122°09′36″W"
+  }, {
+    "name": "Cresta Blanca Winery",
+    "location": "37°37′24″N 121°45′23″W"
+  }, {
+    "name": "First Unitarian Church of Oakland",
+    "location": "37°48′23″N 122°16′36″W"
+  }, {
+    "name": "Francisco Solano Alviso Adobe",
+    "location": "37°39′38″N 121°54′43″W"
+  }, {
+    "name": "Joaquin Miller Home",
+    "location": "37°48′45″N 122°11′08″W"
+  }, {
+    "name": "Leland Stanford Winery",
+    "location": "330 Stanford Ave."
+  }, {
+    "name": "Livermore Memorial Monument",
+    "location": "37°41′28″N 121°46′26″W"
+  }, {
+    "name": "Mills Hall",
+    "location": "37°46′45″N 122°10′57″W"
+  }, {
+    "name": "Mission San José",
+    "location": "37°32′02″N 121°55′12″W"
+  }, {
+    "name": "Paramount Theatre",
+    "location": "37°48′36″N 122°16′04″W"
+  }, {
+    "name": "Pardee Home",
+    "location": "37°48′18″N 122°16′35″W"
+  }, {
+    "name": "Peralta Hacienda Site",
+    "location": "37°47′13″N 122°13′03″W"
+  }, {
+    "name": "Peralta Home",
+    "location": "37°43′51″N 122°09′41″W"
+  }, {
+    "name": "Piedmont Way",
+    "location": "37°52′04″N 122°15′07″W"
+  }, {
+    "name": "Rainbow trout species identified",
+    "location": "50 yards past Redwood Gate entrance kiosk, Redwood Regional Park"
+  }, {
+    "name": "Rancho San Antonio (Peralta Grant)",
+    "location": "37°43′38″N 122°09′29″W"
+  }, {
+    "name": "San Leandro Oyster Beds",
+    "location": "37°41′43″N 122°11′36″W"
+  }, {
+    "name": "Site of Blossom Rock Navigation Trees",
+    "location": "37°48′13″N 122°10′38″W"
+  }, {
+    "name": "Site of College of California",
+    "location": "37°48′12″N 122°16′13″W"
+  }, {
+    "name": "Site of the First County Courthouse",
+    "location": "37°35′48″N 122°04′52″W"
+  }, {
+    "name": "Site of the First Public School in Castro Valley",
+    "location": "37°42′24″N 122°04′26″W"
+  }, {
+    "name": "Site of the nation's first successful sugar beet factory",
+    "location": "37°36′02″N 122°04′14″W"
+  }, {
+    "name": "Site of Saint Mary's College",
+    "location": "37°49′14″N 122°15′41″W"
+  }, {
+    "name": "Site of Shell Mound",
+    "location": "37°50′02″N 122°17′33″W"
+  }, {
+    "name": "Ukrania, Site of Agapius Honcharenko Farmstead",
+    "location": "Garin Regional Park"
+  }, {
+    "name": "University of California, Berkeley Campus",
+    "location": "37°52′12″N 122°15′32″W"
+  }, {
+    "name": "USS Hornet",
+    "location": "37°46′22″N 122°18′10″W"
+  }, {
+    "name": "Vallejo Flour Mill",
+    "location": "37°34′43″N 121°58′39″W"
+  }, {
+    "name": "Wente Bros. Winery",
+    "location": "37°37′26″N 121°45′25″W"
+  }, {
+    "name": "Granville P. Swift Adobe",
+    "location": "39°45′36″N 122°11′48″W"
+  }, {
+    "name": "Site of First Posted Water Notice by Will S. Green",
+    "location": "Cutler and 1st Ave."
+  }, {
+    "name": "Bidwell's Bar",
+    "location": "39°33′24″N 121°26′29″W"
+  }, {
+    "name": "Chico Forestry Station and Nursery",
+    "location": "39°44′43″N 121°48′35″W"
+  }, {
+    "name": "Chinese Temple",
+    "location": "39°30′49″N 121°33′39″W"
+  }, {
+    "name": "Discovery site of the last Yahi Indian",
+    "location": "39°30′44″N 121°31′16″W"
+  }, {
+    "name": "Dogtown Nugget discovery site",
+    "location": "39°48′15″N 121°34′43″W"
+  }, {
+    "name": "Hooker Oak",
+    "location": "39°44′18″N 121°49′31″W"
+  }, {
+    "name": "Mother Orange Tree of Butte County",
+    "location": "39°30′40″N 121°30′15″W"
+  }, {
+    "name": "Old suspension bridge",
+    "location": "39°32′15″N 121°27′15″W"
+  }, {
+    "name": "Oregon City",
+    "location": "39°35′38″N 121°31′46″W"
+  }, {
+    "name": "Rancho Chico and Bidwell Adobe",
+    "location": "39°43′56″N 121°50′37″W"
+  }, {
+    "name": "Altaville",
+    "location": "38°04′46″N 120°33′18″W"
+  }, {
+    "name": "Angels Camp",
+    "location": "38°04′06″N 120°32′23″W"
+  }, {
+    "name": "Angels Hotel",
+    "location": "38°04′08″N 120°32′23″W"
+  }, {
+    "name": "Big Bar",
+    "location": "38°18′43″N 120°43′12″W"
+  }, {
+    "name": "Birthplace of Archie Stevenot",
+    "location": "38°01′40″N 120°30′24″W"
+  }, {
+    "name": "Old mining camp of Brownsville",
+    "location": "38°07′43″N 120°26′31″W"
+  }, {
+    "name": "Calaveritas",
+    "location": "38°09′29″N 120°36′36″W"
+  }, {
+    "name": "Camanche",
+    "location": "38°12′48″N 120°56′07″W"
+  }, {
+    "name": "Campo Seco",
+    "location": "38°13′38″N 120°51′12″W"
+  }, {
+    "name": "California Caverns",
+    "location": "38°12′10″N 120°30′32″W"
+  }, {
+    "name": "Carson Hill",
+    "location": "38°01′42″N 120°30′24″W"
+  }, {
+    "name": "Chili Gulch",
+    "location": "38°12′58″N 120°42′27″W"
+  }, {
+    "name": "Congressional Church",
+    "location": "38°18′00″N 120°42′23″W"
+  }, {
+    "name": "Copperopolis",
+    "location": "37°58′41″N 120°38′18″W"
+  }, {
+    "name": "Courthouse of Calaveras County and the Léger Hotel",
+    "location": "38°18′04″N 120°42′21″W"
+  }, {
+    "name": "Double Springs",
+    "location": "38°12′19″N 120°47′28″W"
+  }, {
+    "name": "Douglass Flat",
+    "location": "38°06′52″N 120°27′18″W"
+  }, {
+    "name": "El Dorado",
+    "location": "38°13′42″N 120°32′27″W"
+  }, {
+    "name": "Fourth Crossing",
+    "location": "38°07′53″N 120°38′05″W"
+  }, {
+    "name": "Glencoe",
+    "location": "38°21′15″N 120°35′06″W"
+  }, {
+    "name": "I.O.O.F. Hall",
+    "location": "38°18′08″N 120°42′22″W"
+  }, {
+    "name": "Jenny Lind",
+    "location": "38°05′42″N 120°52′12″W"
+  }, {
+    "name": "Jesus Maria",
+    "location": "38°17′08″N 120°38′51″W"
+  }, {
+    "name": "Milton",
+    "location": "38°01′55″N 120°51′08″W"
+  }, {
+    "name": "Mokelumne Hill",
+    "location": "38°18′02″N 120°42′23″W"
+  }, {
+    "name": "Murphys",
+    "location": "38°08′15″N 120°27′35″W"
+  }, {
+    "name": "Murphys Hotel",
+    "location": "38°08′16″N 120°27′54″W"
+  }, {
+    "name": "O'Byrne Ferry",
+    "location": "37°53′49″N 120°34′34″W"
+  }, {
+    "name": "Paloma",
+    "location": "38°15′33″N 120°45′42″W"
+  }, {
+    "name": "Peter L. Traver Building",
+    "location": "38°08′16″N 120°27′54″W"
+  }, {
+    "name": "Pioneer Cemetery",
+    "location": "38°12′31″N 120°42′29″W"
+  }, {
+    "name": "Prince-Garibaldi Building",
+    "location": "38°04′46″N 120°33′15″W"
+  }, {
+    "name": "Rail Road Flat",
+    "location": "38°20′36″N 120°30′44″W"
+  }, {
+    "name": "Red Brick Grammar School",
+    "location": "38°04′59″N 120°33′43″W"
+  }, {
+    "name": "Robinson's Ferry",
+    "location": "38°00′33″N 120°30′17″W"
+  }, {
+    "name": "San Andreas",
+    "location": "38°11′46″N 120°40′50″W"
+  }, {
+    "name": "Sandy Gulch",
+    "location": "38°22′49″N 120°31′58″W"
+  }, {
+    "name": "Stone Corral",
+    "location": "Stone Corral Ranch, Hwy 26"
+  }, {
+    "name": "Vallecito",
+    "location": "38°05′25″N 120°28′25″W"
+  }, {
+    "name": "Vallecito Bell Monument",
+    "location": "38°05′11″N 120°28′27″W"
+  }, {
+    "name": "Valley Springs",
+    "location": "38°11′30″N 120°49′45″W"
+  }, {
+    "name": "West Point",
+    "location": "38°23′57″N 120°31′39″W"
+  }, {
+    "name": "Bend City",
+    "location": "36°49′09″N 118°07′50″W"
+  }, {
+    "name": "Bennett-Arcane Long Camp",
+    "location": "Death Valley National Park"
+  }, {
+    "name": "Bishop Creek Battleground",
+    "location": "37°20′29″N 118°28′52″W"
+  }, {
+    "name": "Burned Wagons Point",
+    "location": "Death Valley National Park"
+  }, {
+    "name": "Camp Independence",
+    "location": "36°49′59″N 118°13′21″W"
+  }, {
+    "name": "Cottonwood Charcoal Kilns",
+    "location": "36°24′55″N 118°00′43″W"
+  }, {
+    "name": "Death Valley 49ers Gateway",
+    "location": "36°26′55″N 116°51′10″W"
+  }, {
+    "name": "Eichbaum Toll Road",
+    "location": "Death Valley National Park"
+  }, {
+    "name": "Farley's Olancha Mill Site",
+    "location": "State Hwy 395"
+  }, {
+    "name": "Furnace of Owens Lake Silver-Lead Company",
+    "location": "36°31′49″N 117°54′49″W"
+  }, {
+    "name": "Grave of 1872 Earthquake Victims",
+    "location": "36°37′06″N 118°04′07″W"
+  }, {
+    "name": "Laws Station",
+    "location": "37°24′04″N 118°20′46″W"
+  }, {
+    "name": "Manzanar Relocation Center",
+    "location": "36°43′34″N 118°08′41″W"
+  }, {
+    "name": "Mary Austin's Home",
+    "location": "36°48′06″N 118°12′07″W"
+  }, {
+    "name": "Mayfield Canyon Battlefield",
+    "location": "37°26′49″N 118°38′14″W"
+  }, {
+    "name": "Old Harmony Borax Works",
+    "location": "36°28′48″N 116°52′24″W"
+  }, {
+    "name": "Old Stovepipe Wells",
+    "location": "36°39′33″N 117°04′44″W"
+  }, {
+    "name": "Owensville",
+    "location": "37°24′03″N 118°20′44″W"
+  }, {
+    "name": "Putnam's Stone Cabin",
+    "location": "36°48′11″N 118°12′00″W"
+  }, {
+    "name": "San Francis Ranch",
+    "location": "37°21′41″N 118°27′12″W"
+  }, {
+    "name": "Valley Wells",
+    "location": "35°49′42″N 117°19′54″W"
+  }, {
+    "name": "Battery Point Lighthouse",
+    "location": "41°44′38″N 124°12′12″W"
+  }, {
+    "name": "Brother Jonathan Cemetery",
+    "location": "41°45′03″N 124°12′40″W"
+  }, {
+    "name": "Camp Lincoln",
+    "location": "41°49′11″N 124°08′09″W"
+  }, {
+    "name": "Crescent City Plank and Turnpike Road",
+    "location": "Parkway Dr. & Elk Valley Rd."
+  }, {
+    "name": "Fort Ter-Wer",
+    "location": "41°30′36″N 123°59′19″W"
+  }, {
+    "name": "Site of Old Indian Village",
+    "location": "1886 Pebble Beach Dr."
+  }, {
+    "name": "S.S. Emidio",
+    "location": "41°45′02″N 124°11′48″W"
+  }, {
+    "name": "Ebbetts Pass Route",
+    "location": "38°32′40″N 119°48′43″W"
+  }, {
+    "name": "Kit Carson Marker",
+    "location": "38°41′38″N 119°59′15″W"
+  }, {
+    "name": "Marklee's Cabin Site",
+    "location": "38°41′41″N 119°46′48″W"
+  }, {
+    "name": "Old Emigrant Road",
+    "location": "38°42′11″N 120°02′11″W"
+  }, {
+    "name": "Memorial to Pioneer Odd Fellows",
+    "location": "38°41′32″N 119°59′15″W"
+  }, {
+    "name": "Pony Express Remount Station at Woodfords",
+    "location": "38°46′35″N 119°49′22″W"
+  }, {
+    "name": "Arroyo de Cantúa",
+    "location": "36°14′47″N 120°18′53″W"
+  }, {
+    "name": "Forestiere Underground Gardens",
+    "location": "36°48′26″N 119°52′51″W"
+  }, {
+    "name": "Fort Miller",
+    "location": "37°00′55″N 119°39′34″W"
+  }, {
+    "name": "Fresno City",
+    "location": "36°39′40″N 120°15′40″W"
+  }, {
+    "name": "Site of the Fresno Free Speech Fight of the Industrial Works of the World",
+    "location": ""
+  }, {
+    "name": "Site of the first junior college in California",
+    "location": "Stanislaus St. & O St."
+  }, {
+    "name": "Temporary Detention Camps for Japanese Americans - Fresno Assembly Center",
+    "location": "36°43′53″N 119°45′03″W"
+  }, {
+    "name": "Temporary Detention Camps for Japanese Americans - Pinedale Assembly Center",
+    "location": ""
+  }, {
+    "name": "Bloody Island Massacre",
+    "location": "39°08′56″N 122°53′17″W"
+  }, {
+    "name": "Lower Lake Stone Jail",
+    "location": "38°54′38″N 122°36′35″W"
+  }, {
+    "name": "Old Lake County Courthouse",
+    "location": "39°02′36″N 122°55′02″W"
+  }, {
+    "name": "St. Helena Toll Road and Bull Trail",
+    "location": "38°44′54″N 122°36′59″W"
+  }, {
+    "name": "Stone House",
+    "location": "38°48′33″N 122°34′22″W"
+  }, {
+    "name": "Sulphur Bank Mine",
+    "location": "39°00′14″N 122°39′59″W"
+  }, {
+    "name": "El Adobe de los Robles Rancho",
+    "location": "36°19′40″N 119°48′32″W"
+  }, {
+    "name": "Kingston",
+    "location": "36°25′25″N 119°41′38″W"
+  }, {
+    "name": "Location of the famous Mussel Slough Tragedy",
+    "location": "36°23′21″N 119°42′31″W"
+  }, {
+    "name": "20 Mule Team Borax Terminus",
+    "location": "35°03′24″N 118°10′31″W"
+  }, {
+    "name": "Bealville",
+    "location": "35°16′19″N 118°37′34″W"
+  }, {
+    "name": "Buena Vista Refinery",
+    "location": "35°23′52″N 119°39′54″W"
+  }, {
+    "name": "Buttonwillow Tree",
+    "location": "35°24′25″N 119°28′27″W"
+  }, {
+    "name": "Caliente",
+    "location": "35°17′26″N 118°37′36″W"
+  }, {
+    "name": "California Standard Oil Well 1",
+    "location": "McKittrick Oil Field"
+  }, {
+    "name": "Campsite of Edward M. Kern",
+    "location": "35°38′58″N 118°27′30″W"
+  }, {
+    "name": "Colonel Thomas Baker Memorial",
+    "location": "35°22′23″N 119°01′10″W"
+  }, {
+    "name": "Desert Spring",
+    "location": "35°18′06″N 117°57′15″W"
+  }, {
+    "name": "Discovery well of Kern River Oilfield",
+    "location": "35°25′42″N 118°57′17″W"
+  }, {
+    "name": "Fages-Zalvidea Crossing",
+    "location": "35°03′33″N 119°04′00″W"
+  }, {
+    "name": "Fort Tejon",
+    "location": "34°52′24″N 118°53′44″W"
+  }, {
+    "name": "Freeman Junction",
+    "location": "35°36′07″N 117°54′26″W"
+  }, {
+    "name": "Garcés Baptismal Site",
+    "location": "State Hwy 155"
+  }, {
+    "name": "Garcés Circle",
+    "location": "35°23′13″N 119°01′08″W"
+  }, {
+    "name": "Site of the town of Garlock",
+    "location": "35°24′09″N 117°47′26″W"
+  }, {
+    "name": "Glennville Adobe",
+    "location": "35°43′36″N 118°42′02″W"
+  }, {
+    "name": "Gordon's Ferry",
+    "location": "35°25′29″N 118°58′05″W"
+  }, {
+    "name": "Havilah",
+    "location": "35°31′06″N 118°30′59″W"
+  }, {
+    "name": "Indian Wells",
+    "location": "35°40′04″N 117°52′20″W"
+  }, {
+    "name": "Kern River Slough Station",
+    "location": "35°15′35″N 118°58′03″W"
+  }, {
+    "name": "Kernville",
+    "location": "35°43′13″N 118°26′09″W"
+  }, {
+    "name": "Keysville",
+    "location": "35°37′33″N 118°30′39″W"
+  }, {
+    "name": "Lakeview Gusher",
+    "location": "35°05′29″N 119°24′05″W"
+  }, {
+    "name": "Lavers' Crossing",
+    "location": "35°44′10″N 118°43′13″W"
+  }, {
+    "name": "McKittrick Brea Pit",
+    "location": "35°18′20″N 119°37′21″W"
+  }, {
+    "name": "Mountain House",
+    "location": "Dry Creek on Bakersfield-Glenville Rds."
+  }, {
+    "name": "Oak Creek Pass",
+    "location": "35°03′40″N 118°23′19″W"
+  }, {
+    "name": "Old Town (Tehachapi)",
+    "location": "35°07′56″N 118°26′56″W"
+  }, {
+    "name": "Outermost point in the South San Joaquin Valley visited by Padre Garcés in 1776",
+    "location": "35°12′29″N 118°49′17″W"
+  }, {
+    "name": "Place where Francisco Garcés crossed the Kern River",
+    "location": "State Hwy 178 and Rancheria Rd."
+  }, {
+    "name": "Point on the Jedediah Smith Trail",
+    "location": "35°19′56″N 118°48′24″W"
+  }, {
+    "name": "Posey Creek Station of Butterfield Overland Mail Lines",
+    "location": "35°31′22″N 118°57′47″W"
+  }, {
+    "name": "Rand Mining District",
+    "location": "35°22′05″N 117°39′20″W"
+  }, {
+    "name": "Rose Station",
+    "location": "34°56′29″N 118°55′57″W"
+  }, {
+    "name": "Sebastian Indian Reservation",
+    "location": "34°56′29″N 118°55′57″W"
+  }, {
+    "name": "Shafter Cotton Research Station",
+    "location": "35°31′57″N 119°16′41″W"
+  }, {
+    "name": "Sinks of Tejon",
+    "location": "35°05′34″N 118°54′54″W"
+  }, {
+    "name": "Site of the flight of the Gossamer Condor",
+    "location": "35°30′00″N 119°10′54″W"
+  }, {
+    "name": "Site of the last home of Alexis Godey",
+    "location": "35°22′41″N 119°00′27″W"
+  }, {
+    "name": "Site of the hoem of Elisha Stevens",
+    "location": "35°23′50″N 119°00′21″W"
+  }, {
+    "name": "Tehachapi Loop",
+    "location": "35°12′03″N 118°32′13″W"
+  }, {
+    "name": "Top of Grapevine Pass where Don Pedro Fages passed in 1772",
+    "location": "37°47′28″N 122°23′58″E"
+  }, {
+    "name": "Tulamniu Indian Site",
+    "location": "SE of Blockhouse #BV4"
+  }, {
+    "name": "Walker's Pass",
+    "location": "35°39′46″N 118°01′37″W"
+  }, {
+    "name": "Well 2-6",
+    "location": "35°10′47″N 119°32′56″W"
+  }, {
+    "name": "Willow Springs",
+    "location": "34°52′38″N 118°17′51″W"
+  }, {
+    "name": "Canal Farm Inn",
+    "location": "37°03′26″N 120°49′56″W"
+  }, {
+    "name": "Los Banos",
+    "location": "37°03′24″N 120°50′46″W"
+  }, {
+    "name": "Merced Assembly Center",
+    "location": "Merced County Fairgrounds"
+  }, {
+    "name": "Pacheco Pass",
+    "location": "37°04′50″N 121°05′54″W"
+  }, {
+    "name": "Snelling Courthouse",
+    "location": "Main St."
+  }, {
+    "name": "Alpha Hydraulic Diggings",
+    "location": "39°20′08″N 120°47′14″W"
+  }, {
+    "name": "Bridgeport Covered Bridge",
+    "location": "39°17′34″N 121°11′42″W"
+  }, {
+    "name": "Discovery of Gold at Gold Hill",
+    "location": "39°12′47″N 121°04′09″W"
+  }, {
+    "name": "Donner Monument",
+    "location": "39°19′12″N 120°14′30″W"
+  }, {
+    "name": "Empire Mine",
+    "location": "39°12′13″N 121°02′34″W"
+  }, {
+    "name": "First Manufacturing Site of the Pelton Wheel",
+    "location": "39°15′44″N 121°01′11″W"
+  }, {
+    "name": "First Transcontinental Railroad-Truckee",
+    "location": "39°19′39″N 120°11′07″W"
+  }, {
+    "name": "Holbrooke Hotel",
+    "location": "39°13′08″N 121°03′48″W"
+  }, {
+    "name": "Home of Lola Montez",
+    "location": "39°13′00″N 121°03′50″W"
+  }, {
+    "name": "Home of Lotta Crabtree",
+    "location": "39°13′00″N 121°03′50″W"
+  }, {
+    "name": "Mount Saint Mary's Convent and Academy",
+    "location": "39°12′53″N 121°04′03″W"
+  }, {
+    "name": "National Exchange Hotel",
+    "location": "39°15′45″N 121°01′01″W"
+  }, {
+    "name": "Nevada Theatre",
+    "location": "39°15′47″N 121°01′09″W"
+  }, {
+    "name": "North Bloomfield Mining and Gravel Company",
+    "location": "39°22′07″N 120°54′49″W"
+  }, {
+    "name": "North Star Mine Powerhouse",
+    "location": "39°12′31″N 121°04′11″W"
+  }, {
+    "name": "Omega Hydraulic Diggings",
+    "location": "39°20′00″N 120°44′54″W"
+  }, {
+    "name": "Overland Emigrant Trail",
+    "location": "39°03′43″N 121°05′19″W"
+  }, {
+    "name": "Rough and Ready",
+    "location": "39°13′49″N 121°08′06″W"
+  }, {
+    "name": "South Yuba Canal Office",
+    "location": "39°15′47″N 121°01′01″W"
+  }, {
+    "name": "World's first long-distance telephone line",
+    "location": "39°18′24″N 121°09′46″W"
+  }, {
+    "name": "Agua Fria",
+    "location": "37°29′06″N 120°01′13″W"
+  }, {
+    "name": "Bear Valley",
+    "location": "37°34′08″N 120°07′10″W"
+  }, {
+    "name": "Coulterville",
+    "location": "37°42′38″N 120°11′53″W"
+  }, {
+    "name": "Hornitos",
+    "location": "37°30′08″N 120°14′18″W"
+  }, {
+    "name": "Mariposa County Courthouse",
+    "location": "37°29′20″N 119°58′03″W"
+  }, {
+    "name": "Mormon Bar",
+    "location": "37°27′44″N 119°56′53″W"
+  }, {
+    "name": "Savage Trading Post",
+    "location": "37°39′15″N 119°53′17″W"
+  }, {
+    "name": "Yosemite Valley",
+    "location": "37°43′18″N 119°38′47″W"
+  }, {
+    "name": "Battle of Land's Ranch",
+    "location": "South of State Hwy 139 and Co. Rd. 114"
+  }, {
+    "name": "Bloody Point",
+    "location": "41°57′02″N 121°26′14″W"
+  }, {
+    "name": "Bonner Grade",
+    "location": "Cedar Pass"
+  }, {
+    "name": "Chimney Rock",
+    "location": "41°35′46″N 120°25′26″W"
+  }, {
+    "name": "Cressler and Bonner Trading Post",
+    "location": "41°31′44″N 120°10′26″W"
+  }, {
+    "name": "Evans and Bailey Fight",
+    "location": "41°24′56″N 120°48′09″E"
+  }, {
+    "name": "Fandango Pass",
+    "location": "41°48′08″N 120°12′25″W"
+  }, {
+    "name": "Fort Bidwell",
+    "location": "Fort Bidwell Indian Community Center"
+  }, {
+    "name": "Fremont's Camp",
+    "location": ""
+  }, {
+    "name": "Infernal Caverns Battleground",
+    "location": "41°16′20″N 120°34′34″W"
+  }, {
+    "name": "Old Emigrant Trail",
+    "location": "41°25′07″N 120°59′48″W"
+  }, {
+    "name": "Tule Lake War Relocation Center",
+    "location": "41°53′22″N 121°22′29″W"
+  }, {
+    "name": "Fort Bragg",
+    "location": "321 Main St."
+  }, {
+    "name": "Frog Woman Rock",
+    "location": "38°54′45″N 123°03′22″W"
+  }, {
+    "name": "Mendocino Presbyterian Church",
+    "location": "39°18′18″N 123°47′48″W"
+  }, {
+    "name": "Point Arena Light",
+    "location": "38°57′17″N 123°44′26″W"
+  }, {
+    "name": "Round Valley",
+    "location": "Inspiration Point"
+  }, {
+    "name": "Sun House",
+    "location": "39°08′51″N 123°12′16″W"
+  }, {
+    "name": "Temple of Kwan Tai",
+    "location": "39°18′18″N 123°48′11″W"
+  }, {
+    "name": "Ukiah Vichy Springs Resort",
+    "location": "37°10′25″N 121°49′28″W"
+  }, {
+    "name": "Angel Island",
+    "location": "37°52′N 122°26′W"
+  }, {
+    "name": "Bird's Nest Glen",
+    "location": "Marin Town and Country Club"
+  }, {
+    "name": "China Camp",
+    "location": "37°59′57″N 122°29′18″W"
+  }, {
+    "name": "First sawmill in Marin County",
+    "location": "37°24′18″N 122°15′19″W"
+  }, {
+    "name": "Golden Gate Bridge",
+    "location": "37°49′11″N 122°28′43″W"
+  }, {
+    "name": "Green Brae Brick Kiln",
+    "location": "125 E Sir Francis Drake Blvd."
+  }, {
+    "name": "Lighter Wharf",
+    "location": "Bolinas Lagoon"
+  }, {
+    "name": "Marin County Civic Center",
+    "location": "37°59′59″N 122°31′48″W"
+  }, {
+    "name": "Mission San Rafael Arcángel",
+    "location": "37°58′28″N 122°31′40″W"
+  }, {
+    "name": "Olema Lime Kilns",
+    "location": "37°59′18″N 122°44′46″W"
+  }, {
+    "name": "Outdoor Art Club",
+    "location": "1 W Blithedale Ave."
+  }, {
+    "name": "Olompali State Historic Park",
+    "location": "38°09′09″N 122°34′11″W"
+  }, {
+    "name": "Pioneer Paper Mill",
+    "location": "37°52′N 122°26′W"
+  }, {
+    "name": "St. Vincent's School for Boys",
+    "location": "1 Saint Vincents Dr."
+  }, {
+    "name": "Beringer Brothers Winery",
+    "location": "38°30′38″N 122°28′52″W"
+  }, {
+    "name": "Calistoga Depot",
+    "location": "38°34′48″N 122°34′42″W"
+  }, {
+    "name": "Charles Krug Winery",
+    "location": "38°31′02″N 122°29′20″W"
+  }, {
+    "name": "Chiles Mill",
+    "location": "Chiles and Pope Rd. and Lower Chiles Valley Rd."
+  }, {
+    "name": "First Presbyterian Church",
+    "location": "38°17′48″N 122°17′13″W"
+  }, {
+    "name": "George Yount's Blockhouse",
+    "location": "38°25′16″N 122°22′12″W"
+  }, {
+    "name": "Grave of George Yount",
+    "location": "38°24′31″N 122°22′07″W"
+  }, {
+    "name": "Hudson Cabin",
+    "location": "Hwy 29 & Lincoln Ave."
+  }, {
+    "name": "Kelsey House",
+    "location": "Hwy 29 & Diamond Mtn. Rd."
+  }, {
+    "name": "Litto",
+    "location": "6654 Pope Valley Rd."
+  }, {
+    "name": "Old Bale Mill",
+    "location": "38°32′29″N 122°30′30″W"
+  }, {
+    "name": "Robert Louis Stevenson State Park",
+    "location": "38°39′12″N 122°36′12″W"
+  }, {
+    "name": "Sam Brannan Cottage",
+    "location": "1311 Washington St."
+  }, {
+    "name": "Sam Brannan Store",
+    "location": "Wapoo Ave and Grant St"
+  }, {
+    "name": "Schramsberg Vineyards",
+    "location": "38°33′10″N 122°31′53″W"
+  }, {
+    "name": "Veterans Home of California Yountville",
+    "location": "38°23′39″N 122°21′54″W"
+  }, {
+    "name": "York's Cabin",
+    "location": "Hwy 29 & Lincoln Ave."
+  }, {
+    "name": "Wassama Round House",
+    "location": "37°22′28″N 119°43′19″W"
+  }, {
+    "name": "Auburn",
+    "location": "38°53′55″N 121°04′28″W"
+  }, {
+    "name": "Dutch Flat",
+    "location": "39°12′22″N 120°50′16″W"
+  }, {
+    "name": "Emigrant Gap",
+    "location": "39°18′11″N 120°39′58″W"
+  }, {
+    "name": "Foresthill",
+    "location": "39°01′10″N 120°50′10″W"
+  }, {
+    "name": "Gold Run",
+    "location": "39°10′51″N 120°51′21″W"
+  }, {
+    "name": "Griffith Quarry",
+    "location": "38°51′04″N 121°09′52″W"
+  }, {
+    "name": "Iowa Hill",
+    "location": "39°06′31″N 120°51′34″W"
+  }, {
+    "name": "Lake Tahoe outlet gates",
+    "location": "39°10′00″N 120°08′36″W"
+  }, {
+    "name": "Michigan Bluff",
+    "location": "39°02′35″N 120°44′29″W"
+  }, {
+    "name": "Ophir",
+    "location": "38°53′28″N 121°07′25″W"
+  }, {
+    "name": "Overland Emigrant Trail",
+    "location": "Big Bend Ranger Station, 2008 Hampshire Rocks Rd."
+  }, {
+    "name": "Pioneer Express Trail",
+    "location": "38°43′30″N 121°10′19″W"
+  }, {
+    "name": "Pioneer Ski Area of America",
+    "location": "39°11′48″N 120°14′09″W"
+  }, {
+    "name": "Transcontinental Railroad - Auburn",
+    "location": "38°54′07″N 121°03′58″W"
+  }, {
+    "name": "Transcontinental Railroad - Colfax",
+    "location": "39°06′01″N 120°57′10″W"
+  }, {
+    "name": "Transcontinental Railroad - Newcastle",
+    "location": "38°52′32″N 121°08′03″W"
+  }, {
+    "name": "Transcontinental Railroad - Rocklin",
+    "location": "38°47′30″N 121°14′16″W"
+  }, {
+    "name": "Transcontinental Railroad - Roseville",
+    "location": "38°45′04″N 121°17′10″W"
+  }, {
+    "name": "Virginiatown",
+    "location": "38°54′02″N 121°12′53″W"
+  }, {
+    "name": "Yankee Jims",
+    "location": "39°01′46″N 120°51′42″W"
+  }, {
+    "name": "Fort Janesville",
+    "location": "North of Janesville Elementary School"
+  }, {
+    "name": "Lassen Emigrant Trail",
+    "location": "40°18′52″N 121°03′21″W"
+  }, {
+    "name": "Lassen Emigrant Trail, Bieber",
+    "location": "41°07′17″N 121°08′17″W"
+  }, {
+    "name": "Noble Emigrant Trail",
+    "location": "40°25′07″N 120°17′05″W"
+  }, {
+    "name": "Noble Emigrant Trail, Susanville",
+    "location": "40°25′08″N 120°39′18″W"
+  }, {
+    "name": "Peter Lassen's Grave",
+    "location": "40°21′04″N 120°38′23″W"
+  }, {
+    "name": "Roop's Fort",
+    "location": "40°25′08″N 120°39′20″W"
+  }, {
+    "name": "Bass Hill",
+    "location": "Castle Crags State Park"
+  }, {
+    "name": "Battle Rock",
+    "location": "Castle Crags State Park"
+  }, {
+    "name": "Bell's Bridge",
+    "location": "Hwy 99 & Clear Creek Rd."
+  }, {
+    "name": "Clear Creek",
+    "location": "40°35′32″N 122°28′40″W"
+  }, {
+    "name": "Dersch Homestead",
+    "location": "40°29′10″N 122°09′03″W"
+  }, {
+    "name": "Fort Crook",
+    "location": "41°05′19″N 121°30′52″W"
+  }, {
+    "name": "Fort Reading",
+    "location": "40°28′35″N 122°13′49″W"
+  }, {
+    "name": "Foundation of Catholic Basilica",
+    "location": "40°35′34″N 122°29′19″W"
+  }, {
+    "name": "French Gulch",
+    "location": "40°41′58″N 122°38′19″W"
+  }, {
+    "name": "Lockhart Ferry",
+    "location": "41°00′09″N 121°26′38″W"
+  }, {
+    "name": "Noble Pass Route",
+    "location": "Lassen Volcanic National Park"
+  }, {
+    "name": "Old California-Oregon Road",
+    "location": "NW corner of Hwy 99 and Spring Gulch Rd."
+  }, {
+    "name": "Old town of Shasta",
+    "location": "40°35′56″N 122°29′32″W"
+  }, {
+    "name": "Pioneer baby's grave",
+    "location": "40°36′14″N 122°29′58″W"
+  }, {
+    "name": "Reading Adobe",
+    "location": "40°22′17″N 122°17′01″W"
+  }, {
+    "name": "Reading's Bar",
+    "location": "40°29′41″N 122°29′50″W"
+  }, {
+    "name": "Site of first school in Fall River Valley",
+    "location": "41°04′15″N 121°20′15″W"
+  }, {
+    "name": "Southern Hotel & Stage Station",
+    "location": "On old Hwy 99, 0.7 mi SW of Sims exit"
+  }, {
+    "name": "Whiskeytown",
+    "location": "40°38′05″N 122°33′40″W"
+  }, {
+    "name": "Henness Pass Road",
+    "location": "38°12′44″N 119°00′44″W"
+  }, {
+    "name": "Plum Valley House",
+    "location": "Ridge Rd."
+  }, {
+    "name": "Sierra County Sheriff's Gallows",
+    "location": "39°33′32″N 120°49′48″W"
+  }, {
+    "name": "Grandma Prisbrey's Bottle Village",
+    "location": "34°16′44″N 118°42′14″W"
+  }, {
+    "name": "Hill of the Cross",
+    "location": "34°16′52″N 119°17′53″W"
+  }, {
+    "name": "Mission San Buenaventura",
+    "location": "34°16′52″N 119°17′53″W"
+  }, {
+    "name": "Old Mission Reservoir",
+    "location": "Eastwood Park"
+  }, {
+    "name": "Olivas Adobe",
+    "location": "34°14′40″N 119°14′28″W"
+  }, {
+    "name": "Portolà Expedition",
+    "location": "34°21′21″N 119°03′03″W"
+  }, {
+    "name": "Rancho Camulos",
+    "location": "34°24′20″N 118°45′24″W"
+  }, {
+    "name": "Rancho Simi",
+    "location": "34°16′48″N 118°52′12″W"
+  }, {
+    "name": "San Buenaventura Mission Aqueduct",
+    "location": "234 Canada Larga Rd."
+  }, {
+    "name": "Stagecoach Inn",
+    "location": "34°10′41″N 118°54′41″W"
+  }, {
+    "name": "Sycamore Tree",
+    "location": "34°22′44″N 118°59′23″W"
+  }, {
+    "name": "Union Oil Company Building",
+    "location": "34°21′15″N 119°03′32″W"
+  }, {
+    "name": "Ventura County Courthouse",
+    "location": "34°16′57″N 119°17′32″W"
+  }, {
+    "name": "Warring Park",
+    "location": "34°25′01″N 118°47′29″W"
+  }, {
+    "name": "La Grange Mine",
+    "location": "40°44′28″N 122°59′26″W"
+  }, {
+    "name": "Weaverville Joss House",
+    "location": "40°43′52″N 122°56′27″W"
+  }, {
+    "name": "Fremont Peak",
+    "location": "36°45′26″N 121°30′15″W"
+  }, {
+    "name": "Jose Castro House",
+    "location": "36°50′41″N 121°32′05″W"
+  }, {
+    "name": "Mission San Juan Bautista",
+    "location": "36°50′42″N 121°32′09″W"
+  }, {
+    "name": "New Idria Mine",
+    "location": "36°25′01″N 120°40′24″W"
+  }, {
+    "name": "Plaza Hotel",
+    "location": "San Juan Bautista State Historic Park"
+  }, {
+    "name": "Anaheim Landing",
+    "location": "33°44′16″N 118°05′52″W"
+  }, {
+    "name": "Balboa Pavilion",
+    "location": "33°36′10″N 117°53′56″W"
+  }, {
+    "name": "Barton Mound",
+    "location": "33°38′53″N 117°45′23″W"
+  }, {
+    "name": "Black Star Canyon Indian Village Site",
+    "location": "33°45′58″N 117°40′45″W"
+  }, {
+    "name": "Carbondale",
+    "location": "38°24′32″N 121°00′25″W"
+  }, {
+    "name": "Dana Point",
+    "location": "33°27′50″N 117°42′24″W"
+  }, {
+    "name": "Diego Sepúlveda Adobe",
+    "location": "33°40′23″N 117°56′13″W"
+  }, {
+    "name": "Don Bernardo Yorba Hacienda",
+    "location": "33°51′51″N 117°46′51″W"
+  }, {
+    "name": "First water-to-water flight",
+    "location": "33°35′52″N 117°53′56″W"
+  }, {
+    "name": "Flores Peak",
+    "location": "Tucker Wildlife Sanctuary"
+  }, {
+    "name": "North gate of city of Anaheim",
+    "location": "33°50′38″N 117°55′01″W"
+  }, {
+    "name": "McFadden Wharf",
+    "location": "33°36′28″N 117°55′42″W"
+  }, {
+    "name": "Mission San Juan Capistrano",
+    "location": "33°30′10″N 117°39′46″W"
+  }, {
+    "name": "Modjeska House",
+    "location": "33°42′32″N 117°37′30″W"
+  }, {
+    "name": "Old Landing",
+    "location": "33°37′03″N 117°54′26″W"
+  }, {
+    "name": "Old Town Irvine",
+    "location": "33°40′31″N 117°45′28″W"
+  }, {
+    "name": "Olinda",
+    "location": "33°55′17″N 117°49′49″W"
+  }, {
+    "name": "Pioneer House of the Mother Colony",
+    "location": "33°50′11″N 117°55′41″W"
+  }, {
+    "name": "Old Orange County Courthouse",
+    "location": "33°45′01″N 117°52′09″W"
+  }, {
+    "name": "Old Maizeland School",
+    "location": "Knott's Berry Farm"
+  }, {
+    "name": "Old Santa Ana",
+    "location": "33°50′12″N 117°50′47″W"
+  }, {
+    "name": "Red Hill",
+    "location": "33°45′26″N 117°47′32″W"
+  }, {
+    "name": "Richard Nixon Birthplace",
+    "location": "33°53′22″N 117°49′05″W"
+  }, {
+    "name": "Serrano Adobe",
+    "location": "33°38′30″N 117°41′07″W"
+  }, {
+    "name": "Silverado",
+    "location": "33°44′46″N 117°38′10″W"
+  }, {
+    "name": "California's First Theater",
+    "location": "36°36′11″N 121°53′44″W"
+  }, {
+    "name": "Casa de Oro",
+    "location": "36°36′10″N 121°53′41″W"
+  }, {
+    "name": "Casa Materna of the Vallejos",
+    "location": "36°52′35″N 121°45′43″W"
+  }, {
+    "name": "Chautauqua Hall",
+    "location": "36°37′20″N 121°55′06″W"
+  }, {
+    "name": "Colton Hall",
+    "location": "36°35′52″N 121°53′51″W"
+  }, {
+    "name": "Custom house",
+    "location": "36°36′12″N 121°53′37″W"
+  }, {
+    "name": "Governor Alvarado House",
+    "location": "36°35′52″N 121°53′43″W"
+  }, {
+    "name": "Gutiérrez Adobe",
+    "location": "36°35′49″N 121°53′48″W"
+  }, {
+    "name": "Hill Town Ferry",
+    "location": "36°37′47″N 121°40′43″E"
+  }, {
+    "name": "House of Four Winds",
+    "location": "36°35′51″N 121°53′47″W"
+  }, {
+    "name": "Jose Eusebio Boronda Adobe",
+    "location": "36°42′03″N 121°40′44″W"
+  }, {
+    "name": "Landing Place of Vizcaino and Serra",
+    "location": "36°36′17″N 121°53′43″W"
+  }, {
+    "name": "Larkin House",
+    "location": "36°35′53″N 121°53′46″W"
+  }, {
+    "name": "Mission Nuestra Señora de la Soledad",
+    "location": "36°24′17″N 121°21′21″W"
+  }, {
+    "name": "Mission San Antonio de Padua",
+    "location": "36°00′55″N 121°15′01″W"
+  }, {
+    "name": "Mission San Carlos Borromeo de Carmelo",
+    "location": "36°32′34″N 121°55′13″W"
+  }, {
+    "name": "Old Pacific House",
+    "location": "36°36′09″N 121°53′39″W"
+  }, {
+    "name": "Point Sur Lighthouse",
+    "location": "36°18′23″N 121°54′06″W"
+  }, {
+    "name": "Richardson Adobe",
+    "location": "36°24′15″N 121°19′04″W"
+  }, {
+    "name": "Robert Louis Stevenson House",
+    "location": "36°35′50″N 121°53′36″W"
+  }, {
+    "name": "Royal Presidio Chapel",
+    "location": "36°35′44″N 121°53′25″W"
+  }, {
+    "name": "Salinas Assembly Center",
+    "location": "36°41′28″N 121°38′56″W"
+  }, {
+    "name": "Site of the Battle of Natividad",
+    "location": "36°46′23″N 121°36′13″W"
+  }, {
+    "name": "Soberanes Adobe",
+    "location": "36°36′05″N 121°53′45″W"
+  }, {
+    "name": "Vásquez House",
+    "location": "36°35′52″N 121°53′53″W"
+  }, {
+    "name": "Gable Mansion",
+    "location": "38°40′21″N 121°46′22″W"
+  }, {
+    "name": "Pacific Coast Salmon Cannery",
+    "location": "38°34′59″N 121°30′32″W"
+  }, {
+    "name": "Woodland Opera House",
+    "location": "38°40′40″N 121°46′15″W"
+  }, {
+    "name": "Bodie",
+    "location": "38°12′44″N 119°00′44″W"
+  }, {
+    "name": "Dog Town",
+    "location": "38°10′13″N 119°11′51″W"
+  }, {
+    "name": "Trail of the John C. Fremont 1884 Expedition",
+    "location": "38°20′54″N 119°21′43″W"
+  }, {
+    "name": "Burton Mound",
+    "location": "34°24′40″N 119°41′32″W"
+  }, {
+    "name": "Carpinteria and Indian Village of Mishopshnow",
+    "location": "34°23′33″N 119°30′39″W"
+  }, {
+    "name": "Carrillo Adobe",
+    "location": "34°25′19″N 119°42′06″W"
+  }, {
+    "name": "Casa de la Guerra",
+    "location": "34°25′13″N 119°41′57″W"
+  }, {
+    "name": "Chapel of San Ramon",
+    "location": "34°50′52″N 120°14′27″W"
+  }, {
+    "name": "Covarrubias Adobe",
+    "location": "34°25′16″N 119°41′48″W"
+  }, {
+    "name": "Gaviota Pass",
+    "location": "34°29′07″N 120°13′43″W"
+  }, {
+    "name": "Hastings Adobe",
+    "location": "412 W Montecito St."
+  }, {
+    "name": "Mission La Purisima Concepción",
+    "location": "34°40′14″N 120°25′15″W"
+  }, {
+    "name": "Lobero Theatre",
+    "location": "34°25′18″N 119°42′00″W"
+  }, {
+    "name": "Mission Santa Barbara",
+    "location": "34°26′18″N 119°42′50″W"
+  }, {
+    "name": "Mission Santa Inés",
+    "location": "34°35′40″N 120°08′12″W"
+  }, {
+    "name": "Presidio of Santa Barbara",
+    "location": "34°25′21″N 119°41′50″W"
+  }, {
+    "name": "Santa Barbara County Courthouse",
+    "location": "34°25′28″N 119°42′09″W"
+  }, {
+    "name": "Site of original mission and remaining ruins of Mission La Purisima",
+    "location": "5085 'T' St."
+  }, {
+    "name": "Well, Hill 4",
+    "location": "Unocal Corporation, Mission Hills District"
+  }, {
+    "name": "Canby's Cross",
+    "location": "41°49′18″N 121°30′18″W"
+  }, {
+    "name": "Captain Jack's Stronghold",
+    "location": "41°52′47″N 121°21′56″W"
+  }, {
+    "name": "Emigrant Crossing of present highway",
+    "location": "State Hwy 97 at Military Pass Rd."
+  }, {
+    "name": "Fort Jones",
+    "location": "Fort Jones, California"
+  }, {
+    "name": "Guillem's Graveyard",
+    "location": "Lava Beds National Monument"
+  }, {
+    "name": "Strawberry Valley Station",
+    "location": "W. Jessie St. and Old Stage Rd."
+  }, {
+    "name": "West Miner Street-Third Street Historic District",
+    "location": "41°43′36″N 122°38′15″W"
+  }, {
+    "name": "Benicia Arsenal",
+    "location": "38°03′15″N 122°08′08″W"
+  }, {
+    "name": "Benicia Barracks",
+    "location": "38°03′23″N 122°08′17″W"
+  }, {
+    "name": "Benicia Capitol",
+    "location": "38°03′01″N 122°09′28″W"
+  }, {
+    "name": "Benicia Lodge No. 5",
+    "location": "38°03′09″N 122°09′27″W"
+  }, {
+    "name": "Benicia Seminary",
+    "location": "38°03′14″N 122°09′23″W"
+  }, {
+    "name": "First Presbyterian Church of Benicia",
+    "location": "38°03′13″N 122°09′26″W"
+  }, {
+    "name": "First U.S. Naval Station in the Pacific",
+    "location": "38°05′24″N 122°15′48″W"
+  }, {
+    "name": "Fischer-Hanlon House",
+    "location": "38°03′01″N 122°09′32″W"
+  }, {
+    "name": "Former California State Capitol",
+    "location": "38°03′00″N 122°09′32″W"
+  }, {
+    "name": "Matthew Turner Shipyard Park",
+    "location": "38°03′44″N 122°10′45″W"
+  }, {
+    "name": "Rockville Stone Chapel",
+    "location": "38°14′50″N 122°07′16″W"
+  }, {
+    "name": "Saint Paul's Episcopal Church",
+    "location": "38°03′06″N 122°09′24″W"
+  }, {
+    "name": "University of California Experimental Farm",
+    "location": "38°30′17″N 121°58′50″W"
+  }, {
+    "name": "Vaca-Peña Adobe",
+    "location": "38°20′15″N 122°00′55″W"
+  }, {
+    "name": "Bear Flag Monument",
+    "location": "38°17′36″N 122°27′24″W"
+  }, {
+    "name": "Blue Wing Inn",
+    "location": "38°17′36″N 122°27′20″W"
+  }, {
+    "name": "Bodega Bay & Harbor",
+    "location": "38°19′25″N 123°02′52″W"
+  }, {
+    "name": "Buena Vista Winery",
+    "location": "38°17′58″N 122°25′23″W"
+  }, {
+    "name": "Cooper's Sawmill",
+    "location": "Mirabel and River Rds."
+  }, {
+    "name": "Cotati Downtown Plaza",
+    "location": "38°19′36″N 122°42′22″W"
+  }, {
+    "name": "Fort Ross",
+    "location": "38°30′51″N 123°14′34″W"
+  }, {
+    "name": "Haraszthy Villa",
+    "location": "Castle Rd. near Buena Vista Winery"
+  }, {
+    "name": "Icaria-Speranza Commune",
+    "location": "W side of Asti Rd."
+  }, {
+    "name": "Italian Swiss Colony",
+    "location": ""
+  }, {
+    "name": "Jack London State Historic Park",
+    "location": "38°21′02″N 122°32′35″W"
+  }, {
+    "name": "John Medica Gardens",
+    "location": "5000 Medica Rd."
+  }, {
+    "name": "Luther Burbank Home and Gardens",
+    "location": "38°26′10″N 122°42′42″W"
+  }, {
+    "name": "Mission San Francisco de Solano",
+    "location": "38°17′38″N 122°27′21″W"
+  }, {
+    "name": "Nash-Patton Adobe",
+    "location": "38°17′25″N 122°27′25″W"
+  }, {
+    "name": "Petrified Forest",
+    "location": "4100 Petrified Forest Rd."
+  }, {
+    "name": "Presidio of Sonoma",
+    "location": "38°17′37″N 122°27′24″W"
+  }, {
+    "name": "Rancho Petaluma Adobe",
+    "location": "38°15′20″N 122°35′04″W"
+  }, {
+    "name": "Saint Teresa of Avila Church, Bodega",
+    "location": "38°20′46″N 122°58′21″W"
+  }, {
+    "name": "Salvador Vallejo Adobe",
+    "location": "38°17′37″N 122°27′32″W"
+  }, {
+    "name": "Sebastiani Vineyards and Winery",
+    "location": "38°17′36″N 122°26′58″W"
+  }, {
+    "name": "Swiss Hotel",
+    "location": "38°17′38″N 122°27′29″W"
+  }, {
+    "name": "Temelec Hall",
+    "location": "38°16′00″N 122°29′34″W"
+  }, {
+    "name": "Union Hotel & Union Hall",
+    "location": "35 Napa and 1st St."
+  }, {
+    "name": "Vallejo Estate",
+    "location": "38°17′50″N 122°27′40″W"
+  }, {
+    "name": "Walters Ranch Hop Kiln",
+    "location": "38°32′10″N 122°52′04″W"
+  }, {
+    "name": "William Hood House",
+    "location": "38°26′37″N 122°34′36″W"
+  }, {
+    "name": "Blythe Intake",
+    "location": "33°43′54″N 114°30′57″W"
+  }, {
+    "name": "Giant desert figures",
+    "location": "33°48′00″N 114°31′39″W"
+  }, {
+    "name": "Site of Louis Rubidoux House",
+    "location": "33°59′49″N 117°24′22″W"
+  }, {
+    "name": "Butterfield stage station",
+    "location": "20730 Temescal Canyon Rd."
+  }, {
+    "name": "Carved Rock",
+    "location": "33°46′27″N 117°28′30″W"
+  }, {
+    "name": "Contractor's General Hospital",
+    "location": "33°42′49″N 115°24′09″W"
+  }, {
+    "name": "Corona Founders Monument",
+    "location": "33°52′29″N 117°33′20″W"
+  }, {
+    "name": "de Anza crossing of the Santa Ana River, 1775 and 1776",
+    "location": "33°58′33″N 117°26′28″W"
+  }, {
+    "name": "Desert Training Center",
+    "location": "33°54′30″N 115°14′53″W"
+  }, {
+    "name": "Desert Training Center",
+    "location": "34°04′50″N 115°07′59″W"
+  }, {
+    "name": "Desert Training Center",
+    "location": "33°39′42″N 115°43′20″W"
+  }, {
+    "name": "Hemet Maze Stone",
+    "location": "33°46′52″N 117°03′23″W"
+  }, {
+    "name": "Jensen Alvarado Ranch",
+    "location": "33°59′34″N 117°25′01″W"
+  }, {
+    "name": "Mission Inn",
+    "location": "33°59′00″N 117°22′22″W"
+  }, {
+    "name": "Old Temescal Road",
+    "location": "33°45′56″N 117°29′12″W"
+  }, {
+    "name": "Painted Rock",
+    "location": "From Temescal Canyon Rd, go 0.1 mi E on Dawson Canyon Rd, then go 0.1 mi NE on Gravel Pit Rd, then 0.2 mi S along railroad track berm, site is 50 ft W of berm"
+  }, {
+    "name": "Parent Washington Navel Orange Tree",
+    "location": "33°56′46″N 117°24′06″W"
+  }, {
+    "name": "Pochea Indian village site",
+    "location": "33°43′12″N 116°56′58″W"
+  }, {
+    "name": "Ramona Bowl",
+    "location": "33°43′11″N 116°56′58″W"
+  }, {
+    "name": "Rancho Santa Rosa",
+    "location": "33°33′N 117°16′W"
+  }, {
+    "name": "Robidoux Grist Mill Site",
+    "location": "33°59′43″N 117°24′24″W"
+  }, {
+    "name": "Saahapta",
+    "location": "Brookside Rest Area, W-bound I-10"
+  }, {
+    "name": "Serrano Boulder",
+    "location": "33°46′10″N 117°29′27″W"
+  }, {
+    "name": "Serrano tanning vats",
+    "location": "33°45′47″N 117°28′08″W"
+  }, {
+    "name": "Site of the de Anza camp, March 1774",
+    "location": "33°29′57″N 116°36′13″W"
+  }, {
+    "name": "Site of the Third Serrano Adobe",
+    "location": "33°46′40″N 117°29′10″W"
+  }, {
+    "name": "Soviet 1937 transpolar flight landing site",
+    "location": "33°46′56″N 116°57′33″W"
+  }, {
+    "name": "Big Oak Flat",
+    "location": "37°50′45″N 120°12′28″W"
+  }, {
+    "name": "Cherokee",
+    "location": "37°58′47″N 120°14′53″W"
+  }, {
+    "name": "Chinese Camp",
+    "location": "37°52′13″N 120°26′01″W"
+  }, {
+    "name": "Columbia",
+    "location": "38°02′02″N 120°24′04″W"
+  }, {
+    "name": "Groveland",
+    "location": "37°49′54″N 120°14′23″W"
+  }, {
+    "name": "Jacksonville",
+    "location": "37°50′20″N 120°20′49″W"
+  }, {
+    "name": "Jamestown",
+    "location": "37°57′18″N 120°24′19″W"
+  }, {
+    "name": "Mark Twain Cabin",
+    "location": "37°59′56″N 120°28′41″W"
+  }, {
+    "name": "Montezuma",
+    "location": "37°54′33″N 120°27′08″W"
+  }, {
+    "name": "Parrott's Ferry",
+    "location": "38°02′22″N 120°27′23″W"
+  }, {
+    "name": "St. James Episcopal Church",
+    "location": "N. Washington & Elkin Sts."
+  }, {
+    "name": "Sawmill Flat",
+    "location": "38°01′22″N 120°22′48″W"
+  }, {
+    "name": "Second Garrote",
+    "location": "37°49′31″N 120°11′41″W"
+  }, {
+    "name": "Shaw's Flat",
+    "location": "38°00′14″N 120°24′05″W"
+  }, {
+    "name": "Sonora-Mono Road",
+    "location": "38°03′40″N 120°11′58″W"
+  }, {
+    "name": "Soulsbyville",
+    "location": "37°59′42″N 120°15′37″W"
+  }, {
+    "name": "Springfield",
+    "location": "38°01′15″N 120°24′41″W"
+  }, {
+    "name": "Tuttletown",
+    "location": "38°00′25″N 120°27′04″W"
+  }, {
+    "name": "Summersville",
+    "location": "37°57′42″N 120°14′13″W"
+  }, {
+    "name": "Wells Fargo Express Company Building",
+    "location": "Main St. & Solinsky Alley"
+  }, {
+    "name": "First Tehama County Courthouse",
+    "location": "2nd and D Sts."
+  }, {
+    "name": "Home of Mrs. John Brown",
+    "location": "40°10′21″N 122°13′50″W"
+  }, {
+    "name": "Nomi Lackee Indian Reservation",
+    "location": "Osborn Rd."
+  }, {
+    "name": "William B. Ide Adobe",
+    "location": "40°11′50″N 122°13′34″W"
+  }, {
+    "name": "Almaden Vineyards",
+    "location": "37°14′21″N 121°53′41″W"
+  }, {
+    "name": "Arroyo de San Joseph Cupertino",
+    "location": "37°18′56″N 122°03′28″W"
+  }, {
+    "name": "Cathedral Basilica of St. Joseph",
+    "location": "37°20′03″N 121°53′27″W"
+  }, {
+    "name": "Charles Copeland Morse House",
+    "location": "37°21′07″N 121°56′44″W"
+  }, {
+    "name": "Eadweard Muybridge and the development of motion pictures",
+    "location": "37°25′31″N 122°10′51″W"
+  }, {
+    "name": "Edwin Markham Home",
+    "location": "Kelley Park, 1600 Senter Rd."
+  }, {
+    "name": "First successful introduction of the honeybee to California",
+    "location": "37°21′N 121°55′W"
+  }, {
+    "name": "First Unitarian Church of San Jose",
+    "location": "37°20′23″N 121°53′24″W"
+  }, {
+    "name": "Forbes Flour Mill",
+    "location": "37°13′20″N 121°58′49″W"
+  }, {
+    "name": "First site of El Pueblo de San José de Guadalupe",
+    "location": "37°21′00″N 121°54′13″W"
+  }, {
+    "name": "Gilroy Yamato Hot Springs",
+    "location": "37°06′30″N 121°28′39″W"
+  }, {
+    "name": "Gubserville",
+    "location": "37°17′44″N 121°59′16″W"
+  }, {
+    "name": "Hayes Mansion",
+    "location": "37°15′44″N 121°49′15″W"
+  }, {
+    "name": "HP Garage",
+    "location": "37°26′35″N 122°09′17″W"
+  }, {
+    "name": "Hostess House",
+    "location": "37°26′35″N 122°09′56″W"
+  }, {
+    "name": "John Adams Squire House",
+    "location": "37°27′12″N 122°09′12″W"
+  }, {
+    "name": "Juana Briones de Miranda Home",
+    "location": "37°23′32″N 122°08′22″W"
+  }, {
+    "name": "Kotani-En",
+    "location": "15891 Ravine Rd."
+  }, {
+    "name": "Lou Henry Hoover House",
+    "location": "37°25′07″N 122°10′03″W"
+  }, {
+    "name": "Martin Murphy Home and Estate",
+    "location": "Martin Murphy, Jr. Historical Park"
+  }, {
+    "name": "Mayfield Farm",
+    "location": "37°24′59″N 122°07′49″W"
+  }, {
+    "name": "Mission Santa Clara de Asis",
+    "location": "37°20′57″N 121°56′30″W"
+  }, {
+    "name": "Montgomery Hill",
+    "location": "37°17′53″N 121°45′39″W"
+  }, {
+    "name": "Moreland School",
+    "location": "37°18′03″N 121°58′45″W"
+  }, {
+    "name": "New Almaden Mine",
+    "location": "37°14′54″N 121°47′20″W"
+  }, {
+    "name": "New Almaden Mine",
+    "location": "37°10′27″N 121°49′28″W"
+  }, {
+    "name": "Old Post Office",
+    "location": "37°20′01″N 121°53′25″W"
+  }, {
+    "name": "Old site of Mission Santa Clara de Asis and Old Spanish Bridge",
+    "location": "37°21′59″N 121°56′29″W"
+  }, {
+    "name": "Patchen",
+    "location": "37°08′53″N 121°58′27″W"
+  }, {
+    "name": "Paul Masson Mountain Winery",
+    "location": "37°15′37″N 122°03′54″W"
+  }, {
+    "name": "Pellier Park, site of City Gardens",
+    "location": "37°20′16″N 121°53′45″W"
+  }, {
+    "name": "Peralta Adobe",
+    "location": "37°20′11″N 121°53′41″W"
+  }, {
+    "name": "Pioneer Electronics Research Laboratory",
+    "location": "37°26′29″N 122°09′28″W"
+  }, {
+    "name": "Roberto-Suñol Adobe",
+    "location": "37°18′57″N 121°54′23″W"
+  }, {
+    "name": "San Jose State College",
+    "location": "37°20′08″N 121°52′52″W"
+  }, {
+    "name": "Santa Clara Campaign Treaty Site",
+    "location": "37°21′08″N 121°57′13″W"
+  }, {
+    "name": "Saratoga",
+    "location": "37°15′33″N 122°01′51″W"
+  }, {
+    "name": "Site of California's First State Capitol",
+    "location": "37°19′58″N 121°53′23″W"
+  }, {
+    "name": "Site of invention of the first commercially practicable integrated circuit",
+    "location": "37°25′18″N 122°06′12″W"
+  }, {
+    "name": "Site of the world's first broadcasting station",
+    "location": "37°20′03″N 121°53′22″W"
+  }, {
+    "name": "Vasquez Tree and site of 21-Mile-House",
+    "location": "37°06′47″N 121°38′38″W"
+  }, {
+    "name": "Winchester Mystery House",
+    "location": "37°19′06″N 121°57′03″W"
+  }, {
+    "name": "Women's Club Adobe",
+    "location": "37°21′07″N 121°56′27″W"
+  }, {
+    "name": "Empire City",
+    "location": "37°38′14″N 120°54′10″W"
+  }, {
+    "name": "Knights Ferry",
+    "location": "37°49′11″N 120°39′52″W"
+  }, {
+    "name": "La Grange",
+    "location": "37°39′49″N 120°27′49″W"
+  }, {
+    "name": "Turlock Assembly Center",
+    "location": "Stanislaus County Fairgrounds"
+  }, {
+    "name": "Willms Ranch",
+    "location": "Willms Rd, 1.3 mi S of State Hwy 120"
+  }, {
+    "name": "Bok Kai Temple",
+    "location": "39°08′06″N 121°35′13″W"
+  }, {
+    "name": "Johnson's Ranch",
+    "location": "39°00′37″N 121°25′23″W"
+  }, {
+    "name": "Marysville Assembly Center",
+    "location": "Aarboga Community"
+  }, {
+    "name": "Overland Emigrant Trail",
+    "location": "39°02′23″N 121°23′06″W"
+  }, {
+    "name": "Smartsville",
+    "location": "39°12′27″N 121°17′55″W"
+  }, {
+    "name": "Timbuctoo",
+    "location": "39°13′01″N 121°19′07″W"
+  }, {
+    "name": "Wheatland Hop Riot",
+    "location": "39°00′46″N 121°25′08″W"
+  }, {
+    "name": "Battle of Stanislaus",
+    "location": "Confluence of San Joaquin and Stanislaus Rivers"
+  }, {
+    "name": "Benson's Ferry",
+    "location": "South bank of North Fork Mokelumne River, 100 ft west of County Rd J8"
+  }, {
+    "name": "Burial place of John Brown (Juan Flaco)",
+    "location": "37°57′22″N 121°16′38″W"
+  }, {
+    "name": "California Chicory Works",
+    "location": "1672 W. Bowman Rd."
+  }, {
+    "name": "Carnegie",
+    "location": "37°37′59″N 121°32′37″W"
+  }, {
+    "name": "Corral Hollow",
+    "location": "Corral Hollow"
+  }, {
+    "name": "First landing place of sailing launch Comet",
+    "location": "Entrance to Mossdale Crossing Park and Ramp"
+  }, {
+    "name": "French Camp",
+    "location": "Elm St at French Camp School"
+  }, {
+    "name": "Lindsay Point",
+    "location": "Stockton City Hall"
+  }, {
+    "name": "Lockeford",
+    "location": "38°09′27″N 121°09′05″W"
+  }, {
+    "name": "Lodi Arch",
+    "location": "38°08′03″N 121°16′15″W"
+  }, {
+    "name": "Lone Star Mill",
+    "location": "38°12′15″N 121°05′31″W"
+  }, {
+    "name": "Mokelumne City",
+    "location": "38°15′11″N 121°26′21″W"
+  }, {
+    "name": "New Hope",
+    "location": "37°44′09″N 121°07′37″W"
+  }, {
+    "name": "Reuel Colt Gridley Monument",
+    "location": "37°58′39″N 121°17′11″W"
+  }, {
+    "name": "San Joaquin City",
+    "location": "37°40′12″N 121°15′58″W"
+  }, {
+    "name": "San Joaquin River Bridge",
+    "location": "37°47′13″N 121°18′20″W"
+  }, {
+    "name": "San Joaquin Valley College",
+    "location": "18500 N Lilac St."
+  }, {
+    "name": "Stockton Assembly Center",
+    "location": "37°56′18″N 121°16′06″W"
+  }, {
+    "name": "Stockton Developmental Center",
+    "location": "37°57′52″N 121°17′12″W"
+  }, {
+    "name": "Stockton Gurdwara Sahib",
+    "location": "1930 S. Grant St."
+  }, {
+    "name": "Temple Israel Cemetery",
+    "location": "37°57′54″N 121°16′44″W"
+  }, {
+    "name": "Trail of the John C. Fremont 1844 Expedition",
+    "location": "Hwy 88 & Calaveras River"
+  }, {
+    "name": "Weber Point",
+    "location": "37°57′20″N 121°17′32″W"
+  }, {
+    "name": "Wood's Ferry & Wood's Bridge",
+    "location": "County Hwy Jl0"
+  }, {
+    "name": "Woodbridge",
+    "location": "Historic district"
+  }, {
+    "name": "Anza Expedition Camp",
+    "location": "Banks of San Mateo Camp"
+  }, {
+    "name": "Anza Expedition Camp",
+    "location": "El Camino Real and Ralston"
+  }, {
+    "name": "Broderick-Terry Dueling Place",
+    "location": "37°42′29″N 122°29′03″W"
+  }, {
+    "name": "Burlingame Station",
+    "location": "37°34′48″N 122°20′42″W"
+  }, {
+    "name": "Capidro",
+    "location": "262 Princeton Rd."
+  }, {
+    "name": "Carolands",
+    "location": "37°33′20″N 122°22′15″W"
+  }, {
+    "name": "Casa de Tableta",
+    "location": "37°22′56″N 122°11′37″W"
+  }, {
+    "name": "Filoli",
+    "location": "37°28′13″N 122°18′39″W"
+  }, {
+    "name": "First Congregational Church of Pescadero",
+    "location": "37°15′16″N 122°23′00″W"
+  }, {
+    "name": "Menlo Park Station",
+    "location": "37°27′17″N 122°10′51″W"
+  }, {
+    "name": "Mission Hospice",
+    "location": "37°33′55″N 122°19′41″W"
+  }, {
+    "name": "Old Store at La Honda",
+    "location": "La Honda and Sears Ranch Rds."
+  }, {
+    "name": "Our Lady of the Wayside Church",
+    "location": "37°23′02″N 122°14′02″W"
+  }, {
+    "name": "Pigeon Point Lighthouse",
+    "location": "37°10′54″N 122°23′38″W"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Mouth of Purisima Creek"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Mouth of Gazos Creek"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Mouth of San Pedro Creek"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Foot of Montara Mountain"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "37°19′23″N 122°24′07″W"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Upper Crystal Springs Reservoir"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Pulgas Water Temple"
+  }, {
+    "name": "Portolà Expedition Camp",
+    "location": "Upper Crystal Springs Reservoir"
+  }, {
+    "name": "Portolà Journey's End",
+    "location": "E. Creek Dr. and Alma St."
+  }, {
+    "name": "Ralston Hall",
+    "location": "37°31′03″N 122°17′10″W"
+  }, {
+    "name": "Sánchez Adobe",
+    "location": "37°35′15″N 122°29′33″W"
+  }, {
+    "name": "San Francisco Bay Discovery Site",
+    "location": "37°36′16″N 122°27′28″W"
+  }, {
+    "name": "San Mateo County's first sawmill",
+    "location": "37°24′18″N 122°15′19″W"
+  }, {
+    "name": "Searsville",
+    "location": "37°24′10″N 122°14′43″W"
+  }, {
+    "name": "Steele Brothers Dairy Ranches",
+    "location": "Año Nuevo State Reserve"
+  }, {
+    "name": "Tanforan Assembly Center",
+    "location": "37°38′10″N 122°25′09″W"
+  }, {
+    "name": "Tunitas Beach, Indian Village Site",
+    "location": "Mouth of Tunitas Creek at Tunitas Beach"
+  }, {
+    "name": "Union Cemetery",
+    "location": "37°28′26″N 122°13′23″W"
+  }, {
+    "name": "Woodside Store",
+    "location": "37°25′50″N 122°16′38″W"
+  }, {
+    "name": "Adobe Chapel of The Immaculate Conception",
+    "location": "32°45′06″N 117°11′39″W"
+  }, {
+    "name": "Ballast Point Whaling Station",
+    "location": "Naval Base Point Loma"
+  }, {
+    "name": "Berkeley",
+    "location": "32°43′07″N 117°10′22″W"
+  }, {
+    "name": "Camp Lockett",
+    "location": "32°36′25″N 116°28′18″W"
+  }, {
+    "name": "San Gregorio",
+    "location": "Borrego Sink, Anza-Borrego Desert State Park"
+  }, {
+    "name": "Box Canyon",
+    "location": "Anza-Borrego Desert State Park"
+  }, {
+    "name": "Butterfield Overland Mail Route",
+    "location": "Anza-Borrego Desert State Park, Blair Valley"
+  }, {
+    "name": "Cabrillo National Monument",
+    "location": "32°40′23″N 117°14′19″W"
+  }, {
+    "name": "Camp Wright",
+    "location": "33°23′23″N 116°47′39″W"
+  }, {
+    "name": "Casa de Bandini",
+    "location": "NE corner of Mason and Calhoun Sts., Old Town San Diego State Historic Park"
+  }, {
+    "name": "Casa de Carrillo",
+    "location": "NE of Juan St. on Wallace St."
+  }, {
+    "name": "Casa de Cota",
+    "location": "Twiggs and Congress Sts., Old Town"
+  }, {
+    "name": "Casa de Estudillo",
+    "location": "32°45′14″N 117°11′45″W"
+  }, {
+    "name": "Casa de Lopez",
+    "location": "32°45′07″N 117°11′49″W"
+  }, {
+    "name": "Casa de Machado y Silvas",
+    "location": "Old Town San Diego State Historic Park"
+  }, {
+    "name": "Casa de Pedrorena de Altamirano",
+    "location": "32°45′14″N 117°11′47″W"
+  }, {
+    "name": "Casa de Stewart",
+    "location": "Congress and Mason Sts., Old Town San Diego State Historic Park"
+  }, {
+    "name": "Chapel of Santa Ysabel",
+    "location": "33°07′49″N 116°40′41″W"
+  }, {
+    "name": "Congress Hall",
+    "location": "Vacant lot, south side of 2734 Calhoun St., Old Town San Diego State Historic Park"
+  }, {
+    "name": "Derby Dike",
+    "location": "32°45′34″N 117°11′46″W"
+  }, {
+    "name": "El Camino Real",
+    "location": "Mission San Diego de Alcalá"
+  }, {
+    "name": "El Campo Santo",
+    "location": "32°45′05″N 117°11′36″W"
+  }, {
+    "name": "El Desembarcadero",
+    "location": "2900 block of Farragut Rd."
+  }, {
+    "name": "El Vado",
+    "location": "Anza-Borrego Desert State Park"
+  }, {
+    "name": "Exchange Hotel",
+    "location": "2729 San Diego Ave., Old Town San Diego State Historic Park"
+  }, {
+    "name": "Fort Guijarros",
+    "location": "32°40′12″N 117°14′31″W"
+  }, {
+    "name": "Fort Rosecrans",
+    "location": "32°40′37″N 117°14′41″W"
+  }, {
+    "name": "Fort Rosecrans National Cemetery",
+    "location": "32°41′12″N 117°14′41″W"
+  }, {
+    "name": "Fort Stockton",
+    "location": "32°45′34″N 117°11′31″W"
+  }, {
+    "name": "Gaskill Brothers' Stone Store",
+    "location": "State Hwy 94"
+  }, {
+    "name": "Giant Dipper",
+    "location": "36°57′53″N 122°00′55″W"
+  }, {
+    "name": "Hotel del Coronado",
+    "location": "32°40′51″N 117°10′42″W"
+  }, {
+    "name": "Hubert H. Bancroft Ranch House",
+    "location": "32°44′11″N 116°59′18″W"
+  }, {
+    "name": "Julian",
+    "location": "33°04′15″N 116°35′08″W"
+  }, {
+    "name": "Kate O. Sessions Nursery",
+    "location": "Garnet Ave. and Pico St."
+  }, {
+    "name": "La Cristianita",
+    "location": "33°25′42″N 117°36′35″W"
+  }, {
+    "name": "La Playa",
+    "location": "32°42′44″N 117°14′43″W"
+  }, {
+    "name": "Las Flores Estancia",
+    "location": "33°18′00″N 117°27′40″W"
+  }, {
+    "name": "La Punta De Los Muertos",
+    "location": "32°42′36″N 117°10′16″W"
+  }, {
+    "name": "Leo Carrillo Ranch (Rancho de los Kiotes)",
+    "location": "6200 Flying L.C. Lane"
+  }, {
+    "name": "Los Puertecitos",
+    "location": "33°08′24″N 116°06′18″W"
+  }, {
+    "name": "Mason Street School",
+    "location": "32°45′12″N 117°11′50″W"
+  }, {
+    "name": "Mission San Diego de Alcalá",
+    "location": "32°47′04″N 117°06′23″W"
+  }, {
+    "name": "Mission San Luis Rey de Francia",
+    "location": "33°13′57″N 117°19′13″W"
+  }, {
+    "name": "Montgomery Memorial",
+    "location": "32°34′43″N 117°04′08″W"
+  }, {
+    "name": "Mule Hill",
+    "location": "Pomerado Rd."
+  }, {
+    "name": "National City Santa Fe Rail Depot",
+    "location": "900 West 23 St."
+  }, {
+    "name": "Oak Grove Butterfield Stage Station",
+    "location": "33°23′26″N 116°47′42″W"
+  }, {
+    "name": "Old Mission Dam",
+    "location": "32°50′24″N 117°02′32″W"
+  }, {
+    "name": "Old Point Loma Lighthouse",
+    "location": "32°40′18″N 117°14′27″W"
+  }, {
+    "name": "Old Town San Diego State Historic Park",
+    "location": "32°45′17″N 117°11′50″W"
+  }, {
+    "name": "Palm Spring",
+    "location": "Anza-Borrego Desert State Park"
+  }, {
+    "name": "Pedro Fages Trail",
+    "location": "32°59′40″N 116°32′33″W"
+  }, {
+    "name": "Peg Leg Smith Monument",
+    "location": "Anza-Borrego Desert State Park"
+  }, {
+    "name": "Plaza San Diego Viejo",
+    "location": "Old Town San Diego State Historic Park"
+  }, {
+    "name": "Presidio of San Diego",
+    "location": "32°45′31″N 117°11′36″W"
+  }, {
+    "name": "Rancho Cañada de los Coches",
+    "location": "32°50′N 116°51′W"
+  }, {
+    "name": "Rancho Guajome",
+    "location": "33°16′N 117°16′W"
+  }, {
+    "name": "Rancho Santa Fe",
+    "location": "33°01′26″N 117°12′00″W"
+  }, {
+    "name": "Rancho Santa Margarita y Las Flores",
+    "location": "33°23′N 117°34′W"
+  }, {
+    "name": "Rockwell Field",
+    "location": "North Island"
+  }, {
+    "name": "San Antonio de Pala Asistencia",
+    "location": "33°21′40″N 117°04′45″W"
+  }, {
+    "name": "San Diego Barracks",
+    "location": "Parking lot on N side of Market St."
+  }, {
+    "name": "San Diego State University",
+    "location": "Entrance to service area of Viejas Arena"
+  }, {
+    "name": "San Felipe-Butterfield Stage Station",
+    "location": "33°06′07″N 116°29′02″W"
+  }, {
+    "name": "San Pasqual Battlefield State Historic Park",
+    "location": "33°05′10″N 116°59′24″W"
+  }, {
+    "name": "Santa Catarina",
+    "location": "Anza-Borrego Desert State Park"
+  }, {
+    "name": "Serra Palm",
+    "location": "32°45′34″N 117°11′46″W"
+  }, {
+    "name": "Spanish Landing",
+    "location": "Spanish Landing Park"
+  }, {
+    "name": "Star of India",
+    "location": "32°43′14″N 117°10′25″W"
+  }, {
+    "name": "USS Recruit",
+    "location": "32°43′43″N 117°12′59″W"
+  }, {
+    "name": "Vallecito Station",
+    "location": "Vallecito Stage Station County Park"
+  }, {
+    "name": "Warner's Ranch",
+    "location": "33°14′19″N 116°39′03″W"
+  }, {
+    "name": "Whaley House",
+    "location": "32°45′10″N 117°11′40″W"
+  }, {
+    "name": "American Ranch and Hotel",
+    "location": "39°56′13″N 120°56′43″W"
+  }, {
+    "name": "Beckwourth Pass",
+    "location": "39°47′30″N 120°06′28″W"
+  }, {
+    "name": "Buck's Lake",
+    "location": "39°52′45″N 121°10′34″W"
+  }, {
+    "name": "Elizabethtown",
+    "location": "39°57′50″N 120°57′25″W"
+  }, {
+    "name": "Jamison City, Eureka Mills, Johnstown, and the famous Eureka Mine",
+    "location": "39°47′18″N 120°38′04″W"
+  }, {
+    "name": "Peter Lassen Marker",
+    "location": "40°08′59″N 120°52′46″W"
+  }, {
+    "name": "Pioneer Grave",
+    "location": "39°51′49″N 121°13′37″W"
+  }, {
+    "name": "Pioneer Schoolhouse",
+    "location": "39°56′20″N 120°54′56″W"
+  }, {
+    "name": "Pioneer Ski Area of America",
+    "location": "39°45′24″N 120°41′52″W"
+  }, {
+    "name": "Plumas House",
+    "location": "Main and Court Sts."
+  }, {
+    "name": "Rabbit Creek Hotel Monument",
+    "location": "39°40′58″N 120°59′05″W"
+  }, {
+    "name": "Rich Bar",
+    "location": "40°00′43″N 121°11′35″W"
+  }, {
+    "name": "Spanish Ranch",
+    "location": "39°57′00″N 121°03′25″W"
+  }, {
+    "name": "Butterfield Stage Route",
+    "location": "SW corner of Hermosa St. and State Hwy. 65"
+  }, {
+    "name": "Election Tree",
+    "location": "36°21′30″N 119°10′35″W"
+  }, {
+    "name": "First Tule River Reservation",
+    "location": "36°03′30″N 118°58′00″W"
+  }, {
+    "name": "Fountain Springs",
+    "location": "35°53′28″N 118°54′56″W"
+  }, {
+    "name": "Kaweah Post Office, Kaweah Colony",
+    "location": "36°28′11″N 118°55′06″W"
+  }, {
+    "name": "Tailholt",
+    "location": "35°48′40″N 118°50′34″W"
+  }, {
+    "name": "Tulare Assembly Center",
+    "location": "Tulare County Fairgrounds"
+  }, {
+    "name": "Tule River Stage Station",
+    "location": "Porterville Public Park"
+  }, {
+    "name": "Hock Farm",
+    "location": "39°02′56″N 121°38′00″W"
+  }, {
+    "name": "Thompson seedless grape propagation site",
+    "location": "39°08′43″N 121°46′55″W"
+  }, {
+    "name": "Agua Mansa",
+    "location": "34°02′31″N 117°21′47″W"
+  }, {
+    "name": "A.K. Smiley Public Library",
+    "location": "34°03′16″N 117°11′03″W"
+  }, {
+    "name": "Arrowhead",
+    "location": "34°10′07″N 117°16′42″W"
+  }, {
+    "name": "Calico",
+    "location": "34°56′56″N 116°51′51″W"
+  }, {
+    "name": "Camp Cady",
+    "location": "34°56′42″N 116°35′57″W"
+  }, {
+    "name": "Camp Clipper",
+    "location": "34°48′29″N 115°13′11″W"
+  }, {
+    "name": "Camp Ibis",
+    "location": "34°58′10″N 114°49′58″W"
+  }, {
+    "name": "Camp Iron Mountain",
+    "location": "34°04′55″N 115°07′47″W"
+  }, {
+    "name": "Chimney Rock",
+    "location": "34°27′00″N 117°00′14″W"
+  }, {
+    "name": "Cucamonga Winery",
+    "location": "34°06′24″N 117°36′39″W"
+  }, {
+    "name": "Daley Toll Road Monument",
+    "location": "On State Hwy 18 at Daley Canyon Rd"
+  }, {
+    "name": "Fort Benson",
+    "location": "34°03′41″N 117°17′16″W"
+  }, {
+    "name": "Harvey House",
+    "location": "34°54′17″N 117°01′26″W"
+  }, {
+    "name": "Henry Wade Exit Route",
+    "location": "35°37′59″N 116°17′27″W"
+  }, {
+    "name": "Holcomb Valley",
+    "location": "34°18′05″N 116°53′09″W"
+  }, {
+    "name": "Hulaville Forest",
+    "location": "Amargosa Rd, 2.0 mi W of I-15 and Phelan Rd."
+  }, {
+    "name": "Kimberly Crest",
+    "location": "34°02′16″N 117°10′21″W"
+  }, {
+    "name": "Madonna of the Trail",
+    "location": "34°06′26″N 117°39′04″W"
+  }, {
+    "name": "Garcés-Smith Monument",
+    "location": "San Bernardino National Forest"
+  }, {
+    "name": "Guachama Rancheria",
+    "location": "25894 Mission Rd."
+  }, {
+    "name": "Mojave Road",
+    "location": "Midway Rest Area, N-bound I-15"
+  }, {
+    "name": "Mill Creek Zanja",
+    "location": "34°03′37″N 117°10′04″W"
+  }, {
+    "name": "Mormon Lumber Road",
+    "location": "Waterman Canyon"
+  }, {
+    "name": "Mormon Stockade",
+    "location": "34°06′20″N 117°17′21″W"
+  }, {
+    "name": "Mormon Trail Monument",
+    "location": "34°21′05″N 117°31′37″W"
+  }, {
+    "name": "National Old Trail Monument",
+    "location": "34°51′04″N 114°36′35″W"
+  }, {
+    "name": "Old Bear Valley Dam",
+    "location": "Big Bear Lake"
+  }, {
+    "name": "Possum Trot",
+    "location": "Ghost Town Rd, 1.5 mi N of I-15"
+  }, {
+    "name": "Rancho Santa Ana del Chino",
+    "location": "33°59′24″N 117°43′03″W"
+  }, {
+    "name": "San Bernardino de Sena Estancia",
+    "location": "34°02′40″N 117°13′15″W"
+  }, {
+    "name": "Santa Fe And Salt Lake Trail Monument",
+    "location": "34°18′22″N 117°28′00″W"
+  }, {
+    "name": "Searles Lake Borax discovery",
+    "location": "35°45′28″N 117°22′38″W"
+  }, {
+    "name": "Stoddard-Waite Monument",
+    "location": "34°18′13″N 117°28′00″W"
+  }, {
+    "name": "Sycamore Grove",
+    "location": "Glen Helen Regional Park"
+  }, {
+    "name": "Tapia Adobe",
+    "location": "34°06′24″N 117°36′39″W"
+  }, {
+    "name": "U.S. Rabbit Experimental Station",
+    "location": "34°06′06″N 117°26′40″W"
+  }, {
+    "name": "Von Schmidt State Boundary Monument",
+    "location": "35°00′51″N 114°39′43″W"
+  }, {
+    "name": "Yorba-Slaughter Adobe",
+    "location": "33°56′25″N 117°39′57″W"
+  }, {
+    "name": "Yucaipa Adobe",
+    "location": "34°02′31″N 117°21′47″W"
+  }, {
+    "name": "Yucaipa Rancheria",
+    "location": "34°01′21″N 117°06′08″W"
+  }, {
+    "name": "Birthplace of the United Nations, War Memorial Complex",
+    "location": "San Francisco War Memorial and Performing Arts Center"
+  }, {
+    "name": "California Masonic Lodge No. 1",
+    "location": "728 Montgomery St."
+  }, {
+    "name": "California Theatre",
+    "location": "430 Bush St"
+  }, {
+    "name": "Castillo De San Joaquín",
+    "location": "37°48′38″N 122°28′36″W"
+  }, {
+    "name": "City of Paris building",
+    "location": "SE corner of Geary and Stockton Sts."
+  }, {
+    "name": "Eastern Terminus of Clay Street Hill Railroad",
+    "location": "Portsmouth Square"
+  }, {
+    "name": "Conservatory of Flowers",
+    "location": "37°46′19″N 122°27′36″W"
+  }, {
+    "name": "El Camino Real",
+    "location": ""
+  }, {
+    "name": "Site of the Jenny Lind Theatre and San Francisco City Hall",
+    "location": "750 Kearny St at Merchant"
+  }, {
+    "name": "Entrance of the San Carlos into San Francisco Bay",
+    "location": "Aquatic Park, NW corner of Beach and Larkin Sts"
+  }, {
+    "name": "Farnsworth's Green Street Lab",
+    "location": "37°48′01″N 122°24′11″W"
+  }, {
+    "name": "First dynamite factory in the United States",
+    "location": "37°44′20″N 122°26′31″W"
+  }, {
+    "name": "First Jewish religious services in San Francisco",
+    "location": "37°47′46″N 122°24′13″W"
+  }, {
+    "name": "First Public School in California",
+    "location": "37°47′41″N 122°24′20″W"
+  }, {
+    "name": "First San Francisco Mint building",
+    "location": "37°47′39″N 122°24′12″W"
+  }, {
+    "name": "Fort Gunnybags",
+    "location": "S side of Sacramento between Davis and Front"
+  }, {
+    "name": "Golden Gate Bridge",
+    "location": "37°49′11″N 122°28′43″W"
+  }, {
+    "name": "Hudson's Bay Company headquarters",
+    "location": "37°47′39″N 122°24′12″W"
+  }, {
+    "name": "Juana Briones, Pioneer settler of Yerba Buena",
+    "location": "Washington Square"
+  }, {
+    "name": "Landing place of Captain J. Montgomery",
+    "location": "37°47′41″N 122°24′19″W"
+  }, {
+    "name": "Laurel Hill Cemetery",
+    "location": "3333 California St."
+  }, {
+    "name": "Long Wharf",
+    "location": "Leidesdorff and Commercial Sts."
+  }, {
+    "name": "Lucas, Turner & Co. Bank",
+    "location": "NE corner of Montgomery and Jackson"
+  }, {
+    "name": "Mark Hopkins Institute of Art",
+    "location": "California at Mason"
+  }, {
+    "name": "Liberty Bell Slot Machine",
+    "location": "37°47′28″N 122°23′58″W"
+  }, {
+    "name": "Mellus and Howard",
+    "location": "555 Montgomery"
+  }, {
+    "name": "Montgomery Block",
+    "location": "37°47′42″N 122°24′11″W"
+  }, {
+    "name": "Niantic Hotel",
+    "location": "37°47′42″N 122°24′08″W"
+  }, {
+    "name": "Office of the California Star newspaper",
+    "location": "743 Washington St"
+  }, {
+    "name": "Old Saint Mary's Cathedral",
+    "location": "37°47′34″N 122°24′21″W"
+  }, {
+    "name": "Original Mission Dolores and Dolores Lagoon",
+    "location": "37°45′51″N 122°25′22″W"
+  }, {
+    "name": "Original site of the Bancroft Library",
+    "location": "1538 Valencia St."
+  }, {
+    "name": "Original site of St. Mary's College",
+    "location": "Mission and College Sts."
+  }, {
+    "name": "Original site of the Third Baptist Church",
+    "location": "37°48′09″N 122°24′28″W"
+  }, {
+    "name": "Parrott Granite Block",
+    "location": "California and Montgomery"
+  }, {
+    "name": "Portsmouth Plaza",
+    "location": "Portsmouth Square"
+  }, {
+    "name": "Presidio of San Francisco",
+    "location": "37°47′53″N 122°27′57″W"
+  }, {
+    "name": "Rincon Hill",
+    "location": "Rincon and Bryant Sts."
+  }, {
+    "name": "San Francisco Mint",
+    "location": "37°46′58″N 122°24′21″W"
+  }, {
+    "name": "Sarcophagus of Thomas Starr King",
+    "location": "First Unitarian Church of San Francisco"
+  }, {
+    "name": "Shoreline markers",
+    "location": "37°47′29″N 122°23′57″W"
+  }, {
+    "name": "Site of the first California State fair",
+    "location": "37°47′27″N 122°24′05″W"
+  }, {
+    "name": "Telegraph Hill",
+    "location": "37°48′09″N 122°24′21″W"
+  }, {
+    "name": "Treasure Island",
+    "location": "37°49′N 122°22′W"
+  }, {
+    "name": "Union Square",
+    "location": "37°47′17″N 122°24′27″W"
+  }, {
+    "name": "Western business headquarters of Russell, Majors and Waddell (Pony Express)",
+    "location": "37°47′42″N 122°24′12″W"
+  }, {
+    "name": "What Cheer House",
+    "location": "37°47′38″N 122°24′08″W"
+  }, {
+    "name": "Woodward's Gardens",
+    "location": "SW corner of Mission and Duboce Sts."
+  }, {
+    "name": "Adams and Company Building",
+    "location": "Old Sacramento State Historic Park, 1014 2nd St."
+  }, {
+    "name": "African Methodist Episcopal Church",
+    "location": "38°35′03″N 121°29′46″W"
+  }, {
+    "name": "B.F. Hastings Bank Building",
+    "location": "38°34′59″N 121°30′15″W"
+  }, {
+    "name": "Booth Company",
+    "location": "38°35′00″N 121°30′20″W"
+  }, {
+    "name": "California Almond Growers exchange process facility",
+    "location": "38°35′06″N 121°28′43″W"
+  }, {
+    "name": "California’s First Passenger Railroad",
+    "location": "38°34′26″N 121°30′24″W"
+  }, {
+    "name": "California State Capitol",
+    "location": "38°34′36″N 121°29′36″W"
+  }, {
+    "name": "Camp Union, Sutterville",
+    "location": "38°32′16″N 121°30′15″W"
+  }, {
+    "name": "Chevra Kaddisha Cemetery",
+    "location": "3230 J St."
+  }, {
+    "name": "China Slough",
+    "location": "Sacramento Station"
+  }, {
+    "name": "Coloma Road - Nimbus Dam",
+    "location": "Folsom Lake State Recreation Area"
+  }, {
+    "name": "Coloma Road - Sutter's Fort",
+    "location": "38°34′19″N 121°28′13″W"
+  }, {
+    "name": "D.O. Mills Bank Building",
+    "location": "Old Sacramento State Historic Park, 2nd and J Sts"
+  }, {
+    "name": "E.B. Crocker Art Gallery",
+    "location": "38°34′37″N 121°30′18″W"
+  }, {
+    "name": "Eagle Theatre (Sacramento, California)",
+    "location": "38°35′01″N 121°30′19″W"
+  }, {
+    "name": "First and second state capitols",
+    "location": "38°34′57″N 121°29′49″W"
+  }, {
+    "name": "Ebner's Hotel",
+    "location": "116 1/2 K St."
+  }, {
+    "name": "Elk Grove Free Library",
+    "location": "38°24′33″N 121°21′41″W"
+  }, {
+    "name": "Fifteen Mile House - Overland Pony Express Route",
+    "location": "White Rock & Gold Valley Rds."
+  }, {
+    "name": "First Jewish Synagogue owned by a congregation on the west coast",
+    "location": "38°34′41″N 121°29′57″W"
+  }, {
+    "name": "Five Mile House - Overland Pony Express Route",
+    "location": "California State University, 6000 \"J\" St., left on State University Drive East to Guy West Bridge over-crossing and plaza. Plaque located in plaza."
+  }, {
+    "name": "Folsom - Overland Pony Express Route",
+    "location": "819 Sutter St."
+  }, {
+    "name": "Folsom Terminal",
+    "location": "38°40′33″N 121°10′49″W"
+  }, {
+    "name": "Folsom Powerhouse",
+    "location": "38°40′50″N 121°10′32″W"
+  }, {
+    "name": "Governor's Mansion",
+    "location": "38°34′49″N 121°29′01″W"
+  }, {
+    "name": "Grave of Alexander Hamilton Willard",
+    "location": "38°22′37″N 121°27′22″W"
+  }, {
+    "name": "Grave of Elitha Cumi Donner Wilder",
+    "location": "38°24′31″N 121°23′07″W"
+  }, {
+    "name": "Lady Adams Building",
+    "location": "38°34′57″N 121°30′19″W"
+  }, {
+    "name": "Leland Stanford Mansion State Historic Park",
+    "location": "38°34′34″N 121°29′52″W"
+  }, {
+    "name": "Michigan Bar",
+    "location": "38°29′10″N 121°03′11″W"
+  }, {
+    "name": "Murphy's Corral",
+    "location": "38°22′29″N 121°21′43″W"
+  }, {
+    "name": "New Helvetia Cemetery",
+    "location": "38°34′22″N 121°27′54″W"
+  }, {
+    "name": "Nisipowinan",
+    "location": "Address restricted"
+  }, {
+    "name": "Old Folsom Powerhouse Station",
+    "location": "38°35′02″N 121°29′52″W"
+  }, {
+    "name": "Old Sacramento",
+    "location": "38°34′58″N 121°30′12″W"
+  }, {
+    "name": "Original Sacramento Bee building",
+    "location": "Under N-bound offramp of I-5, W side of 3rd St between J and K Sts"
+  }, {
+    "name": "Orleans Hotel",
+    "location": "Old Sacramento State Historic Park, 1018 2nd St."
+  }, {
+    "name": "Overton Building",
+    "location": "Old Sacramento State Historic Park, 2nd and J Sts."
+  }, {
+    "name": "Pioneer Congregational United Church of Christ",
+    "location": "915 6th St."
+  }, {
+    "name": "Pioneer Mutual Volunteer Firehouse",
+    "location": "200 ft NE of intersection of 3rd and J Sts"
+  }, {
+    "name": "Prairie City",
+    "location": "38°38′37″N 121°09′26″W"
+  }, {
+    "name": "Pioneer Telegraph Station",
+    "location": "38°34′57″N 121°30′15″W"
+  }, {
+    "name": "Sacramento Assembly Center aka Camp Kohler",
+    "location": "38°40′06″N 121°21′05″W"
+  }, {
+    "name": "Sacramento Historic City Cemetery",
+    "location": "38°33′49″N 121°30′03″W"
+  }, {
+    "name": "Sacramento Union",
+    "location": "Old Sacramento State Historic Park, 121 J St."
+  }, {
+    "name": "Sheldon Grist Mill",
+    "location": "38°29′47″N 121°11′50″W"
+  }, {
+    "name": "Site of Stage and Railroad",
+    "location": "Old Sacramento State Historic Park"
+  }, {
+    "name": "Sam Brannan House",
+    "location": "Old Sacramento State Historic Park, 112 J. St."
+  }, {
+    "name": "Sloughhouse",
+    "location": "38°29′47″N 121°11′47″W"
+  }, {
+    "name": "State Indian Museum",
+    "location": "2618 K St."
+  }, {
+    "name": "Sutterville",
+    "location": "38°32′45″N 121°30′30″W"
+  }, {
+    "name": "Sutter's Landing",
+    "location": "38°34′53″N 121°27′57″W"
+  }, {
+    "name": "First Transcontinental Railroad",
+    "location": "Old Sacramento State Historic Park, California State Railroad Museum"
+  }, {
+    "name": "First Transcontinental Railroad - Western base of Sierra Nevada",
+    "location": "Haggin Oaks Municipal Golf Course, N side of clubhouse, 3645 Fulton Ave."
+  }, {
+    "name": "Western Hotel",
+    "location": "Parking lot, 200 ft NE of intersection of 2nd and K Sts."
+  }, {
+    "name": "What Cheer House",
+    "location": "Front and K Sts."
+  }, {
+    "name": "Adamson House",
+    "location": "34°02′04″N 118°40′51″W"
+  }, {
+    "name": "Adobe de Palomares",
+    "location": "34°05′26″N 117°44′35″W"
+  }, {
+    "name": "Angeles National Forest",
+    "location": "34°20′00″N 118°08′00″W"
+  }, {
+    "name": "Avila Adobe",
+    "location": "34°03′26″N 118°14′16″W"
+  }, {
+    "name": "Banning Park",
+    "location": "401 East M St."
+  }, {
+    "name": "Beach Boys Historic Landmark",
+    "location": "33°55′31″N 118°20′15″W"
+  }, {
+    "name": "Savannah Memorial Park",
+    "location": "34°04′52″N 118°04′04″W"
+  }, {
+    "name": "Beale's Cut Stagecoach Pass",
+    "location": "34°20′32″N 118°30′34″W"
+  }, {
+    "name": "Bella Union Hotel site",
+    "location": "34°03′17″N 118°14′27″W"
+  }, {
+    "name": "Brand Park",
+    "location": "34°16′21″N 118°27′26″W"
+  }, {
+    "name": "Campo de Cahuenga",
+    "location": "34°08′24″N 118°21′42″W"
+  }, {
+    "name": "Casa Adobe De San Rafael",
+    "location": "34°09′58″N 118°15′50″W"
+  }, {
+    "name": "Casa De Governor Pio Pico",
+    "location": "33°59′37″N 118°04′16″W"
+  }, {
+    "name": "Casa De San Pedro",
+    "location": "Meyler and Quartermaster Rds."
+  }, {
+    "name": "The Cascades",
+    "location": "34°19′22″N 118°29′51″W"
+  }, {
+    "name": "Catalina Adobe",
+    "location": "2211 Bonita Dr."
+  }, {
+    "name": "Cecil B. DeMille Studio Barn",
+    "location": "34°06′31″N 118°20′10″W"
+  }, {
+    "name": "Centinela Springs",
+    "location": "Centinela Park, 700 Warren Ln."
+  }, {
+    "name": "Chatsworth Calera",
+    "location": "Woolsey Canyon Rd. & Valley Circle Blvd."
+  }, {
+    "name": "Christmas Tree Lane",
+    "location": "34°11′25″N 118°08′09″W"
+  }, {
+    "name": "Site of Home of Diego Sepúlveda",
+    "location": "33°40′23″N 117°56′13″W"
+  }, {
+    "name": "Dominguez Ranch House",
+    "location": "33°52′01″N 118°13′03″W"
+  }, {
+    "name": "Drum Barracks",
+    "location": "33°47′05″N 118°15′24″W"
+  }, {
+    "name": "E.J. Baldwin's Queen Anne Cottage",
+    "location": "34°08′27″N 118°03′09″W"
+  }, {
+    "name": "Santa Fe Trail Historical Park",
+    "location": "Santa Fe Trail Historical Park"
+  }, {
+    "name": "Ennis House",
+    "location": "34°06′58″N 118°17′34″W"
+  }, {
+    "name": "Fred C. Nelles Youth Correctional Facility",
+    "location": "33°58′34″N 118°03′04″W"
+  }, {
+    "name": "First home of Pomona College",
+    "location": "34°03′17″N 117°45′32″W"
+  }, {
+    "name": "First Jewish site in Los Angeles",
+    "location": "34°04′11″N 118°14′28″W"
+  }, {
+    "name": "First United States Air Meet",
+    "location": "33°51′42″N 118°14′06″W"
+  }, {
+    "name": "Freeman House",
+    "location": "34°06′20″N 118°20′19″W"
+  }, {
+    "name": "Gamble House",
+    "location": "34°09′06″N 118°09′39″W"
+  }, {
+    "name": "Glendora bougainvillea",
+    "location": "34°08′23″N 117°51′38″W"
+  }, {
+    "name": "Governor Stoneman Adobe, Los Robles",
+    "location": "34°06′51″N 118°08′10″W"
+  }, {
+    "name": "Grave of George Caralambo",
+    "location": "Founders' Memorial Park"
+  }, {
+    "name": "Griffith Ranch",
+    "location": "34°17′24″N 118°24′41″W"
+  }, {
+    "name": "Hancock Park",
+    "location": "34°03′49″N 118°21′25″W"
+  }, {
+    "name": "Harold Lloyd Estate",
+    "location": "34°05′17″N 118°25′37″W"
+  }, {
+    "name": "Hay Tree",
+    "location": "16475 Paramount Blvd."
+  }, {
+    "name": "Henry Gage Mansion",
+    "location": "33°58′19″N 118°08′04″W"
+  }, {
+    "name": "Heritage House",
+    "location": "33°53′34″N 118°13′28″W"
+  }, {
+    "name": "Hugo Reid Adobe",
+    "location": "Los Angeles State and County Arboretum"
+  }, {
+    "name": "Jose Dolores Sepulveda Adobe",
+    "location": "Madison St. & Courtney Way"
+  }, {
+    "name": "La Casa de Carrión",
+    "location": "34°05′46″N 117°47′20″W"
+  }, {
+    "name": "La Mesa Battlefield",
+    "location": "34°00′09″N 118°12′17″W"
+  }, {
+    "name": "Lang Southern Pacific Station",
+    "location": "34°25′52″N 118°22′44″W"
+  }, {
+    "name": "Liberty Hill site",
+    "location": "33°44′26″N 118°16′50″W"
+  }, {
+    "name": "Llano del Rio",
+    "location": "34°30′23″N 117°49′37″W"
+  }, {
+    "name": "Long Beach Marine Stadium",
+    "location": "33°46′09″N 118°07′58″W"
+  }, {
+    "name": "Los Angeles Memorial Coliseum",
+    "location": "34°00′51″N 118°17′16″W"
+  }, {
+    "name": "Los Angeles Plaza",
+    "location": "34°03′25″N 118°14′16″W"
+  }, {
+    "name": "Los Encinos State Historic Park",
+    "location": "34°09′38″N 118°29′58″W"
+  }, {
+    "name": "Lugo Adobe",
+    "location": "El Pueblo de Los Angeles Historic Monument"
+  }, {
+    "name": "Lummis Home",
+    "location": "34°05′35″N 118°12′22″W"
+  }, {
+    "name": "Lyons Station Stagecoach Stop",
+    "location": "34°21′46″N 118°30′27″W"
+  }, {
+    "name": "Manhattan Beach pier",
+    "location": "33°53′01″N 118°24′49″W"
+  }, {
+    "name": "Mentryville",
+    "location": "34°22′45″N 118°36′40″W"
+  }, {
+    "name": "Merced Theatre",
+    "location": "El Pueblo de Los Angeles Historic Monument"
+  }, {
+    "name": "Mirror Building",
+    "location": "145 S. Spring St."
+  }, {
+    "name": "Mission San Fernando Rey de España",
+    "location": "34°16′23″N 118°27′40″W"
+  }, {
+    "name": "Mission San Gabriel Arcángel",
+    "location": "34°05′51″N 118°06′23″W"
+  }, {
+    "name": "Mission Vieja",
+    "location": "N. Gabriel Blvd. & N. Lincoln Ave."
+  }, {
+    "name": "Camp Cady (on the Mojave Road)",
+    "location": "Drum Barracks to Route 66 crosses LA County line into San Bernardino County"
+  }, {
+    "name": "Naval and Marine Corps Reserve Center",
+    "location": "34°04′10″N 118°14′33″W"
+  }, {
+    "name": "Nuestra Señora Reina de los Angeles",
+    "location": "34°03′25″N 118°14′22″W"
+  }, {
+    "name": "Oak of the Golden Dream",
+    "location": "34°23′N 118°35′W"
+  }, {
+    "name": "Old Mill",
+    "location": "34°07′08″N 118°07′41″W"
+  }, {
+    "name": "Old Plaza Firehouse",
+    "location": "34°03′22″N 118°14′20″W"
+  }, {
+    "name": "Old Salt Lake",
+    "location": "33°51′07″N 118°23′49″W"
+  }, {
+    "name": "Old Santa Monica Forestry Station",
+    "location": "Rustic Canyon"
+  }, {
+    "name": "Old Short Cut",
+    "location": "34°19′36″N 118°00′21″W"
+  }, {
+    "name": "Old Trapper's Lodge",
+    "location": "Los Angeles Pierce College"
+  }, {
+    "name": "Old Whaling Station",
+    "location": "Portuguese Bend Club"
+  }, {
+    "name": "Original building of the University of Southern California",
+    "location": "34°01′11″N 118°16′58″W"
+  }, {
+    "name": "Ortega-Vigare Adobe",
+    "location": "34°05′41″N 118°06′28″W"
+  }, {
+    "name": "Pacific Asia Museum",
+    "location": "34°08′48″N 118°08′28″W"
+  }, {
+    "name": "Paradox Hybrid Walnut Tree",
+    "location": "33°58′26″N 118°02′45″W"
+  }, {
+    "name": "Pasadena Playhouse",
+    "location": "34°08′43″N 118°08′14″W"
+  }, {
+    "name": "Pico House",
+    "location": "34°03′24″N 118°14′22″W"
+  }, {
+    "name": "Pioneer Oil Refinery",
+    "location": "34°22′42″N 118°33′50″W"
+  }, {
+    "name": "Plummer House and oldest house in Hollywood",
+    "location": "23537 Calabasas Rd."
+  }, {
+    "name": "Point Dume",
+    "location": "34°00′03″N 118°48′25″W"
+  }, {
+    "name": "Pomona Water Powerplant",
+    "location": "34°12′44″N 117°40′34″W"
+  }, {
+    "name": "Port of Los Angeles Long Wharf in Santa Monica",
+    "location": "34°01′53″N 118°31′38″W"
+  }, {
+    "name": "Portolá Trail Campsite",
+    "location": "34°04′19″N 118°13′38″W"
+  }, {
+    "name": "Portolá Trail Campsite 2",
+    "location": "34°03′41″N 118°22′33″W"
+  }, {
+    "name": "Rancho Los Cerritos Historic Site",
+    "location": "33°50′11″N 118°11′40″W"
+  }, {
+    "name": "Rancho San Francisco",
+    "location": "34°26′25″N 118°36′19″W"
+  }, {
+    "name": "Rio San Gabriel Battlefield",
+    "location": "33°59′31″N 118°06′40″W"
+  }, {
+    "name": "Rómulo Pico Adobe",
+    "location": "34°16′08″N 118°28′03″W"
+  }, {
+    "name": "SS Catalina",
+    "location": ""
+  }, {
+    "name": "St. Francis Dam Disaster Site",
+    "location": "34°32′49″N 118°30′45″W"
+  }, {
+    "name": "St. Vincent's Place",
+    "location": "St. Vincent Court"
+  }, {
+    "name": "San Fernando Cemetery",
+    "location": "34°19′15″N 118°26′53″W"
+  }, {
+    "name": "Serra Springs",
+    "location": "University High School"
+  }, {
+    "name": "Site of the Los Angeles Star",
+    "location": "Fletcher Bowron Square"
+  }, {
+    "name": "Temporary detention camps for Japanese Americans-Santa Anita assembly center and Pomona assembly center",
+    "location": ""
+  }, {
+    "name": "Timm's Point and Landing",
+    "location": "33°43′42″N 118°16′31″W"
+  }, {
+    "name": "Tuna Club of Avalon",
+    "location": "33°21′18″N 118°19′53″W"
+  }, {
+    "name": "Watts Tower",
+    "location": "34°02′04″N 118°40′42″W"
+  }, {
+    "name": "Well, Alamitos #1",
+    "location": "33°47′50″N 118°09′32″W"
+  }, {
+    "name": "Well, CSO 4",
+    "location": "34°22′10″N 118°37′49″W"
+  }, {
+    "name": "Western Hotel",
+    "location": "34°41′54″N 118°08′20″W"
+  }, {
+    "name": "Workman Home and Family Cemetery",
+    "location": "34°01′12″N 117°57′51″W"
+  }, {
+    "name": "Ah Louis Store",
+    "location": "35°16′54″N 120°39′51″W"
+  }, {
+    "name": "Atascadero Administration Building",
+    "location": "35°29′22″N 120°40′03″W"
+  }, {
+    "name": "Dallidet Adobe",
+    "location": "35°16′51″N 120°39′23″W"
+  }, {
+    "name": "Estrella Adobe Church",
+    "location": "On Airport Rd."
+  }, {
+    "name": "Hearst San Simeon State Historical Monument",
+    "location": "Hearst San Simeon State Historical Monument"
+  }, {
+    "name": "Nitt Witt Ridge",
+    "location": "35°34′00″N 121°05′43″W"
+  }, {
+    "name": "Mission San Luis Obispo de Tolosa",
+    "location": "35°16′51″N 120°39′52″W"
+  }, {
+    "name": "Mission San Miguel Arcángel",
+    "location": "35°44′41″N 120°41′53″W"
+  }, {
+    "name": "Morro Rock",
+    "location": "35°22′10″N 120°52′03″W"
+  }, {
+    "name": "Rancho Nipomo",
+    "location": "35°02′N 120°29′W"
+  }, {
+    "name": "Rios-Caledonia Adobe",
+    "location": "35°44′17″N 120°41′56″W"
+  }, {
+    "name": "Santa Margarita de Cortona Asistencia",
+    "location": "35°24′02″N 120°36′44″W"
+  }, {
+    "name": "Sebastian Store",
+    "location": "35°38′36″N 121°11′29″W"
+  }]
+}

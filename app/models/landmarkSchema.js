@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 var landmarkSchema = new mongoose.Schema({
-  name: {type: String, required: true},
+  name: {type: String, required: true, unique: true},
   location: String,
   yearOfSignificance: Number,
   blurb: String,
