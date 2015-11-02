@@ -6,8 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var cheerio = require('cheerio');
-var request = require('request');
 var fs = require('fs');
 
 var app = express();
@@ -24,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/landmarks', require('./routes/landmarks'))
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
