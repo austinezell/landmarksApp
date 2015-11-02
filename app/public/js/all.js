@@ -69,6 +69,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'LandingCtrl'
       }
     }
+  }).state('app.map', {
+    url: '/map',
+    views: {
+      'menuContent': {
+        templateUrl: "../html/map.html",
+        controller: 'MapCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
@@ -79,8 +87,8 @@ var app = angular.module('landmarksApp');
 
 app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
-  $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
+  $scope.isLoggedIn = false;
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -90,11 +98,12 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 
   // Form data for the login modal
 
-  $scope.registerState = function () {
+  ($scope.registerState = function () {
     $scope.Login = !$scope.Login;
+    $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
     $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
-  };
+  })();
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('html/login.html', {
@@ -127,6 +136,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.doLogin = function (user) {
     console.log("login");
     auth.login(user).success(function (data) {
+      $scope.isLoggedIn = true;
       console.log(data);
       console.log("ok");
     }).error(function (err) {
@@ -145,6 +155,68 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 var app = angular.module('landmarksApp');
 
 app.controller('LandingCtrl', function ($scope, $stateParams) {});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
+  $scope.$on('$ionicView.enter', function () {
+    initialize();
+  });
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(43.07493, -89.381388);
+
+    var mapOptions = {
+      center: myLatlng,
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    //Marker + infowindow + angularjs compiled ng-click
+    var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
+    var compiled = $compile(contentString)($scope);
+
+    var infowindow = new google.maps.InfoWindow({
+      content: compiled[0]
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+      infowindow.open(map, marker);
+    });
+
+    $scope.map = map;
+  }
+  // google.maps.event.addDomListener(window, 'load', initialize);
+
+  $scope.centerOnMe = function () {
+    if (!$scope.map) {
+      return;
+    }
+
+    $scope.loading = $ionicLoading.show({
+      content: 'Getting current location...',
+      showBackdrop: false
+    });
+
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+      $scope.loading.hide();
+    }, function (error) {
+      alert('Unable to get location: ' + error.message);
+    });
+  };
+
+  $scope.clickTest = function () {
+    alert('Example of infowindow with ng-click');
+  };
+});
 'use strict';
 
 var app = angular.module('landmarksApp');

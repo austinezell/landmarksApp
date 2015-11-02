@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userSchema.js')
+var auth = require('../config/auth.js');
 
 
 /* GET users listing. */
 router.post('/create', function(req, res, next) {
-  console.log("hit", req.body);
   var user = new User()
   user.username= req.body.username;
   user.fullName= req.body.fullName;
@@ -39,7 +39,6 @@ router.post('/login', function(req, res, next){
 });
 
 router.post('/register', function(req, res, next){
-  console.log(req.body);
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'Missing required fields username and password.'});
   }
@@ -49,8 +48,6 @@ router.post('/register', function(req, res, next){
   user.email = req.body.email;
   user.username = req.body.username;
   user.setPassword(req.body.password);
-
-  console.log('user:', user);
 
   user.save(function(err, user){
     console.log('save cb:', err || user);
@@ -64,13 +61,11 @@ router.post('/register', function(req, res, next){
   })
 });
 
-router.post('/favorites/:uid/:lid', function (req, res){
-  console.log('here',req.params.uid)
+router.post('/favorites/:uid/:lid', auth, function (req, res){
   User.findById(req.params.uid, function (err,user){
     if(err){
       res.send(err)
     }else{
-      console.log(req.params.lid)
       user.favorites.push(req.params.lid);
       user.save();
       res.send(user)
@@ -78,13 +73,11 @@ router.post('/favorites/:uid/:lid', function (req, res){
   })
 })
 
-router.post('/visited/:uid/:lid', function (req, res){
-  console.log('here',req.params.uid)
+router.post('/visited/:uid/:lid', auth, function (req, res){
   User.findById(req.params.uid, function (err,user){
     if(err){
       res.send(err)
     }else{
-      console.log(req.params.lid)
       user.visited.push(req.params.lid);
       user.save();
       res.send(user)

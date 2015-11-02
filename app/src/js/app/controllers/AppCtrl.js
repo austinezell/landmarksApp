@@ -2,8 +2,8 @@ var app = angular.module('landmarksApp')
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
-  $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
+  $scope.isLoggedIn = false;
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -13,11 +13,12 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
 
   // Form data for the login modal
 
-  $scope.registerState = function(){
+  ($scope.registerState = function(){
     $scope.Login = !$scope.Login;
+    $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
     $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
-  }
+  })();
 
 
   // Create the login modal that we will use later
@@ -54,6 +55,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     console.log("login");
     auth.login(user)
     .success(function(data){
+      $scope.isLoggedIn = true;
       console.log(data);
       console.log("ok");
     })

@@ -62,6 +62,24 @@ $dark:                            #444 !default;
     color: black;
     border-radius: 5px; }
 
+#hamburgerMenu {
+  color: #FBF8E7; }
+
+.locations * {
+  display: inline-block; }
+  .locations * p {
+    margin-left: 15px; }
+  .locations * img {
+    margin-left: 1vw; }
+
+.landmarkIcon {
+  height: 30px;
+  width: 30px; }
+
+#map {
+  width: 100vw;
+  height: 50vh; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
