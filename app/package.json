@@ -7,7 +7,7 @@
     "start": "node ./bin/www",
     "postinstall": "bower install",
     "test": "mocha test/*",
-    "setup": "rm -rf node_modules public/lib public/vendor && touch .env && printf \"MONGO_URL=\nSECRET=\" > .env && npm i && bower i"
+    "setup": "rm -rf node_modules public/lib && touch .env && printf \"MONGO_URL=\nSECRET=\" > .env && npm i && bower i"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
