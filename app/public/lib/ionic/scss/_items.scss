@@ -95,6 +95,9 @@
   &.item-dark {
     @include item-style($item-dark-bg, $item-dark-border, $item-dark-text);
   }
+  &.item-california {
+    @include item-style($item-california-bg, $item-california-border, $item-california-text);
+  }
 
   &[ng-click]:hover {
     cursor: pointer;
@@ -143,6 +146,9 @@
   }
   &.item-dark {
     @include item-active-style($item-dark-active-bg, $item-dark-active-border);
+  }
+  &.item-california {
+    @include item-active-style($tertiary, $green);
   }
 }
 
