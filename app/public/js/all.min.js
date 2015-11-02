@@ -38,13 +38,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: '../html/search.html'
       }
     }
-  }).state('app.browse', {
-    url: '/browse',
-    views: {
-      'menuContent': {
-        templateUrl: '../html/browse.html'
-      }
-    }
   }).state('app.playlists', {
     url: '/playlists',
     views: {
@@ -87,7 +80,7 @@ var app = angular.module('landmarksApp');
 
 app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.isLoggedIn = false;
+  $scope.isLoggedIn = auth.isLoggedIn();
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -124,13 +117,13 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 
   $scope.logout = function () {
     auth.logout();
+    $scope.isLoggedIn = false;
   };
 
   $scope.register = function (user) {
     console.log("register");
     auth.register(user).success(function (data) {
-      $scope.doLogin(user);
-      $scope.user = {};
+      $scope.doLogin(user);s;
     }).error(function (err) {
       console.log(err);
     });
@@ -140,10 +133,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.doLogin = function (user) {
     console.log("login");
     auth.login(user).success(function (data) {
-      $scope.isLoggedIn = true;
       swal({ title: "Success!", text: "Successfully Authenticated", type: "success", timer: 1000, showConfirmButton: false });
-      console.log(data);
-      console.log("ok");
     }).error(function (err) {
       console.log(err);
     });
@@ -289,13 +279,13 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.register = function (user) {
     return $http.post('/users/register', user).success(function (data) {
-      auth.saveToken(data.token);
+      auth.saveToken(data);
     });
   };
 
   auth.login = function (user) {
     return $http.post('/users/login', user).success(function (data) {
-      auth.saveToken(data.token);
+      auth.saveToken(data);
     });
   };
 

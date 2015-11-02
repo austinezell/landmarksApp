@@ -43,15 +43,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: '../html/browse.html'
-        }
-      }
-    })
+  
     .state('app.playlists', {
       url: '/playlists',
       views: {
