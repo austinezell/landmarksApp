@@ -38,13 +38,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: '../html/search.html'
       }
     }
-  }).state('app.browse', {
-    url: '/browse',
-    views: {
-      'menuContent': {
-        templateUrl: '../html/browse.html'
-      }
-    }
   }).state('app.playlists', {
     url: '/playlists',
     views: {
@@ -87,7 +80,7 @@ var app = angular.module('landmarksApp');
 
 app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.isLoggedIn = false;
+  $scope.isLoggedIn = auth.isLoggedIn();
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -122,11 +115,15 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
     $scope.modal.show();
   };
 
+  $scope.logout = function () {
+    auth.logout();
+    $scope.isLoggedIn = false;
+  };
+
   $scope.register = function (user) {
     console.log("register");
     auth.register(user).success(function (data) {
-      $scope.doLogin(user);
-      $scope.user = {};
+      $scope.doLogin(user);s;
     }).error(function (err) {
       console.log(err);
     });
@@ -136,9 +133,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.doLogin = function (user) {
     console.log("login");
     auth.login(user).success(function (data) {
-      $scope.isLoggedIn = true;
-      console.log(data);
-      console.log("ok");
+      swal({ title: "Success!", text: "Successfully Authenticated", type: "success", timer: 1000, showConfirmButton: false });
     }).error(function (err) {
       console.log(err);
     });
@@ -164,46 +159,66 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
     initialize();
   });
   function initialize() {
-    var myLatlng = new google.maps.LatLng(43.07493, -89.381388);
 
-    var mapOptions = {
-      center: myLatlng,
-      zoom: 16,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var myLatlng;
+
+    async.series([function (callback) {
+      $scope.loading = $ionicLoading.show({
+        content: 'Getting current location...',
+        showBackdrop: false
+      });
+
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        console.log(pos);
+        myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        $scope.loading.hide();
+        callback();
+      }, function (error) {
+        alert('Unable to get location: ' + error.message);
+        callback(error);
+      });
+    }, function (callback) {
+      console.log(myLatlng);
+      var mapOptions = {
+        center: myLatlng,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      callback();
+    }], function (err) {
+      if (err) {
+        alert(err);
+      }
+      $scope.map = map;
+    });
 
     //Marker + infowindow + angularjs compiled ng-click
-    var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-    var compiled = $compile(contentString)($scope);
-
-    var infowindow = new google.maps.InfoWindow({
-      content: compiled[0]
-    });
-
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Uluru (Ayers Rock)'
-    });
-
-    google.maps.event.addListener(marker, 'click', function () {
-      infowindow.open(map, marker);
-    });
+    // var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
+    // var compiled = $compile(contentString)($scope);
+    //
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: compiled[0]
+    // });
+    //
+    // var marker = new google.maps.Marker({
+    //   position: myLatlng,
+    //   map: map,
+    //   title: 'Uluru (Ayers Rock)'
+    // });
+    //
+    // google.maps.event.addListener(marker, 'click', function() {
+    //   infowindow.open(map,marker);
+    // });
 
     $scope.map = map;
   }
   // google.maps.event.addDomListener(window, 'load', initialize);
 
-  $scope.centerOnMe = function () {
+  function centerOnMe() {
     if (!$scope.map) {
       return;
     }
-
-    $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
-      showBackdrop: false
-    });
 
     navigator.geolocation.getCurrentPosition(function (pos) {
       $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
@@ -279,13 +294,13 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.register = function (user) {
     return $http.post('/users/register', user).success(function (data) {
-      auth.saveToken(data.token);
+      auth.saveToken(data);
     });
   };
 
   auth.login = function (user) {
     return $http.post('/users/login', user).success(function (data) {
-      auth.saveToken(data.token);
+      auth.saveToken(data);
     });
   };
 

@@ -3970,13 +3970,13 @@ a.subdued {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
     border-color: #b2b2b2;
-    background-color: #f8f8f8;
+    background-color: #4F201A;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-    color: #444; }
+    color: #FBF8E7; }
     .bar.bar-stable .title {
-      color: #444; }
+      color: #FBF8E7; }
     .bar.bar-stable.bar-footer {
-      background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, #4F201A, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
     border-color: #0c60ee;
     background-color: #387ef5;
@@ -5786,6 +5786,10 @@ ion-tabs.tabs-color-active-dark .tab-item {
     border-color: #111;
     background-color: #444;
     color: #fff; }
+  .item.item-california {
+    border-color: #4F201A;
+    background-color: #EDD8A9;
+    color: #4c653b; }
   .item[ng-click]:hover {
     cursor: pointer; }
 
@@ -5873,6 +5877,14 @@ ion-tabs.tabs-color-active-dark .tab-item {
   .item .item-content.activated.item-dark {
     border-color: #000;
     background-color: #262626; }
+  .item.active.item-california,
+  .item.activated.item-california,
+  .item-complex.active .item-content.item-california,
+  .item-complex.activated .item-content.item-california,
+  .item .item-content.active.item-california,
+  .item .item-content.activated.item-california {
+    border-color: #4c653b;
+    background-color: #EDD8A9; }
 
 .item,
 .item h1,

@@ -2,7 +2,7 @@ var app = angular.module('landmarksApp')
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.Login = true;
-  $scope.isLoggedIn = false;
+  $scope.isLoggedIn = auth.isLoggedIn();
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -20,7 +20,6 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     $scope.Login ? $scope.stateMessage = "Do you need an Account?" : $scope.stateMessage = "Go to login";
   })();
 
-
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('html/login.html', {
     scope: $scope
@@ -32,18 +31,22 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.closeLogin = function() {
     $scope.modal.hide();
   };
-
+  
   // Open the login modal
   $scope.login = function() {
     $scope.modal.show();
+  };
+
+  $scope.logout = function() {
+    auth.logout();
+    $scope.isLoggedIn = false;
   };
 
   $scope.register = function(user){
     console.log("register");
     auth.register(user)
     .success(function(data){
-      $scope.doLogin(user);
-      $scope.user = {};
+      $scope.doLogin(user);s
     })
     .error(function(err){
       console.log(err);
@@ -55,9 +58,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     console.log("login");
     auth.login(user)
     .success(function(data){
-      $scope.isLoggedIn = true;
-      console.log(data);
-      console.log("ok");
+      swal({  title: "Success!",   text: "Successfully Authenticated",   type: "success", timer: 1000, showConfirmButton: false });
     })
     .error(function(err){
       console.log(err);
