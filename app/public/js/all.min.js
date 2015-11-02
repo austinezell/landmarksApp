@@ -117,13 +117,14 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 
   $scope.logout = function () {
     auth.logout();
-    $scope.isLoggedIn = false;
+    $scope.isLoggedIn = auth.isLoggedIn();
   };
 
   $scope.register = function (user) {
     console.log("register");
     auth.register(user).success(function (data) {
-      $scope.doLogin(user);s;
+      $scope.doLogin(user);
+      $scope.isLoggedIn = auth.isLoggedIn();
     }).error(function (err) {
       console.log(err);
     });
@@ -134,6 +135,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
     console.log("login");
     auth.login(user).success(function (data) {
       swal({ title: "Success!", text: "Successfully Authenticated", type: "success", timer: 1000, showConfirmButton: false });
+      $scope.isLoggedIn = auth.isLoggedIn();
     }).error(function (err) {
       console.log(err);
     });
