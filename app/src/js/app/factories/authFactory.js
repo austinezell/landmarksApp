@@ -6,6 +6,7 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
   var auth = {};
 
   auth.saveToken = function(token) {
+    console.log('hit', token);
     $window.localStorage[tokenStorageKey] = token;
   };
 
@@ -32,15 +33,11 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
   };
 
   auth.register = function(user){
-    return $http.post('/users/register', user).success(function(data){
-      auth.saveToken(data);
-    });
+    return $http.post('/users/register', user)
   };
 
   auth.login = function(user){
-    return $http.post('/users/login', user).success(function(data){
-      auth.saveToken(data);
-    });
+    return $http.post('/users/login', user)
   };
 
   auth.logout = function(){
