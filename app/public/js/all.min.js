@@ -31,11 +31,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     abstract: true,
     templateUrl: '../html/menu.html',
     controller: 'AppCtrl'
-  }).state('app.search', {
-    url: '/search',
+  }).state('app.profile', {
+    url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: '../html/search.html'
+        templateUrl: '../html/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   }).state('app.playlists', {
@@ -259,6 +260,11 @@ app.controller('PlaylistsCtrl', function ($scope) {
 // .controller('PlaylistCtrl', function($scope, $stateParams) {
 //
 // });
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('ProfileCtrl', function ($scope, $stateParams) {});
 'use strict';
 
 var app = angular.module('landmarksApp');

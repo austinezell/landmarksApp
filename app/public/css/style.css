@@ -9146,3 +9146,26 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+#profile {
+  padding: 5%;
+  background-color: #FBF8E7; }
+
+#profileThumbnail {
+  border-radius: 100%;
+  border: solid 5px grey;
+  max-width: 100px;
+  margin-bottom: 1em;
+  float: right; }
+
+#name {
+  float: left; }
+
+.content {
+  text-align: left; }
+
+.unique {
+  color: #4c653b; }
+
+.uniqueImg {
+  border: solid 5px #4c653b; }

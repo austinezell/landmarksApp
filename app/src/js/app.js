@@ -35,15 +35,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.profile', {
+    url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: '../html/search.html'
+        templateUrl: '../html/profile.html',
+        controller: 'ProfileCtrl'
       }
     }
   })
-  
+
     .state('app.playlists', {
       url: '/playlists',
       views: {

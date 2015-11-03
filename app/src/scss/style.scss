@@ -110,3 +110,34 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "public/lib/ionic/scss/ionic";
+
+//PROFILE VIEW STYLING
+
+#profile {
+  padding: 5%;
+  background-color: $secondary;
+}
+
+#profileThumbnail {
+  border-radius:100%;
+  border: solid 5px grey;
+  max-width: 100px;
+  margin-bottom: 1em;
+  float: right;
+}
+
+#name {
+  float: left;
+}
+
+.content {
+  text-align: left;
+}
+
+.unique {
+  color: $green;
+}
+
+.uniqueImg {
+  border: solid 5px $green;
+}
