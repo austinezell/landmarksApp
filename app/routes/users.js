@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/userSchema.js')
+var User = require('../models/userSchema.js');
 var auth = require('../config/auth.js');
 
 
 /* GET users listing. */
 router.post('/create', function(req, res, next) {
-  var user = new User()
+  var user = new User();
   user.username= req.body.username;
   user.fullName= req.body.fullName;
   user.email= req.body.email;
@@ -16,7 +16,7 @@ router.post('/create', function(req, res, next) {
     if(err){
       res.send(err)
     }
-    var jwt = user.generateJWT()
+    var jwt = user.generateJWT();
     res.send(jwt)
   })
 });
@@ -32,7 +32,7 @@ router.post('/login', function(req, res, next){
     }else if(!user || !user.validPassword(req.body.password)){
       res.send('Invalid login credentials')
     }else{
-      var jwt = user.generateJWT()
+      var jwt = user.generateJWT();
       res.send(jwt)
     }
   })
@@ -71,7 +71,7 @@ router.post('/favorites/:uid/:lid', auth, function (req, res){
       res.send(user)
     }
   })
-})
+});
 
 router.post('/visited/:uid/:lid', auth, function (req, res){
   User.findById(req.params.uid, function (err,user){
@@ -83,7 +83,7 @@ router.post('/visited/:uid/:lid', auth, function (req, res){
       res.send(user)
     }
   })
-})
+});
 
 
 module.exports = router;
