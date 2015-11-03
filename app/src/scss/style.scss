@@ -109,6 +109,7 @@ $green: #4c653b;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
+<<<<<<< HEAD
 @import "public/lib/ionic/scss/ionic";
 
 //PROFILE VIEW STYLING
@@ -141,3 +142,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .uniqueImg {
   border: solid 5px $green;
 }
+=======
+@import "src/lib/ionic/scss/ionic";
+>>>>>>> origin/userInfo

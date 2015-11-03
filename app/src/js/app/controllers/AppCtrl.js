@@ -31,7 +31,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
   $scope.closeLogin = function() {
     $scope.modal.hide();
   };
-  
+
   // Open the login modal
   $scope.login = function() {
     $scope.modal.show();
@@ -39,36 +39,40 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
 
   $scope.logout = function() {
     auth.logout();
-    $scope.isLoggedIn = false;
+    $scope.isLoggedIn = auth.isLoggedIn();
   };
 
   $scope.register = function(user){
-    console.log("register");
-    auth.register(user)
-    .success(function(data){
-      $scope.doLogin(user);s
-    })
-    .error(function(err){
-      console.log(err);
-    })
+    if(/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)){
+      auth.register(user)
+      .success(function(data){
+        $scope.doLogin(user);
+      })
+      .error(function(err){
+        let error;
+        if (err.errmsg.split(' ')[0] === "E11000") {
+          error = "Username or email already exists!"
+        }
+        swal({title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true})
+      })
+    }
+    else {
+      swal({title: "Error", text: "Please enter a valid email", type: 'warning', timer: 2000, showConfirmButton: true})
+    }
   }
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function(user) {
-    console.log("login");
     auth.login(user)
     .success(function(data){
+      auth.saveToken(data);
       swal({  title: "Success!",   text: "Successfully Authenticated",   type: "success", timer: 1000, showConfirmButton: false });
+      $scope.isLoggedIn = auth.isLoggedIn();
+      $scope.closeLogin();
     })
     .error(function(err){
-      console.log(err);
+      swal({title: "Error", text: err,    type: 'warning', timer: 1200, showConfirmButton: true})
     })
-
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
   };
+
 })

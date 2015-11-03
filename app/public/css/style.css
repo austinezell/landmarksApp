@@ -5750,6 +5750,10 @@ ion-tabs.tabs-color-active-dark .tab-item {
     top: 8px; }
   .item .badge + .badge {
     margin-right: 5px; }
+  .item.item-california {
+    border-color: #4F201A;
+    background-color: #EDD8A9;
+    color: #4c653b; }
   .item.item-light {
     border-color: #ddd;
     background-color: #fff;
@@ -5801,6 +5805,14 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .item .item-content.activated {
   border-color: #ccc;
   background-color: #D9D9D9; }
+  .item.active.item-california,
+  .item.activated.item-california,
+  .item-complex.active .item-content.item-california,
+  .item-complex.activated .item-content.item-california,
+  .item .item-content.active.item-california,
+  .item .item-content.activated.item-california {
+    border-color: #4c653b;
+    background-color: #EDD8A9; }
   .item.active.item-light,
   .item.activated.item-light,
   .item-complex.active .item-content.item-light,

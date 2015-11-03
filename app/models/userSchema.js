@@ -2,11 +2,12 @@
 var jwt = require('jsonwebtoken')
 var mongoose = require('mongoose');
 var crypto = require('crypto');
+var constants = require('../config/constants.js');
 
 var UserSchema = new mongoose.Schema({
   username: {type: String,  unique: true, required: true},
   fullName: String,
-  email: String,
+  email: {type: String, unique: true, required: true},
   hash: String,
   salt: String,
   points: {type: Number, default: 0},
@@ -37,7 +38,7 @@ UserSchema.methods.generateJWT = function() {
     _id: this._id,
     username: this.username,
     exp: parseInt(exp.getTime() / 1000),
-  }, process.env.SECRET);
+  }, constants.SECRET);
 };
 
 // User.methods.validateEmail = function(email) {

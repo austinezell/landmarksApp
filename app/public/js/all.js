@@ -35,7 +35,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     url: '/profile',
     views: {
       'menuContent': {
+<<<<<<< HEAD
         templateUrl: '../html/profile.html',
+=======
+        templateUrl: "../html/profile.html",
+>>>>>>> origin/userInfo
         controller: 'ProfileCtrl'
       }
     }
@@ -72,6 +76,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
 });
@@ -118,32 +123,35 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
 
   $scope.logout = function () {
     auth.logout();
-    $scope.isLoggedIn = false;
+    $scope.isLoggedIn = auth.isLoggedIn();
   };
 
   $scope.register = function (user) {
-    console.log("register");
-    auth.register(user).success(function (data) {
-      $scope.doLogin(user);s;
-    }).error(function (err) {
-      console.log(err);
-    });
+    if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
+      auth.register(user).success(function (data) {
+        $scope.doLogin(user);
+      }).error(function (err) {
+        var error = undefined;
+        if (err.errmsg.split(' ')[0] === "E11000") {
+          error = "Username or email already exists!";
+        }
+        swal({ title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true });
+      });
+    } else {
+      swal({ title: "Error", text: "Please enter a valid email", type: 'warning', timer: 2000, showConfirmButton: true });
+    }
   };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function (user) {
-    console.log("login");
     auth.login(user).success(function (data) {
+      auth.saveToken(data);
       swal({ title: "Success!", text: "Successfully Authenticated", type: "success", timer: 1000, showConfirmButton: false });
-    }).error(function (err) {
-      console.log(err);
-    });
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function () {
+      $scope.isLoggedIn = auth.isLoggedIn();
       $scope.closeLogin();
-    }, 1000);
+    }).error(function (err) {
+      swal({ title: "Error", text: err, type: 'warning', timer: 1200, showConfirmButton: true });
+    });
   };
 });
 'use strict';
@@ -157,6 +165,7 @@ var app = angular.module('landmarksApp');
 
 app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
   $scope.$on('$ionicView.enter', function () {
+    $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
     initialize();
   });
   function initialize() {
@@ -242,8 +251,23 @@ app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('PlaylistsCtrl', function ($scope) {
-  $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
+app.controller('PlaylistsCtrl', function ($scope) {});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.controller('ProfileCtrl', function ($scope, auth) {
+  console.log("Profile contrler.");
+  $scope.getCurrentUserInfo = function () {
+    auth.getCurrentUserInfo().success(function (data) {
+      console.log(data);
+      $scope.user = data;
+    }).error(function (err) {
+      console.log(err);
+    });
+  };
+
+  $scope.getCurrentUserInfo();
 });
 
 // .controller('PlaylistsCtrl', function($scope) {
@@ -273,6 +297,7 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
   var auth = {};
 
   auth.saveToken = function (token) {
+    console.log('hit', token);
     $window.localStorage[tokenStorageKey] = token;
   };
 
@@ -292,26 +317,30 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.currentUser = function () {
     if (auth.isLoggedIn()) {
+      console.log("Is logged in!");
       var token = auth.getToken();
       var payload = JSON.parse($window.atob(token.split('.')[1]));
-      return payload.username;
+      return { id: payload._id, username: payload.username };
     }
   };
 
   auth.register = function (user) {
-    return $http.post('/users/register', user).success(function (data) {
-      auth.saveToken(data);
-    });
+    return $http.post('/users/register', user);
   };
 
   auth.login = function (user) {
-    return $http.post('/users/login', user).success(function (data) {
-      auth.saveToken(data);
-    });
+    return $http.post('/users/login', user);
   };
 
   auth.logout = function () {
     $window.localStorage.removeItem(tokenStorageKey);
+  };
+
+  auth.getCurrentUserInfo = function () {
+    $http.defaults.headers.common.Authorization = 'Bearer ' + auth.getToken();
+    var user = auth.currentUser();
+    console.log(user);
+    return $http.get('/users/me/' + user.id);
   };
 
   return auth;

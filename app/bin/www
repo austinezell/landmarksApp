@@ -2,12 +2,14 @@
 /**
  * Module dependencies.
  */
+
 require('dotenv').load();
+var constants = require('../config/constants.js')
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
 require('mongoose')
-.connect(process.env.MONGO_URL || 'mongodb://localhost/landmarks')
+.connect(constants.MONGO_URL)
 /**
  * Get port from environment and store in Express.
  */
