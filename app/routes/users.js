@@ -67,8 +67,15 @@ router.post('/visited/:uid/:lid', auth, function (req, res){
   })
 })
 
-// router.get('/currentUser', auth, (req, res) =>{
-//
-// })
+router.get('/me', auth, (req, res) => {
+  // User.findById(req.body.id)
+})
+
+router.get('/user/', auth, (req, res) =>{
+ User.findById(req.params.id, (err, user)=>{
+   if (err) res.status(403).send(err)
+   else res.send(user)
+ })
+})
 
 module.exports = router;

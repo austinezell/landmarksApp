@@ -28,7 +28,7 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
     if(auth.isLoggedIn()){
       var token = auth.getToken();
       var payload = JSON.parse($window.atob(token.split('.')[1]));
-      return payload.username;
+      return {id: payload._id, username: payload.username}
     }
   };
 
@@ -46,7 +46,8 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
 
   auth.getCurrentUserInfo = function() {
     $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`
-    // return $http.get('/')
+    let user = auth.currentUser
+    return $http.get('/users/currentUser/'+user.id)
   }
 
   return auth;

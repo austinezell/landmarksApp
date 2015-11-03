@@ -73,11 +73,6 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     .error(function(err){
       swal({title: "Error", text: err,    type: 'warning', timer: 1200, showConfirmButton: true})
     })
-
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    // $timeout(function() {
-    // }, 1000);
   };
+
 })
