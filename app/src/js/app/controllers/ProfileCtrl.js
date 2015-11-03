@@ -5,17 +5,12 @@ app.controller('ProfileCtrl', function($scope, auth) {
   $scope.getCurrentUserInfo = () => {
     auth.getCurrentUserInfo()
     .success( data => {
-        console.log(data);
-        $scope.user = data;
+      console.log(data);
+      $scope.user = data;
     })
     .error( err => {
-      console.log(err)
-    }
-
-    )
+    })
   };
 
   $scope.getCurrentUserInfo();
 });
-
-

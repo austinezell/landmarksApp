@@ -35,11 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     url: '/profile',
     views: {
       'menuContent': {
-<<<<<<< HEAD
         templateUrl: '../html/profile.html',
-=======
-        templateUrl: "../html/profile.html",
->>>>>>> origin/userInfo
         controller: 'ProfileCtrl'
       }
     }
@@ -252,23 +248,6 @@ app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
 var app = angular.module('landmarksApp');
 
 app.controller('PlaylistsCtrl', function ($scope) {});
-'use strict';
-
-var app = angular.module('landmarksApp');
-
-app.controller('ProfileCtrl', function ($scope, auth) {
-  console.log("Profile contrler.");
-  $scope.getCurrentUserInfo = function () {
-    auth.getCurrentUserInfo().success(function (data) {
-      console.log(data);
-      $scope.user = data;
-    }).error(function (err) {
-      console.log(err);
-    });
-  };
-
-  $scope.getCurrentUserInfo();
-});
 
 // .controller('PlaylistsCtrl', function($scope) {
 //   $scope.locations = [
@@ -288,7 +267,17 @@ app.controller('ProfileCtrl', function ($scope, auth) {
 
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function ($scope, $stateParams) {});
+app.controller('ProfileCtrl', function ($scope, auth) {
+  console.log("Profile contrler.");
+  $scope.getCurrentUserInfo = function () {
+    auth.getCurrentUserInfo().success(function (data) {
+      console.log(data);
+      $scope.user = data;
+    }).error(function (err) {});
+  };
+
+  $scope.getCurrentUserInfo();
+});
 'use strict';
 
 var app = angular.module('landmarksApp');
