@@ -132,7 +132,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
         swal({ title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true });
       });
     } else {
-      swal({ title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true });
+      swal({ title: "Error", text: "Please enter a valid email", type: 'warning', timer: 2000, showConfirmButton: true });
     }
   };
 
@@ -295,6 +295,11 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.logout = function () {
     $window.localStorage.removeItem(tokenStorageKey);
+  };
+
+  auth.getCurrentUserInfo = function () {
+    $http.defaults.headers.common.Authorization = 'Bearer ' + auth.getToken();
+    // return $http.get('/')
   };
 
   return auth;

@@ -44,5 +44,10 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
     $window.localStorage.removeItem(tokenStorageKey);
   };
 
+  auth.getCurrentUserInfo = function() {
+    $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`
+    // return $http.get('/')
+  }
+
   return auth;
 });

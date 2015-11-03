@@ -67,5 +67,8 @@ router.post('/visited/:uid/:lid', auth, function (req, res){
   })
 })
 
+// router.get('/currentUser', auth, (req, res) =>{
+//
+// })
 
 module.exports = router;
