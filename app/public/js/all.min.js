@@ -31,11 +31,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     abstract: true,
     templateUrl: '../html/menu.html',
     controller: 'AppCtrl'
-  }).state('app.search', {
-    url: '/search',
+  }).state('app.profile', {
+    url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: '../html/search.html'
+        templateUrl: "../html/profile.html",
+        controller: 'ProfileCtrl'
       }
     }
   }).state('app.playlists', {
@@ -71,6 +72,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
 });
@@ -146,11 +148,6 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
     }).error(function (err) {
       swal({ title: "Error", text: err, type: 'warning', timer: 1200, showConfirmButton: true });
     });
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    // $timeout(function() {
-    // }, 1000);
   };
 });
 'use strict';
@@ -255,6 +252,23 @@ app.controller('PlaylistsCtrl', function ($scope) {});
 
 var app = angular.module('landmarksApp');
 
+app.controller('ProfileCtrl', function ($scope, auth) {
+  console.log("Profile contrler.");
+  $scope.getCurrentUserInfo = function () {
+    auth.getCurrentUserInfo().success(function (data) {
+      console.log(data);
+      $scope.user = data;
+    }).error(function (err) {
+      console.log(err);
+    });
+  };
+
+  $scope.getCurrentUserInfo();
+});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
 app.factory('auth', function ($window, $http, tokenStorageKey) {
   var auth = {};
 
@@ -279,6 +293,7 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.currentUser = function () {
     if (auth.isLoggedIn()) {
+      console.log("Is logged in!");
       var token = auth.getToken();
       var payload = JSON.parse($window.atob(token.split('.')[1]));
       return { id: payload._id, username: payload.username };
@@ -299,8 +314,9 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
   auth.getCurrentUserInfo = function () {
     $http.defaults.headers.common.Authorization = 'Bearer ' + auth.getToken();
-    var user = auth.currentUser;
-    return $http.get('/users/currentUser/' + user.id);
+    var user = auth.currentUser();
+    console.log(user);
+    return $http.get('/users/me/' + user.id);
   };
 
   return auth;

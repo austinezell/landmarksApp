@@ -10,7 +10,7 @@ router.post('/register', function(req, res, next) {
     return res.status(400).send('Username and password are required fields');
   }
 
-  var user = new User()
+  var user = new User();
   user.username= req.body.username;
   user.fullName= req.body.fullName;
   user.email= req.body.email;
@@ -20,7 +20,7 @@ router.post('/register', function(req, res, next) {
     if(err){
       res.status(401).send(err)
     } else {
-      var jwt = user.generateJWT()
+      var jwt = user.generateJWT();
       res.send(jwt)
     }
   })
@@ -67,15 +67,18 @@ router.post('/visited/:uid/:lid', auth, function (req, res){
   })
 });
 
-router.get('/me', auth, (req, res) => {
-  // User.findById(req.body.id)
-})
+router.get('/me/:id', auth, (req, res) => {
+  console.log("me/:", req.params);
+   User.findById(req.params.id, (err, user) => {
+     (err) ? res.status(403).send(err) : res.send(user)
+   });
+});
 
-router.get('/user/', auth, (req, res) =>{
- User.findById(req.params.id, (err, user)=>{
-   if (err) res.status(403).send(err)
+router.get('/user/:id', auth, (req, res) => {
+ User.findById(req.params.id, (err, user)=> {
+   if (err) res.status(403).send(err);
    else res.send(user)
  })
-})
+});
 
 module.exports = router;

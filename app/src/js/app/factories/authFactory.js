@@ -26,6 +26,7 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
 
   auth.currentUser = function(){
     if(auth.isLoggedIn()){
+      console.log("Is logged in!");
       var token = auth.getToken();
       var payload = JSON.parse($window.atob(token.split('.')[1]));
       return {id: payload._id, username: payload.username}
@@ -45,10 +46,11 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
   };
 
   auth.getCurrentUserInfo = function() {
-    $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`
-    let user = auth.currentUser
-    return $http.get('/users/currentUser/'+user.id)
-  }
+    $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
+    let user = auth.currentUser();
+    console.log(user);
+    return $http.get('/users/me/' + user.id);
+  };
 
   return auth;
 });

@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('landmarksApp', ['ionic'])
+var app = angular.module('landmarksApp', ['ionic']);
 
-app.constant('tokenStorageKey', 'my-token')
+app.constant('tokenStorageKey', 'my-token');
 
 
 app.run(function($ionicPlatform) {
@@ -23,7 +23,7 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-})
+});
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -35,15 +35,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: '../html/search.html'
+    .state('app.profile', {
+      url:'/profile',
+      views: {
+        'menuContent' : {
+          templateUrl: "../html/profile.html",
+          controller: 'ProfileCtrl'
+        }
       }
-    }
-  })
-  
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -81,6 +82,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/landing');
 });
