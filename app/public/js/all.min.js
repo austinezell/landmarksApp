@@ -156,14 +156,94 @@ app.controller('LandingCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
+app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
   $scope.$on('$ionicView.enter', function () {
-    $scope.locations = [{ name: 'Mission San Jose', id: 1 }, { name: 'Rancho Higuera Historical Park', id: 2 }, { name: 'Centerville Pioneer Cemetery', id: 3 }, { name: 'Leland Stanford Winery', id: 4 }, { name: 'Ardenwood Historic Farm', id: 5 }, { name: 'Shinn Historic Park & Arboretum', id: 6 }];
     initialize();
   });
   function initialize() {
-
+    var landmarksMap;
     var myLatlng;
+    var bounds;
+    var center;
+    var area;
+    var displayLocationArray = [];
+    var styles = [{
+      featureType: 'road',
+      elementType: 'labels',
+      stylers: [{ saturation: -100 }, { invert_lightness: true }]
+    }, {
+      "featureType": "landscape",
+      "stylers": [{ "weight": 0.1 }, { "saturation": 58 }, { "color": "#FBF8E7" }]
+    }];
+
+    function boundsAndCenter(landmarksMap) {
+      var boundsObj = landmarksMap.getBounds();
+      console.log(boundsObj);
+      var ne = boundsObj.getSouthWest().toString();
+      var sw = boundsObj.getNorthEast().toString();
+
+      bounds = { NE: ne, SW: sw };
+      center = landmarksMap.getCenter().toString();
+    }
+
+    function calcArea(center, bounds) {
+      var neBounds = formatCoord(bounds.NE);
+      var swBounds = formatCoord(bounds.SW);
+      var distanceEq = Math.pow(parseFloat(swBounds[0]) - parseFloat(neBounds[0]), 2) + Math.pow(parseInt(swBounds[1]) - parseInt(neBounds[1]), 2);
+      var distance = Math.sqrt(distanceEq);
+      var radius = distance / 2;
+      area = Math.PI * Math.pow(radius, 2);
+    }
+
+    function formatCoord(coord) {
+      return coord.split("").filter(function (el) {
+        return el.match(/[\d|,|\.]/g);
+      }).join("").split(",");
+    }
+
+    function ConvertDMSToDD(degrees, minutes, seconds, direction) {
+      var dd = parseFloat(degrees + minutes / 60 + seconds / (60 * 60));
+
+      if (direction == "S" || direction == "W") {
+        dd = dd * -1;
+      } // Don't do anything for N or E
+      return dd;
+    }
+
+    function getLandmarks() {
+      landmark.getAll().success(function (locations) {
+        locations.forEach(function (location) {
+          formatLandmarkCoordinates(location);
+        });
+      }).error(function (err) {
+        console.log(err);
+      });
+    }
+
+    function formatLandmarkCoordinates(location) {
+      if (!location.latitude) {
+        var formated = location.location.split(",");
+        var coordinates = { lat: parseFloat(formated[0]), lng: parseFloat(formated[1]) };
+      } else {
+        var latParts = location.latitude.split(/[^\d\w]+/);
+        var lngParts = location.longitude.split(/[^\d\w]+/);
+        var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]) * .1;
+        var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]) * .1;
+        var coordinates = { lat: lat, lng: lng };
+      }
+      landmarkFromCenter(coordinates, location);
+    }
+
+    function landmarkFromCenter(landmarkCoord, location) {
+      // console.log(landmarkCoord);
+      var centerCoord = formatCoord(center);
+      var distanceEq = Math.pow(parseFloat(landmarkCoord.lat) - parseFloat(centerCoord[0]), 2) + Math.pow(parseInt(landmarkCoord.lng) - parseInt(centerCoord[1]), 2);
+      var distance = Math.sqrt(distanceEq);
+      var areaCeil = parseInt(Math.ceil(area));
+      if (distance < areaCeil) {
+        console.log(landmarkCoord);
+      }
+    }
 
     async.series([function (callback) {
       $scope.loading = $ionicLoading.show({
@@ -181,19 +261,38 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
         callback(error);
       });
     }, function (callback) {
-      console.log(myLatlng);
       var mapOptions = {
         center: myLatlng,
         zoom: 16,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: styles
       };
-      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      landmarksMap = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      landmarksMap.addListener('zoom_changed', function () {
+        boundsAndCenter(landmarksMap);
+        calcArea(center, bounds);
+        getLandmarks();
+      });
+
+      landmarksMap.addListener('center_changed', function () {
+        boundsAndCenter(landmarksMap);
+        calcArea(center, bounds);
+        getLandmarks();
+      });
+
+      google.maps.event.addListenerOnce(landmarksMap, 'idle', function () {
+        boundsAndCenter(landmarksMap);
+        calcArea(center, bounds);
+        getLandmarks();
+      });
       callback();
     }], function (err) {
       if (err) {
         alert(err);
       }
-      $scope.map = map;
+      $scope.map = landmarksMap;
     });
 
     //Marker + infowindow + angularjs compiled ng-click
@@ -213,27 +312,7 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile) {
     // google.maps.event.addListener(marker, 'click', function() {
     //   infowindow.open(map,marker);
     // });
-
-    $scope.map = map;
   }
-  // google.maps.event.addDomListener(window, 'load', initialize);
-
-  function centerOnMe() {
-    if (!$scope.map) {
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(function (pos) {
-      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-      $scope.loading.hide();
-    }, function (error) {
-      alert('Unable to get location: ' + error.message);
-    });
-  };
-
-  $scope.clickTest = function () {
-    alert('Example of infowindow with ng-click');
-  };
 });
 'use strict';
 
@@ -295,4 +374,17 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
   };
 
   return auth;
+});
+'use strict';
+
+var app = angular.module('landmarksApp');
+
+app.factory('landmark', function ($window, $http) {
+  var landmark = {};
+
+  landmark.getAll = function () {
+    return $http.get('/landmarks');
+  };
+
+  return landmark;
 });

@@ -1,8 +1,12 @@
 <ion-view view-title="Near You">
   <ion-content>
     <div id="map" data-tap-disabled="true"></div>
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input ng-model="searchInput" type="search" placeholder="Search">
+    </label>
     <ion-list>
-      <ion-item class="item-california locations" ng-repeat="location in locations" href="#/app/locations/{{location.id}}">
+      <ion-item class="item-california locations" ng-repeat="location in locations | filter:searchInput" href="#/app/locations/{{location.id}}">
         <img class="landmarkIcon" src="../assets/Bear_Filled-50.png" alt="">
         <p>{{location.name}}</p>
       </ion-item>
