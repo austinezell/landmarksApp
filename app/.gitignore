@@ -5,6 +5,3 @@ public/vendor/
 .env
 public/lib
 .DS_Store
-public/css/
-public/html/
-public/js/
