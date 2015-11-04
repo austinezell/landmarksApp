@@ -1,11 +1,16 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "public/lib/ionic/scss/ionic";
 /*
+
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
 $light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
@@ -14,6 +19,7 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+// $stable:                          #4F201A !default;
 
 $primary: #4F201A;
 $secondary: #FBF8E7;
@@ -46,7 +52,7 @@ $green: #4c653b;
 
 #loginForm::after{
   content: "";
-  background: url(../assets/LA-vintage-map.jpg);
+  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -104,6 +110,32 @@ $green: #4c653b;
   height: 50vh;
 }
 
+$item-california-bg:              $tertiary !default;
+$item-california-border:          $primary !default;
+$item-california-text:            $green !default;
+$item-california-active-bg:       $button-light-active-bg;
+$item-california-active-border:   $button-light-active-border;
+
+.item{
+  &.item-california {
+    @include item-active-style($tertiary, $green);
+  }
+}
+.bar {
+  &.bar-stable {
+    @include bar-style($primary, $bar-stable-border, $secondary);
+    &.bar-footer{
+      background-image: linear-gradient(180deg, $primary, $bar-stable-border 50%, transparent 50%);
+    }
+  }
+}
+
+
+.item .item-content.activated {
+  &.item-california {
+    @include item-style($item-california-bg, $item-california-border, $item-california-text);
+  }
+}
 
 #landing .backPanel {
   background-image: url("../assets/calimap.jpg");
@@ -126,10 +158,3 @@ $green: #4c653b;
 #landing .subtitle {
   color:  $primary;
 }
-
-
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
-
-// Include all of Ionic
-@import "src/lib/ionic/scss/ionic";
