@@ -10,4 +10,3 @@ dev mode:
 5. ONLY do work in src for frontend.
 6. gulp will babelfy js so use es6 if you want.
 7. gulp will convert scss to css.
-ad
