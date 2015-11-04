@@ -6,7 +6,7 @@ dev mode:
 1. Run "npm run setup"
 2. Run "gulp watch" before editing.
 3. Define MONGO_URL in .env file (will default to localhost)
-4. Define SECRET in .env file
+4. Define SECRET in .env file (will default to secret)
 5. ONLY do work in src for frontend.
 6. gulp will babelfy js so use es6 if you want.
 7. gulp will convert scss to css.
