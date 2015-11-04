@@ -46,7 +46,7 @@ $green: #4c653b;
 
 #loginForm::after{
   content: "";
-  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
+  background: url(../assets/LA-vintage-map.jpg);
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -102,6 +102,29 @@ $green: #4c653b;
 #map{
   width: 100vw;
   height: 50vh;
+}
+
+
+#landing .backPanel {
+  background-image: url("../assets/calimap.jpg");
+  position: relative;
+  background-size: cover;
+  background-color: $tertiary;
+  height: 100vh;
+}
+
+#landing .header {
+  background-color: $cool;
+  opacity: .95;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+#landing .title,
+#landing .subtitle {
+  color:  $primary;
 }
 
 

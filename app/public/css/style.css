@@ -33,7 +33,7 @@ $dark:                            #444 !default;
 
 #loginForm::after {
   content: "";
-  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
+  background: url(../assets/LA-vintage-map.jpg);
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -80,26 +80,24 @@ $dark:                            #444 !default;
   width: 100vw;
   height: 50vh; }
 
-
 #landing .backPanel {
-  background-image: url("../assets/chinatwo.jpg");
-
+  background-image: url("../assets/calimap.jpg");
   position: relative;
   background-size: cover;
-  background-color: red;
-  height: 100vh;
-}
+  background-color: #EDD8A9;
+  height: 100vh; }
 
 #landing .header {
-  background-color: white;
-  opacity: .87;
+  background-color: #CAE8DC;
+  opacity: .95;
   position: absolute;
-  color: white;
   width: 100%;
   top: 50%;
-  transform: translate(0%, -50%);
+  transform: translate(0%, -50%); }
 
-}
+#landing .title,
+#landing .subtitle {
+  color: #4F201A; }
 
 /*!
   Ionicons, v2.0.1
