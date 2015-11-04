@@ -21,7 +21,7 @@ var dirs = {
     js: 'public/js'
   }
 }
-gulp.task('default', ['sass', 'scripts', 'templates']);
+gulp.task('default', ['sass', 'scripts', 'templates', 'watch']);
 
 gulp.task('sass', function(done) {
   gulp.src(dirs.src.scss)
@@ -35,11 +35,6 @@ gulp.task('sass', function(done) {
     .pipe(gulp.dest(dirs.out.css))
     .on('end', done);
 });
-
-// gulp.task('lib', function(){
-//   return gulp.src(dirs.src.lib)
-//     .pipe(gulp.dest(dirs.out.lib));
-// })
 
 gulp.task('scripts', function(){
   return gulp.src(dirs.src.js)
@@ -59,7 +54,6 @@ gulp.task('watch', function() {
   gulp.watch(dirs.src.html, ['templates']);
   gulp.watch(dirs.src.scss, ['sass']);
   gulp.watch(dirs.src.js, ['scripts']);
-  // gulp.watch(dirs.src.lib, ['lib']);
 });
 
 
