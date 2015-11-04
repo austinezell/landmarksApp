@@ -69,10 +69,13 @@ router.post('/visited/:uid/:lid', auth, function (req, res){
 
 router.get('/me/:id', auth, (req, res) => {
   console.log("me/:", req.params);
-   User.findById(req.params.id, (err, user) => {
-     (err) ? res.status(403).send(err) : res.send(user)
-   });
+  User.findById(req.params.id).populate('favorites').populate('visited').exec(function (err, data){
+    console.log(data)
+    err ? res.status(401).send(err) : res.send(data)
+  })
 });
+
+
 
 router.get('/user/:id', auth, (req, res) => {
  User.findById(req.params.id, (err, user)=> {

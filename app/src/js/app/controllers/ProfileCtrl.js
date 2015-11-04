@@ -1,6 +1,6 @@
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function($scope, auth) {
+app.controller('ProfileCtrl', function($scope, auth,$http) {
   console.log("Profile contrler.");
   $scope.getCurrentUserInfo = () => {
     auth.getCurrentUserInfo()
@@ -13,4 +13,11 @@ app.controller('ProfileCtrl', function($scope, auth) {
   };
 
   $scope.getCurrentUserInfo();
+
+
+  $scope.populateFavorites = function(){
+    
+
+  }
 });
+

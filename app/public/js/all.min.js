@@ -267,7 +267,7 @@ app.controller('PlaylistsCtrl', function ($scope) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function ($scope, auth) {
+app.controller('ProfileCtrl', function ($scope, auth, $http) {
   console.log("Profile contrler.");
   $scope.getCurrentUserInfo = function () {
     auth.getCurrentUserInfo().success(function (data) {
@@ -277,6 +277,8 @@ app.controller('ProfileCtrl', function ($scope, auth) {
   };
 
   $scope.getCurrentUserInfo();
+
+  $scope.populateFavorites = function () {};
 });
 'use strict';
 
