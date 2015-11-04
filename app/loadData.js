@@ -6,6 +6,8 @@ var Landmark = require('./models/landmarkSchema.js')
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
 obj.landmarks.forEach(item => {
+  item.coords = formatLandmarkCoordinates(item);
+  console.log(item);
   Landmark.create(item, (err, landmark)=>{
     if(err) {
       console.log("err ", err);
@@ -14,3 +16,26 @@ obj.landmarks.forEach(item => {
     }
   })
 })
+
+function formatLandmarkCoordinates(location){
+  if (!location.latitude){
+    var formated = location.location.split(",");
+    var coordinates = {lat: parseFloat(formated[0]), lng: parseFloat(formated[1])};
+  } else {
+    var latParts = location.latitude.split(/[^\d\w]+/);
+    var lngParts = location.longitude.split(/[^\d\w]+/);
+    var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]) * .1;
+    var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]) * .1;
+    var coordinates = {lat: lat, lng: lng};
+  }
+  return coordinates;
+}
+
+function ConvertDMSToDD(degrees, minutes, seconds, direction) {
+  var dd = parseFloat(degrees + minutes/60 + seconds/(60*60));
+
+  if (direction == "S" || direction == "W") {
+      dd = dd * -1;
+  } // Don't do anything for N or E
+  return dd;
+}

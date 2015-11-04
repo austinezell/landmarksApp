@@ -7,12 +7,13 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
     initialize();
   });
       function initialize() {
+        $scope.locations = [];
+        var locationCoords = [];
         var landmarksMap;
         var myLatlng;
         var bounds;
         var center;
         var area;
-        var displayLocationArray = [];
         var styles = [
           {
             featureType: 'road',
@@ -56,20 +57,11 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
           }).join("").split(",");
         }
 
-        function ConvertDMSToDD(degrees, minutes, seconds, direction) {
-          var dd = parseFloat(degrees + minutes/60 + seconds/(60*60));
-
-          if (direction == "S" || direction == "W") {
-              dd = dd * -1;
-          } // Don't do anything for N or E
-          return dd;
-        }
-
         function getLandmarks(){
           landmark.getAll()
           .success(function(locations){
             locations.forEach(function(location){
-              formatLandmarkCoordinates(location);
+              console.log(location);
             })
           })
           .error(function(err){
@@ -77,29 +69,36 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
           })
         }
 
-        function formatLandmarkCoordinates(location){
-          if (!location.latitude){
-            var formated = location.location.split(",");
-            var coordinates = {lat: parseFloat(formated[0]), lng: parseFloat(formated[1])};
-          } else {
-            var latParts = location.latitude.split(/[^\d\w]+/);
-            var lngParts = location.longitude.split(/[^\d\w]+/);
-            var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]) * .1;
-            var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]) * .1;
-            var coordinates = {lat: lat, lng: lng};
-          }
-          landmarkFromCenter(coordinates, location);
-        }
-
         function landmarkFromCenter(landmarkCoord, location){
-          // console.log(landmarkCoord);
           var centerCoord = formatCoord(center);
           var distanceEq = Math.pow((parseFloat(landmarkCoord.lat) - parseFloat(centerCoord[0])), 2) + Math.pow((parseInt(landmarkCoord.lng) - parseInt(centerCoord[1])), 2);
           var distance = Math.sqrt(distanceEq);
-          var areaCeil = parseInt(Math.ceil(area));
-          if(distance < areaCeil){
-            console.log(landmarkCoord);
+          if(distance < area){
+            $scope.locations.push(location);
+            showLocationMarkers(landmarkCoord);
           }
+        }
+
+        function showLocationMarkers(landmarkCoord){
+          var newLandmark = new google.maps.LatLng(landmarkCoord.lat, (landmarkCoord.lng * -1));
+
+          var marker = new google.maps.Marker({
+             map: landmarksMap,
+             draggable: true,
+             animation: google.maps.Animation.DROP,
+             position: newLandmark
+           });
+
+           marker.addListener('click', toggleBounce);
+
+          function toggleBounce() {
+           if (marker.getAnimation() !== null) {
+             marker.setAnimation(null);
+           } else {
+             marker.setAnimation(google.maps.Animation.BOUNCE);
+           }
+          }
+          marker.setMap(landmarksMap);
         }
 
         async.series([
@@ -131,22 +130,28 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
             mapOptions);
 
             landmarksMap.addListener('zoom_changed', function() {
+              locationCoords = [];
+              $scope.locations = [];
               boundsAndCenter(landmarksMap);
               calcArea(center, bounds);
               getLandmarks();
             });
 
             landmarksMap.addListener('center_changed', function() {
-               boundsAndCenter(landmarksMap);
-               calcArea(center, bounds);
-               getLandmarks()
+              locationCoords = [];
+              $scope.locations = [];
+              boundsAndCenter(landmarksMap);
+              calcArea(center, bounds);
+              getLandmarks()
             });
 
             google.maps.event.addListenerOnce(landmarksMap, 'idle', function(){
+              $scope.locations = [];
               boundsAndCenter(landmarksMap)
               calcArea(center, bounds);
               getLandmarks();
             });
+
             callback();
           }
         ], function(err){
@@ -155,25 +160,5 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
           }
           $scope.map = landmarksMap;
         });
-
-
-        //Marker + infowindow + angularjs compiled ng-click
-        // var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-        // var compiled = $compile(contentString)($scope);
-        //
-        // var infowindow = new google.maps.InfoWindow({
-        //   content: compiled[0]
-        // });
-        //
-        // var marker = new google.maps.Marker({
-        //   position: myLatlng,
-        //   map: map,
-        //   title: 'Uluru (Ayers Rock)'
-        // });
-        //
-        // google.maps.event.addListener(marker, 'click', function() {
-        //   infowindow.open(map,marker);
-        // });
-
       }
     });
