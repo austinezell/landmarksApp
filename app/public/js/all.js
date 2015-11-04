@@ -35,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     url: '/profile',
     views: {
       'menuContent': {
-        templateUrl: "../html/profile.html",
+        templateUrl: '../html/profile.html',
         controller: 'ProfileCtrl'
       }
     }
@@ -248,22 +248,37 @@ app.controller('PlaylistCtrl', function ($scope, $stateParams) {});
 var app = angular.module('landmarksApp');
 
 app.controller('PlaylistsCtrl', function ($scope) {});
+
+// .controller('PlaylistsCtrl', function($scope) {
+//   $scope.locations = [
+//     { name: 'Mission San Jose', id: 1 },
+//     { name: 'Rancho Higuera Historical Park', id: 2 },
+//     { name: 'Centerville Pioneer Cemetery', id: 3 },
+//     { name: 'Leland Stanford Winery', id: 4 },
+//     { name: 'Ardenwood Historic Farm', id: 5 },
+//     { name: 'Shinn Historic Park & Arboretum', id: 6 }
+//   ];
+// })
+//
+// .controller('PlaylistCtrl', function($scope, $stateParams) {
+//
+// });
 'use strict';
 
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function ($scope, auth) {
+app.controller('ProfileCtrl', function ($scope, auth, $http) {
   console.log("Profile contrler.");
   $scope.getCurrentUserInfo = function () {
     auth.getCurrentUserInfo().success(function (data) {
       console.log(data);
       $scope.user = data;
-    }).error(function (err) {
-      console.log(err);
-    });
+    }).error(function (err) {});
   };
 
   $scope.getCurrentUserInfo();
+
+  $scope.populateFavorites = function () {};
 });
 'use strict';
 

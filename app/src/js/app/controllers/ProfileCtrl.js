@@ -1,21 +1,23 @@
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function($scope, auth) {
+app.controller('ProfileCtrl', function($scope, auth,$http) {
   console.log("Profile contrler.");
   $scope.getCurrentUserInfo = () => {
     auth.getCurrentUserInfo()
     .success( data => {
-        console.log(data);
-        $scope.user = data;
+      console.log(data);
+      $scope.user = data;
     })
     .error( err => {
-      console.log(err)
-    }
-
-    )
+    })
   };
 
   $scope.getCurrentUserInfo();
-});
 
+
+  $scope.populateFavorites = function(){
+    
+
+  }
+});
 
