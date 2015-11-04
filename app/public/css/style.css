@@ -80,6 +80,27 @@ $dark:                            #444 !default;
   width: 100vw;
   height: 50vh; }
 
+
+#landing .backPanel {
+  background-image: url("../assets/chinatwo.jpg");
+
+  position: relative;
+  background-size: cover;
+  background-color: red;
+  height: 100vh;
+}
+
+#landing .header {
+  background-color: white;
+  opacity: .87;
+  position: absolute;
+  color: white;
+  width: 100%;
+  top: 50%;
+  transform: translate(0%, -50%);
+
+}
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
