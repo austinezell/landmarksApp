@@ -1,85 +1,4 @@
 @charset "UTF-8";
-/*
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
-#loginForm {
-  background-color: #FBF8E7;
-  border: 2px solid grey; }
-  #loginForm .list {
-    background-color: #FBF8E7; }
-    #loginForm .list button {
-      background-color: #F16156;
-      box-shadow: 0px 5px 5px #888888;
-      color: white; }
-    #loginForm .list button::active {
-      background-color: #F16156; }
-    #loginForm .list a {
-      color: #CAE8DC; }
-    #loginForm .list label {
-      background-color: #FBF8E7; }
-
-#loginForm::after {
-  content: "";
-  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1; }
-
-#iconRow {
-  margin-top: 10px;
-  display: inline-block;
-  width: 100%;
-  text-align: center; }
-
-#californiaIcon {
-  height: 50px;
-  width: 50px; }
-
-#stateChange {
-  display: inline-block;
-  width: 100%;
-  text-align: center; }
-  #stateChange button {
-    background-color: #CAE8DC;
-    border: 0px;
-    color: black;
-    border-radius: 5px; }
-
-#hamburgerMenu {
-  color: #FBF8E7; }
-
-.locations * {
-  display: inline-block; }
-  .locations * p {
-    margin-left: 15px; }
-  .locations * img {
-    margin-left: 1vw; }
-
-.landmarkIcon {
-  height: 30px;
-  width: 30px; }
-
-#map {
-  width: 100vw;
-  height: 50vh; }
-
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -3970,13 +3889,13 @@ a.subdued {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
     border-color: #b2b2b2;
-    background-color: #4F201A;
+    background-color: #f8f8f8;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-    color: #FBF8E7; }
+    color: #444; }
     .bar.bar-stable .title {
-      color: #FBF8E7; }
+      color: #444; }
     .bar.bar-stable.bar-footer {
-      background-image: linear-gradient(180deg, #4F201A, #b2b2b2 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
     border-color: #0c60ee;
     background-color: #387ef5;
@@ -5750,10 +5669,6 @@ ion-tabs.tabs-color-active-dark .tab-item {
     top: 8px; }
   .item .badge + .badge {
     margin-right: 5px; }
-  .item.item-california {
-    border-color: #4F201A;
-    background-color: #EDD8A9;
-    color: #4c653b; }
   .item.item-light {
     border-color: #ddd;
     background-color: #fff;
@@ -5805,14 +5720,6 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .item .item-content.activated {
   border-color: #ccc;
   background-color: #D9D9D9; }
-  .item.active.item-california,
-  .item.activated.item-california,
-  .item-complex.active .item-content.item-california,
-  .item-complex.activated .item-content.item-california,
-  .item .item-content.active.item-california,
-  .item .item-content.activated.item-california {
-    border-color: #4c653b;
-    background-color: #EDD8A9; }
   .item.active.item-light,
   .item.activated.item-light,
   .item-complex.active .item-content.item-light,
@@ -9158,3 +9065,94 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+/*
+
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+#loginForm {
+  background-color: #FBF8E7;
+  border: 2px solid grey; }
+  #loginForm .list {
+    background-color: #FBF8E7; }
+    #loginForm .list button {
+      background-color: #F16156;
+      box-shadow: 0px 5px 5px #888888;
+      color: white; }
+    #loginForm .list button::active {
+      background-color: #F16156; }
+    #loginForm .list a {
+      color: #CAE8DC; }
+    #loginForm .list label {
+      background-color: #FBF8E7; }
+
+#loginForm::after {
+  content: "";
+  background: url(../assets/8096118-los-angeles-california-vintage-1920s-map-printed-in-1926--copyrights-expired-with-a-red-pushpin-sele.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
+
+#iconRow {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+
+#californiaIcon {
+  height: 50px;
+  width: 50px; }
+
+#stateChange {
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+  #stateChange button {
+    background-color: #CAE8DC;
+    border: 0px;
+    color: black;
+    border-radius: 5px; }
+
+#hamburgerMenu {
+  color: #FBF8E7; }
+
+.locations * {
+  display: inline-block; }
+  .locations * p {
+    margin-left: 15px; }
+  .locations * img {
+    margin-left: 1vw; }
+
+.landmarkIcon {
+  height: 30px;
+  width: 30px; }
+
+#map {
+  width: 100vw;
+  height: 50vh; }
+
+.item.item-california {
+  border-color: #4c653b;
+  background-color: #EDD8A9; }
+
+.item .item-content.activated.item-california {
+  border-color: #4F201A;
+  background-color: #EDD8A9;
+  color: #4c653b; }

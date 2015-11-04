@@ -1,4 +1,10 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "public/lib/ionic/scss/ionic";
 /*
+
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
@@ -105,8 +111,22 @@ $green: #4c653b;
 }
 
 
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// Include all of Ionic
-@import "src/lib/ionic/scss/ionic";
+
+$item-california-bg:              $tertiary !default;
+$item-california-border:          $primary !default;
+$item-california-text:            $green !default;
+$item-california-active-bg:       $button-light-active-bg;
+$item-california-active-border:   $button-light-active-border;
+
+.item{
+  &.item-california {
+    @include item-active-style($tertiary, $green);
+  }
+}
+
+.item .item-content.activated {
+  &.item-california {
+    @include item-style($item-california-bg, $item-california-border, $item-california-text);
+  }
+}

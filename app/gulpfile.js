@@ -11,19 +11,17 @@ var babel = require('gulp-babel');
 
 var dirs = {
   src: {
-    lib: "src/lib/**/*",
     js: "src/js/**/*.js",
     scss: "src/scss/**/*.scss",
     html: "src/templates/**/*.html"
   },
   out: {
-    lib: 'public/lib',
     html: 'public/html',
     css: 'public/css',
     js: 'public/js'
   }
 }
-gulp.task('default', ['sass', 'scripts', 'templates', 'lib']);
+gulp.task('default', ['sass', 'scripts', 'templates']);
 
 gulp.task('sass', function(done) {
   gulp.src(dirs.src.scss)
@@ -38,10 +36,10 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
-gulp.task('lib', function(){
-  return gulp.src(dirs.src.lib)
-    .pipe(gulp.dest(dirs.out.lib));
-})
+// gulp.task('lib', function(){
+//   return gulp.src(dirs.src.lib)
+//     .pipe(gulp.dest(dirs.out.lib));
+// })
 
 gulp.task('scripts', function(){
   return gulp.src(dirs.src.js)
@@ -61,7 +59,7 @@ gulp.task('watch', function() {
   gulp.watch(dirs.src.html, ['templates']);
   gulp.watch(dirs.src.scss, ['sass']);
   gulp.watch(dirs.src.js, ['scripts']);
-  gulp.watch(dirs.src.lib, ['lib']);
+  // gulp.watch(dirs.src.lib, ['lib']);
 });
 
 
