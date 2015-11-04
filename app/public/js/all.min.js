@@ -205,24 +205,26 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
     function getLandmarks() {
       landmark.getAll().success(function (locations) {
         locations.forEach(function (location) {
-          console.log(location);
+          landmarkFromCenter(location);
         });
+        showLocationMarkers();
       }).error(function (err) {
         console.log(err);
       });
     }
 
-    function landmarkFromCenter(landmarkCoord, location) {
+    function landmarkFromCenter(location) {
       var centerCoord = formatCoord(center);
-      var distanceEq = Math.pow(parseFloat(landmarkCoord.lat) - parseFloat(centerCoord[0]), 2) + Math.pow(parseInt(landmarkCoord.lng) - parseInt(centerCoord[1]), 2);
+      var distanceEq = Math.pow(parseFloat(location.coords.lat) - parseFloat(centerCoord[0]), 2) + Math.pow(parseInt(location.coords.lng) - parseInt(centerCoord[1]), 2);
       var distance = Math.sqrt(distanceEq);
       if (distance < area) {
         $scope.locations.push(location);
-        showLocationMarkers(landmarkCoord);
       }
     }
 
-    function showLocationMarkers(landmarkCoord) {
+    function showLocationMarkers() {
+      var landmarks = $scope.locations;
+      console.log(landmarks);
       var newLandmark = new google.maps.LatLng(landmarkCoord.lat, landmarkCoord.lng * -1);
 
       var marker = new google.maps.Marker({
