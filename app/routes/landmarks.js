@@ -5,8 +5,7 @@ let router = express.Router();
 let Landmark = require('../models/landmarkSchema.js')
 
 
-router.get('/all', (req, res, next) => {
-  console.log('hit');
+router.get('/', (req, res, next) => {
   Landmark.find({}, (err, landmarks)=>{
     if(err) res.send(err)
     else res.send(landmarks)
