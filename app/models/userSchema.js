@@ -11,8 +11,8 @@ var UserSchema = new mongoose.Schema({
   hash: String,
   salt: String,
   points: {type: Number, default: 0},
-  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark', unique: true}],
-  visited: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark', unique: true}],
+  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark'}],
+  visited: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark'}],
   badges: []
 })
 

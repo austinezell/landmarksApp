@@ -49,7 +49,7 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
     $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
     let user = auth.currentUser();
     console.log(user);
-    return $http.get('/users/me/' + user.id);
+    return $http.get('/users/me');
   };
 
   return auth;

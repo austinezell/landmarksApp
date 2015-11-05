@@ -13,7 +13,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
 
   // Form data for the login modal
 
-  ($scope.registerState = function(){
+  ($scope.registerState = function() {
     $scope.Login = !$scope.Login;
     $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
@@ -42,36 +42,72 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     $scope.isLoggedIn = auth.isLoggedIn();
   };
 
-  $scope.register = function(user){
-    if(/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)){
-      auth.register(user)
-      .success(function(data){
-        $scope.doLogin(user);
+  $scope.register = function(user) {
+    if (!user || !user.username || !user.password || !user.email) {
+      console.log('hit');
+      swal({
+        title: "Error",
+        text: "Email, username, and password are required fields",
+        type: 'warning',
+        timer: 3000,
+        showConfirmButton: true
       })
-      .error(function(err){
-        let error;
-        if (err.errmsg.split(' ')[0] === "E11000") {
-          error = "Username or email already exists!"
-        }
-        swal({title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true})
-      })
-    }
-    else {
-      swal({title: "Error", text: "Please enter a valid email", type: 'warning', timer: 2000, showConfirmButton: true})
+    } else {
+
+      if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
+        auth.register(user)
+        .success(function(data) {
+          $scope.doLogin(user);
+        })
+        .error(function(err) {
+          let error;
+          if (err.errmsg.split(' ')[0] === "E11000") {
+            error = "Username or email already exists!"
+          }
+
+          swal({
+            title: "Error",
+            text: (error || err),
+            type: 'warning',
+            timer: 3000,
+            showConfirmButton: true
+          })
+        })
+      } else {
+        swal({
+          title: "Error",
+          text: "Please enter a valid email",
+          type: 'warning',
+          timer: 3000,
+          showConfirmButton: true
+        })
+      }
     }
   }
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function(user) {
     auth.login(user)
-    .success(function(data){
+    .success(function(data) {
       auth.saveToken(data);
-      swal({  title: "Success!",   text: "Successfully Authenticated",   type: "success", timer: 1000, showConfirmButton: false });
+      swal({
+        title: "Success!",
+        text: "Successfully Authenticated",
+        type: "success",
+        timer: 1000,
+        showConfirmButton: false
+      });
       $scope.isLoggedIn = auth.isLoggedIn();
       $scope.closeLogin();
     })
-    .error(function(err){
-      swal({title: "Error", text: err,    type: 'warning', timer: 1200, showConfirmButton: true})
+    .error(function(err) {
+      swal({
+        title: "Error",
+        text: err,
+        type: 'warning',
+        timer: 3000,
+        showConfirmButton: true
+      })
     })
   };
 

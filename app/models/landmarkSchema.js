@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var landmarkSchema = new mongoose.Schema({
   name: {type: String, required: true, unique: true},
   wikiLink: String,
+  coords: Object,
   location: String,
   longitude: String,
   latitude: String,

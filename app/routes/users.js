@@ -1,8 +1,10 @@
+"use strict"
+
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userSchema.js');
 var auth = require('../config/auth.js');
-
+let atob = require('atob')
 
 /* GET users listing. */
 router.post('/register', function(req, res, next) {
@@ -28,7 +30,7 @@ router.post('/register', function(req, res, next) {
 
 router.post('/login', function(req, res, next){
   if(!req.body.username || !req.body.password){
-    return res.status(400).json({message: 'Missing required fields username and password.'});
+    return res.status(400).send('Please fill out all fields');
   }
 
   User.findOne({username: req.body.username}, function(err, user){
@@ -43,42 +45,60 @@ router.post('/login', function(req, res, next){
   })
 });
 
-router.post('/favorites/:uid/:lid', auth, function (req, res){
-  User.findById(req.params.uid, function (err,user){
+router.post('/favorites/:lid', auth, function (req, res){
+  let jwt = req.headers.authorization.replace(/Bearer /, "")
+  let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
+  var landmarkID = req.params.lid
+
+  User.findById(userID, function (err,user){
     if(err){
       res.send(err)
     }else{
-      user.favorites.push(req.params.lid);
-      user.save();
-      res.send(user)
+      if (user.favorites.indexOf(landmarkID) === -1){
+        user.favorites.push(landmarkID);
+        user.save();
+        res.send(user)
+      }else{
+        res.send(user)
+      }
     }
   })
 });
 
-router.post('/visited/:uid/:lid', auth, function (req, res){
-  User.findById(req.params.uid, function (err,user){
+router.post('/visited/:lid', auth, function (req, res){
+  let jwt = req.headers.authorization.replace(/Bearer /, "")
+  let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
+  let landmarkID = req.params.lid
+
+  User.findById(userID, function (err,user){
     if(err){
       res.send(err)
     }else{
-      user.visited.push(req.params.lid);
-      user.save();
-      res.send(user)
+      if (user.visited.indexOf(landmarkID) === -1){
+        user.visited.push(landmarkID);
+        user.save();
+        res.send(user)
+      }else{
+        res.send(user)
+      }
     }
   })
 });
 
-router.get('/me/:id', auth, (req, res) => {
-  console.log("me/:", req.params);
-   User.findById(req.params.id, (err, user) => {
-     (err) ? res.status(403).send(err) : res.send(user)
-   });
+router.get('/me/', auth, (req, res) => {
+  let jwt = req.headers.authorization.replace(/Bearer /, "")
+  let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
+
+  User.findById(userID).populate('favorites').populate('visited').exec(function (err, data){
+    err ? res.status(401).send(err) : res.send(data)
+  })
 });
 
 router.get('/user/:id', auth, (req, res) => {
- User.findById(req.params.id, (err, user)=> {
-   if (err) res.status(403).send(err);
-   else res.send(user)
- })
+  User.findById(req.params.id, (err, user)=> {
+    if (err) res.status(401).send(err);
+    else res.send(user)
+  })
 });
 
 module.exports = router;
