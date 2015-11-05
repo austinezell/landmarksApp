@@ -21,7 +21,7 @@ var dirs = {
     js: 'public/js'
   }
 }
-gulp.task('default', ['sass', 'scripts', 'templates']);
+gulp.task('default', ['sass', 'scripts', 'templates', 'watch']);
 
 gulp.task('sass', function(done) {
   gulp.src(dirs.src.scss)

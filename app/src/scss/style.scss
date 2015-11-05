@@ -1,11 +1,16 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "public/lib/ionic/scss/ionic";
 /*
+
 To customize the look and feel of Ionic, you can override the variables
 in ionic's _variables.scss file.
 
 For example, you might change some of the default colors:
 
 $light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
@@ -14,6 +19,7 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+// $stable:                          #4F201A !default;
 
 $primary: #4F201A;
 $secondary: #FBF8E7;
@@ -104,9 +110,79 @@ $green: #4c653b;
   height: 50vh;
 }
 
+$item-california-bg:              $tertiary !default;
+$item-california-border:          $primary !default;
+$item-california-text:            $green !default;
+$item-california-active-bg:       $button-light-active-bg;
+$item-california-active-border:   $button-light-active-border;
 
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+.item{
+  &.item-california {
+    @include item-active-style($tertiary, $green);
+  }
+}
+.bar {
+  &.bar-stable {
+    @include bar-style($primary, $bar-stable-border, $secondary);
+    &.bar-footer{
+      background-image: linear-gradient(180deg, $primary, $bar-stable-border 50%, transparent 50%);
+    }
+  }
+}
 
-// Include all of Ionic
-@import "public/lib/ionic/scss/ionic";
+.item .item-content.activated {
+  &.item-california {
+    @include item-style($item-california-bg, $item-california-border, $item-california-text);
+  }
+}
+
+#landing .backPanel {
+  background-image: url("../assets/calimap.jpg");
+  position: relative;
+  background-size: cover;
+  background-color: $tertiary;
+  height: 100vh;
+}
+
+#landing .header {
+  background-color: $cool;
+  opacity: .95;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+#landing .title,
+#landing .subtitle {
+  color:  $primary;
+}
+
+#profile {
+  padding: 5%;
+  background-color: $secondary;
+}
+
+#profileThumbnail {
+  border-radius:100%;
+  border: solid 5px grey;
+  max-width: 100px;
+  margin-bottom: 1em;
+  float: right;
+}
+
+#name {
+  float: left;
+}
+
+.content {
+  text-align: left;
+}
+
+.unique {
+  color: $green;
+}
+
+.uniqueImg {
+  border: solid 5px $green;
+}
