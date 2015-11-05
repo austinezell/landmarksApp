@@ -3,30 +3,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "public/lib/ionic/scss/ionic";
-/*
 
-To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
+// import local variables
+@import 'variables'
 
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
-*/
-// $stable:                          #4F201A !default;
-
-$primary: #4F201A;
-$secondary: #FBF8E7;
-$tertiary: #EDD8A9;
-$highlight: #F16156;
-$cool: #CAE8DC;
-$green: #4c653b;
 
 #loginForm{
   background-color: $secondary;
@@ -110,11 +90,7 @@ $green: #4c653b;
   height: 50vh;
 }
 
-$item-california-bg:              $tertiary !default;
-$item-california-border:          $primary !default;
-$item-california-text:            $green !default;
-$item-california-active-bg:       $button-light-active-bg;
-$item-california-active-border:   $button-light-active-border;
+
 
 .item{
   &.item-california {

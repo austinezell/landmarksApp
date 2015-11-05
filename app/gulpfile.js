@@ -27,6 +27,7 @@ gulp.task('sass', function(done) {
   gulp.src(dirs.src.scss)
     .pipe(sass())
     .on('error', sass.logError)
+    .pipe(concat('style.css'))
     .pipe(gulp.dest(dirs.out.css))
     .pipe(minifyCss({
       keepSpecialComments: 0
