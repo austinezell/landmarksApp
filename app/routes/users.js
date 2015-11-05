@@ -48,14 +48,17 @@ router.post('/login', function(req, res, next){
 router.post('/favorites/:lid', auth, function (req, res){
   let jwt = req.headers.authorization.replace(/Bearer /, "")
   let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
+  var landmarkID = req.params.lid
 
   User.findById(userID, function (err,user){
     if(err){
       res.send(err)
     }else{
-      if (!user.favorites.indexOf(lid)){
-        user.favorites.push(req.params.lid);
+      if (user.favorites.indexOf(landmarkID) === -1){
+        user.favorites.push(landmarkID);
         user.save();
+        res.send(user)
+      }else{
         res.send(user)
       }
     }
@@ -65,14 +68,17 @@ router.post('/favorites/:lid', auth, function (req, res){
 router.post('/visited/:lid', auth, function (req, res){
   let jwt = req.headers.authorization.replace(/Bearer /, "")
   let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
+  let landmarkID = req.params.lid
 
   User.findById(userID, function (err,user){
     if(err){
       res.send(err)
     }else{
-      if (!user.visited.indexOf(lid)){
-        user.visited.push(req.params.lid);
+      if (user.visited.indexOf(landmarkID) === -1){
+        user.visited.push(landmarkID);
         user.save();
+        res.send(user)
+      }else{
         res.send(user)
       }
     }
