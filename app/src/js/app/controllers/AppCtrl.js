@@ -53,11 +53,11 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
         if (err.errmsg.split(' ')[0] === "E11000") {
           error = "Username or email already exists!"
         }
-        swal({title: "Error", text: error, type: 'warning', timer: 1200, showConfirmButton: true})
+        swal({title: "Error", text: error, type: 'warning', timer: 3000, showConfirmButton: true})
       })
     }
     else {
-      swal({title: "Error", text: "Please enter a valid email", type: 'warning', timer: 2000, showConfirmButton: true})
+      swal({title: "Error", text: "Please enter a valid email", type: 'warning', timer: 3000, showConfirmButton: true})
     }
   }
 
