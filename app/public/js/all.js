@@ -123,18 +123,43 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   };
 
   $scope.register = function (user) {
-    if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
-      auth.register(user).success(function (data) {
-        $scope.doLogin(user);
-      }).error(function (err) {
-        var error = undefined;
-        if (err.errmsg.split(' ')[0] === "E11000") {
-          error = "Username or email already exists!";
-        }
-        swal({ title: "Error", text: error, type: 'warning', timer: 3000, showConfirmButton: true });
+    if (!user || !user.username || !user.password || !user.email) {
+      console.log('hit');
+      swal({
+        title: "Error",
+        text: "Email, username, and password are required fields",
+        type: 'warning',
+        timer: 3000,
+        showConfirmButton: true
       });
     } else {
-      swal({ title: "Error", text: "Please enter a valid email", type: 'warning', timer: 3000, showConfirmButton: true });
+
+      if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
+        auth.register(user).success(function (data) {
+          $scope.doLogin(user);
+        }).error(function (err) {
+          var error = undefined;
+          if (err.errmsg.split(' ')[0] === "E11000") {
+            error = "Username or email already exists!";
+          }
+
+          swal({
+            title: "Error",
+            text: error || err,
+            type: 'warning',
+            timer: 3000,
+            showConfirmButton: true
+          });
+        });
+      } else {
+        swal({
+          title: "Error",
+          text: "Please enter a valid email",
+          type: 'warning',
+          timer: 3000,
+          showConfirmButton: true
+        });
+      }
     }
   };
 
@@ -142,11 +167,23 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, auth) {
   $scope.doLogin = function (user) {
     auth.login(user).success(function (data) {
       auth.saveToken(data);
-      swal({ title: "Success!", text: "Successfully Authenticated", type: "success", timer: 1000, showConfirmButton: false });
+      swal({
+        title: "Success!",
+        text: "Successfully Authenticated",
+        type: "success",
+        timer: 1000,
+        showConfirmButton: false
+      });
       $scope.isLoggedIn = auth.isLoggedIn();
       $scope.closeLogin();
     }).error(function (err) {
-      swal({ title: "Error", text: err, type: 'warning', timer: 1200, showConfirmButton: true });
+      swal({
+        title: "Error",
+        text: err,
+        type: 'warning',
+        timer: 3000,
+        showConfirmButton: true
+      });
     });
   };
 });
@@ -267,18 +304,21 @@ app.controller('PlaylistsCtrl', function ($scope) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function ($scope, auth, $http) {
-  console.log("Profile contrler.");
+app.controller('ProfileCtrl', function ($scope, auth, $http, $state) {
+  // console.log(!auth.isLoggedIn);
+  // if(!auth.isLoggedIn()) {
+  //   $state.go('app.landing')
+  //   console.log('hey');
+  // } else {
   $scope.getCurrentUserInfo = function () {
     auth.getCurrentUserInfo().success(function (data) {
       console.log(data);
       $scope.user = data;
-    }).error(function (err) {});
+    }).error(function (err) {
+      console.log(err);
+    });
   };
-
   $scope.getCurrentUserInfo();
-
-  $scope.populateFavorites = function () {};
 });
 'use strict';
 

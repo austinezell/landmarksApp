@@ -1,7 +1,11 @@
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function($scope, auth,$http) {
-  console.log("Profile contrler.");
+app.controller('ProfileCtrl', function($scope, auth, $http, $state) {
+  // console.log(!auth.isLoggedIn);
+  // if(!auth.isLoggedIn()) {
+  //   $state.go('app.landing')
+  //   console.log('hey');
+  // } else {
   $scope.getCurrentUserInfo = () => {
     auth.getCurrentUserInfo()
     .success( data => {
@@ -9,15 +13,10 @@ app.controller('ProfileCtrl', function($scope, auth,$http) {
       $scope.user = data;
     })
     .error( err => {
+      console.log(err);
     })
   };
-
   $scope.getCurrentUserInfo();
 
 
-  $scope.populateFavorites = function(){
-    
-
-  }
 });
-

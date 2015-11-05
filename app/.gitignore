@@ -1,7 +1,10 @@
 node_modules/
 platforms/
 plugins/
-public/vendor/
 .env
 public/lib
 .DS_Store
+public/js/
+public/css/
+public/html/
+data.json
