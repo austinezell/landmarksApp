@@ -9,11 +9,12 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
       function initialize() {
         $scope.locations = [];
         var locationCoords = [];
+        var inProcess = false;
         var landmarksMap;
         var myLatlng;
         var bounds;
         var center;
-        var area;
+        var radius;
         var styles = [
           {
             featureType: 'road',
@@ -32,11 +33,22 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
           }
         ];
 
+        function readjustView(){
+          if(inProcess){
+            return;
+          }
+          inProcess = true;
+          boundsAndCenter(landmarksMap);
+          calcArea(center, bounds);
+          getLandmarks()
+          console.log("center: ", center);
+        }
+
         function boundsAndCenter(landmarksMap){
           var boundsObj = landmarksMap.getBounds();
           console.log(boundsObj);
-          var ne = boundsObj.getSouthWest().toString();
-          var sw = boundsObj.getNorthEast().toString();
+          var sw = boundsObj.getSouthWest().toString();
+          var ne = boundsObj.getNorthEast().toString();
 
           bounds = {NE: ne, SW: sw};
           center = landmarksMap.getCenter().toString();
@@ -45,25 +57,33 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
         function calcArea(center, bounds){
           var neBounds = formatCoord(bounds.NE);
           var swBounds = formatCoord(bounds.SW);
+          console.log("swBounds: ", swBounds);
+          console.log("neBounds: ", neBounds);
           var distanceEq = Math.pow((parseFloat(swBounds[0]) - parseFloat(neBounds[0])), 2) + Math.pow((parseInt(swBounds[1]) - parseInt(neBounds[1])), 2);
           var distance = Math.sqrt(distanceEq);
-          var radius = distance/2;
-          area = (Math.PI * Math.pow(radius, 2));
+          radius = distance/2;
+          console.log("radius", radius);
         }
 
         function formatCoord(coord){
           return coord.split("").filter(function(el){
-            return el.match(/[\d|,|\.]/g);
+            return el.match(/[\d|,|\.|\-]/g);
           }).join("").split(",");
         }
 
         function getLandmarks(){
+          $scope.locations = [];
+          var counter = 0;
           landmark.getAll()
           .success(function(locations){
             locations.forEach(function(location){
+              counter ++;
               landmarkFromCenter(location);
-            })
-            showLocationMarkers()
+              if(counter === locations.length){
+                showLocationMarkers();
+                inProcess = false;
+              }
+            });
           })
           .error(function(err){
             console.log(err);
@@ -74,24 +94,32 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
           var centerCoord = formatCoord(center);
           var distanceEq = Math.pow((parseFloat(location.coords.lat) - parseFloat(centerCoord[0])), 2) + Math.pow((parseInt(location.coords.lng) - parseInt(centerCoord[1])), 2);
           var distance = Math.sqrt(distanceEq);
-          if(distance < area){
+          console.log("distance: ", distance, " radius: ", radius);
+          if(distance < radius){
             $scope.locations.push(location);
           }
         }
 
         function showLocationMarkers(){
           var landmarks = $scope.locations;
-          console.log(landmarks);
-          var newLandmark = new google.maps.LatLng(landmarkCoord.lat, (landmarkCoord.lng * -1));
+          console.log("locations: ", landmarks);
+          // var newLandmark = new google.maps.LatLng(landmarkCoord.lat, (landmarkCoord.lng * -1));
+          //
+          var marker;
 
-          var marker = new google.maps.Marker({
-             map: landmarksMap,
-             draggable: true,
-             animation: google.maps.Animation.DROP,
-             position: newLandmark
-           });
+          for(var i = 0; i < landmarks.length; i++){
+            marker = new google.maps.Marker({
+               map: landmarksMap,
+               draggable: true,
+               animation: google.maps.Animation.DROP,
+               position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng)
+             });
 
-           marker.addListener('click', toggleBounce);
+             marker.addListener('click', toggleBounce);
+             marker.setMap(landmarksMap);
+
+          }
+
 
           function toggleBounce() {
            if (marker.getAnimation() !== null) {
@@ -100,7 +128,7 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
              marker.setAnimation(google.maps.Animation.BOUNCE);
            }
           }
-          marker.setMap(landmarksMap);
+
         }
 
         async.series([
@@ -131,27 +159,22 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark) {
             landmarksMap = new google.maps.Map(document.getElementById("map"),
             mapOptions);
 
-            landmarksMap.addListener('zoom_changed', function() {
-              locationCoords = [];
-              $scope.locations = [];
-              boundsAndCenter(landmarksMap);
-              calcArea(center, bounds);
-              getLandmarks();
+            landmarksMap.addListener('zoom_changed', () => {
+              setTimeout(function(){
+                readjustView();
+              }, 1000);
             });
 
-            landmarksMap.addListener('center_changed', function() {
-              locationCoords = [];
-              $scope.locations = [];
-              boundsAndCenter(landmarksMap);
-              calcArea(center, bounds);
-              getLandmarks()
+            landmarksMap.addListener('dragend', () => {
+              setTimeout(function(){
+                readjustView();
+              }, 1000);
             });
 
-            google.maps.event.addListenerOnce(landmarksMap, 'idle', function(){
-              $scope.locations = [];
-              boundsAndCenter(landmarksMap)
-              calcArea(center, bounds);
-              getLandmarks();
+            google.maps.event.addListenerOnce(landmarksMap, 'idle', () => {
+              setTimeout(function(){
+                readjustView();
+              }, 1000);
             });
 
             callback();
