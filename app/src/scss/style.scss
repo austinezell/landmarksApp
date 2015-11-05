@@ -5,7 +5,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "public/lib/ionic/scss/ionic";
 
 // import local variables
-@import 'variables'
+@import 'variables';
 
 
 #loginForm{
@@ -89,8 +89,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   width: 100vw;
   height: 50vh;
 }
-
-
 
 .item{
   &.item-california {
