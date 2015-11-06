@@ -76,6 +76,7 @@ router.post('/visited/:lid', auth, function (req, res){
     }else{
       if (user.visited.indexOf(landmarkID) === -1){
         user.visited.push(landmarkID);
+        user.points += 15
         user.save();
         res.send(user)
       }else{

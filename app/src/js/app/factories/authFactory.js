@@ -2,11 +2,10 @@
 
 var app = angular.module('landmarksApp');
 
-app.factory('auth', function($window, $http, tokenStorageKey) {
+app.factory('auth', function($window, $http, tokenStorageKey, $rootScope) {
   var auth = {};
 
   auth.saveToken = function(token) {
-    console.log('hit', token);
     $window.localStorage[tokenStorageKey] = token;
   };
 
@@ -24,15 +23,6 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
     }
   };
 
-  auth.currentUser = function(){
-    if(auth.isLoggedIn()){
-      console.log("Is logged in!");
-      var token = auth.getToken();
-      var payload = JSON.parse($window.atob(token.split('.')[1]));
-      return {id: payload._id, username: payload.username}
-    }
-  };
-
   auth.register = function(user){
     return $http.post('/users/register', user)
   };
@@ -47,9 +37,14 @@ app.factory('auth', function($window, $http, tokenStorageKey) {
 
   auth.getCurrentUserInfo = function() {
     $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
-    let user = auth.currentUser();
-    console.log(user);
-    return $http.get('/users/me');
+    $http.get('/users/me')
+    .success( data => {
+      $rootScope.user = data;
+    })
+    .error( err => {
+      $rootScope.user = null;
+    })
+
   };
 
   return auth;

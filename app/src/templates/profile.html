@@ -11,6 +11,7 @@
           <img id="profileThumbnail" src="../assets/user_1_profilePic.jpeg" alt="">
         </div>
       </div>
+
       <div class="row">
         <div class="col">
           <div class="content">
@@ -22,12 +23,21 @@
             <h4>Locations visited: <span><a href="place.name" ng-repeat='place in user.visited' >{{place.name}}</a></span></h4>
           </div>
         </div>
-      </div>
+
 
 
 
 
 
     </div>
+    <h4 align=center>Locations visited</h4>
+    <ion-list>
+      <ion-item ng-repeat='place in user.visited'>
+        <img src="https://maxcdn.icons8.com/windows8/PNG/26/Very_Basic/checked-26.png" title="Checked" width="26">
+        <span>{{place.name}}</span>
+        <img class='leftArrow' src="../assets/left.png"/>
+        <ion-option-button class="button-california" ng-click='showLandmark(location)'>View</ion-option-button>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

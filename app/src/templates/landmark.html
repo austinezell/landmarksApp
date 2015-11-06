@@ -1,12 +1,12 @@
 <ion-modal-view>
-  <ion-header-bar>
+  <ion-header-bar class="modalHeader">
     <h1 class="title">{{displayLandmark.name}}</h1>
 
     <div class="buttons">
       <button class="button button-clear" ng-click="closeLandmark()">Close</button>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content class="modalBody">
     <div class="well">
       <div align=right>
         <b>Registry Number:</b> {{displayLandmark.registryNumber}}<br>
@@ -23,7 +23,7 @@
     <div align="center">
       <img class="californiaIcon" src="../assets/026905-glossy-black-3d-button-icon-culture-state-california.png" alt="">
     </div>
-    <div align='right'>
+    <div align="center" class="wikiLink">
       <a href="{{displayLandmark.wikiLink}}">Learn more about this location</a>
     </div>
   </ion-content>

@@ -1,6 +1,10 @@
 var app = angular.module('landmarksApp');
 
+<<<<<<< HEAD
 app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory) {
+=======
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootScope, $location) {
+>>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
   $scope.Login = true;
   $scope.isLoggedIn = auth.isLoggedIn();
 
@@ -39,53 +43,57 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
 
   $scope.logout = function() {
     auth.logout();
+    $rootScope.user = null;
     $scope.isLoggedIn = auth.isLoggedIn();
+<<<<<<< HEAD
     $ionicHistory.nextViewOptions({
       historyRoot: true
     });
     $state.go("app.landing");
+=======
+    $location.path("/home");
+>>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
   };
 
   $scope.register = function(user) {
     if (!user || !user.username || !user.password || !user.email) {
-      console.log('hit');
       swal({
         title: "Error",
         text: "Email, username, and password are required fields",
         type: 'warning',
         timer: 3000,
-        showConfirmButton: true
+        showConfirmButton: false,
+        showCancelButton: true,
+        closeOnCancel: true
       })
-    } else {
-
-      if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
-        auth.register(user)
-        .success(function(data) {
-          $scope.doLogin(user);
-        })
-        .error(function(err) {
-          let error;
-          if (err.errmsg.split(' ')[0] === "E11000") {
-            error = "Username or email already exists!"
-          }
-
-          swal({
-            title: "Error",
-            text: (error || err),
-            type: 'warning',
-            timer: 3000,
-            showConfirmButton: true
-          })
-        })
-      } else {
+    } else if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
+      auth.register(user)
+      .success(function(data) {
+        $scope.doLogin(user);
+      })
+      .error(function(err) {
+        let error;
+        if (err.errmsg.split(' ')[0] === "E11000") {
+          error = "Username or email already exists!"
+        }
         swal({
           title: "Error",
-          text: "Please enter a valid email",
+          text: (error || err),
           type: 'warning',
           timer: 3000,
-          showConfirmButton: true
+          showCancelButton: true
         })
-      }
+      })
+    } else {
+      swal({
+        title: "Error",
+        text: "Please enter a valid email",
+        type: 'warning',
+        timer: 3000,
+        showConfirmButton: false,
+        showCancelButton: true,
+        closeOnCancel: true
+      })
     }
   };
 
@@ -94,6 +102,7 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
     auth.login(user)
     .success(function(data) {
       auth.saveToken(data);
+      auth.getCurrentUserInfo();
       swal({
         title: "Success!",
         text: "Successfully Authenticated",
@@ -102,6 +111,7 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
         showConfirmButton: false
       });
       $scope.isLoggedIn = auth.isLoggedIn();
+<<<<<<< HEAD
         $scope.closeLogin();
 
         //redirect to the profile page after login form is closed
@@ -112,13 +122,19 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
         $state.go("app.profile");
 
       })
+=======
+      $scope.closeLogin();
+    })
+>>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
     .error(function(err) {
       swal({
         title: "Error",
         text: err,
         type: 'warning',
         timer: 3000,
-        showConfirmButton: true
+        showConfirmButton: false,
+        showCancelButton: true,
+        closeOnCancel: true
       })
     })
   };
