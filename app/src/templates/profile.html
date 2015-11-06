@@ -3,12 +3,8 @@
     <div id="profile">
       <div class="row">
         <div class="col">
-          <div id = "header">
-            <h4 id="name">{{user.username}}</h4>
-          </div>
-        </div>
-        <div class="col">
           <img id="profileThumbnail" src="../assets/compass-1.png" alt="">
+          <h4 id="name">Welcome {{user.username}}</h4>
         </div>
       </div>
       <div class="row">
@@ -17,8 +13,6 @@
             <h4 class="stats">Points: <span class="unique">{{user.points}}</span></h4>
             <h4 class="stats">Visited: <span class="unique">{{user.visited.length}}</span></h4>
             <h4 class="stats"><span>Favorites: </span><a  ng-repeat='place in user.favorites' href='{{place.name}}'> {{place.name}}<br></a> </h4>
-            <h4 class="stats">Your travels:</h4>
-            <img class="uniqueImg" src="http://images.singletracks.com/blog/wp-content/uploads/2012/01/Map-300x199.png" alt="mySlimeTrail">
             <h4>Locations visited: <span><a href="place.name" ng-repeat='place in user.visited' >{{place.name}}</a></span></h4>
           </div>
         </div>
