@@ -1,4 +1,4 @@
-var app = angular.module('landmarksApp')
+var app = angular.module('landmarksApp');
 
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootScope, $location) {
   $scope.Login = true;
@@ -84,7 +84,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootSco
         closeOnCancel: true
       })
     }
-  }
+  };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function(user) {
@@ -115,4 +115,4 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootSco
     })
   };
 
-})
+});
