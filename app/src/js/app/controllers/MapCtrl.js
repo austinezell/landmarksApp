@@ -133,24 +133,27 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       for(var i = 0; i < landmarks.length; i++){
         marker = new google.maps.Marker({
           map: landmarksMap,
-          position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng)
+          position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng),
+          title: landmarks[i].name
         });
-        marker.addListener('click', toggleBounce);
+        marker.addListener('click', function(){
+          toggleInfoWindow(this);
+        });
         markers.push(marker);
       }
+    }
+
+    function toggleInfoWindow(marker) {
+      var contentString = '<p id="firstHeading" class="firstHeading">'+marker.title+'</p>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      infowindow.open(landmarksMap, marker);
     }
 
     function popMarkers(){
       for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(landmarksMap);
-      }
-    }
-
-    function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
       }
     }
 
