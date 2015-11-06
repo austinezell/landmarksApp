@@ -19,8 +19,8 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
     $scope.landmarkModal.show();
   }
 
-  $scope.addToVisited = (displayLandmark) => {
-    landmark.addToVisited(displayLandmark._id)
+  $scope.addToFavorites = (displayLandmark) => {
+    landmark.addToFavorites(displayLandmark._id)
     .catch(err => {
       console.log(err);
     })
@@ -28,7 +28,7 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
       console.log(user);
       swal({
         title: "Success!",
-        text: "You've visited " + displayLandmark.name,
+        text:  `${displayLandmark.name} has been added to your favorites!`,
         type: "success",
         timer: 2000,
         showConfirmButton: false
