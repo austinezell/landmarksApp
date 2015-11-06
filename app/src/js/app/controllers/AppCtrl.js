@@ -40,6 +40,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $state) 
   $scope.logout = function() {
     auth.logout();
     $scope.isLoggedIn = auth.isLoggedIn();
+    $state.go("app.landing");
   };
 
   $scope.register = function(user) {
