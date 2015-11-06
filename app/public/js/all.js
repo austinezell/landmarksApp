@@ -386,6 +386,7 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark, $
       $scope.map = landmarksMap;
     });
   }
+
   $ionicModal.fromTemplateUrl('html/landmark.html', {
     scope: $scope
   }).then(function (landmarkModal) {
@@ -396,9 +397,17 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark, $
     $scope.landmarkModal.hide();
   };
 
-  $scope.showLandmark = function (landmark) {
-    $scope.displayLandmark = landmark;
+  $scope.showLandmark = function (displayLandmark) {
+    $scope.displayLandmark = displayLandmark;
     $scope.landmarkModal.show();
+  };
+
+  $scope.addToVisited = function (displayLandmark) {
+    landmark.addToVisited(displayLandmark._id)['catch'](function (err) {
+      console.log(err);
+    }).then(function (user) {
+      console.log(user);
+    });
   };
 });
 'use strict';
@@ -431,11 +440,9 @@ app.controller('PlaylistsCtrl', function ($scope) {});
 var app = angular.module('landmarksApp');
 
 app.controller('ProfileCtrl', function ($scope, auth, $http, $state) {
-  // console.log(!auth.isLoggedIn);
-  // if(!auth.isLoggedIn()) {
-  //   $state.go('app.landing')
-  //   console.log('hey');
-  // } else {
+  $scope.$on('$ionicView.enter', function () {
+    initialize();
+  });
   $scope.getCurrentUserInfo = function () {
     auth.getCurrentUserInfo().success(function (data) {
       console.log(data);
@@ -506,7 +513,7 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
 var app = angular.module('landmarksApp');
 
-app.factory('landmark', function ($window, $http) {
+app.factory('landmark', function ($window, $http, auth) {
   var landmark = {};
 
   landmark.getAll = function () {
@@ -515,6 +522,12 @@ app.factory('landmark', function ($window, $http) {
 
   landmark.getOne = function (id) {
     return $http.get('/landmarks/' + id);
+  };
+
+  landmark.addToVisited = function (id) {
+    console.log('hit');
+    $http.defaults.headers.common.Authorization = 'Bearer ' + auth.getToken();
+    return $http.post('/users/visited/' + id);
   };
 
   return landmark;

@@ -209,6 +209,7 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       $scope.map = landmarksMap;
     });
   }
+
   $ionicModal.fromTemplateUrl('html/landmark.html', {
     scope: $scope
   }).then(function(landmarkModal) {
@@ -219,8 +220,18 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
     $scope.landmarkModal.hide();
   }
 
-  $scope.showLandmark = (landmark) =>{
-    $scope.displayLandmark = landmark;
+  $scope.showLandmark = (displayLandmark) =>{
+    $scope.displayLandmark = displayLandmark;
     $scope.landmarkModal.show();
+  }
+
+  $scope.addToVisited = (displayLandmark) => {
+    landmark.addToVisited(displayLandmark._id)
+    .catch(err => {
+      console.log(err);
+    })
+    .then(user => {
+      console.log(user);
+    })
   }
 });
