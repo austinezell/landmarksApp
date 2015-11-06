@@ -1,6 +1,6 @@
 var app = angular.module('landmarksApp');
 
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $state) {
+app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory) {
   $scope.Login = true;
   $scope.isLoggedIn = auth.isLoggedIn();
 
@@ -40,6 +40,9 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $state) 
   $scope.logout = function() {
     auth.logout();
     $scope.isLoggedIn = auth.isLoggedIn();
+    $ionicHistory.nextViewOptions({
+      historyRoot: true
+    });
     $state.go("app.landing");
   };
 
@@ -99,10 +102,16 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $state) 
         showConfirmButton: false
       });
       $scope.isLoggedIn = auth.isLoggedIn();
-      $scope.closeLogin();
+        $scope.closeLogin();
+
+        //redirect to the profile page after login form is closed
+        $ionicHistory.nextViewOptions({
+          historyRoot: true
+        });
+
         $state.go("app.profile");
 
-    })
+      })
     .error(function(err) {
       swal({
         title: "Error",
