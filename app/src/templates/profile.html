@@ -13,7 +13,10 @@
             <h4 class="stats">Points: <span class="unique">{{user.points}}</span></h4>
             <h4 class="stats">Visited: <span class="unique">{{user.visited.length}}</span></h4>
             <h4 class="stats"><span>Favorites: </span><a  ng-repeat='place in user.favorites' href='{{place.name}}'> {{place.name}}<br></a> </h4>
-            <h4>Locations visited: <span><a href="place.name" ng-repeat='place in user.visited' >{{place.name}}</a></span></h4>
+            <h4>Locations visited: </h4>
+            <ul>
+              <a href="place.name" ng-repeat='place in user.visited' ><li>{{place.name}}</li></a>
+            </ul>
           </div>
         </div>
       </div>
