@@ -196,7 +196,7 @@ app.controller('LandingCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
+app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark, $ionicModal) {
   $scope.$on('$ionicView.enter', function () {
     initialize();
   });
@@ -386,6 +386,20 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       $scope.map = landmarksMap;
     });
   }
+  $ionicModal.fromTemplateUrl('html/landmark.html', {
+    scope: $scope
+  }).then(function (landmarkModal) {
+    $scope.landmarkModal = landmarkModal;
+  });
+
+  $scope.closeLandmark = function () {
+    $scope.landmarkModal.hide();
+  };
+
+  $scope.showLandmark = function (landmark) {
+    $scope.displayLandmark = landmark;
+    $scope.landmarkModal.show();
+  };
 });
 'use strict';
 
@@ -497,6 +511,10 @@ app.factory('landmark', function ($window, $http) {
 
   landmark.getAll = function () {
     return $http.get('/landmarks');
+  };
+
+  landmark.getOne = function (id) {
+    return $http.get('/landmarks/' + id);
   };
 
   return landmark;

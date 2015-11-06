@@ -7,5 +7,9 @@ app.factory('landmark', function($window, $http){
     return $http.get('/landmarks')
   }
 
+  landmark.getOne = function(id){
+    return $http.get(`/landmarks/${id}`)
+  }
+
   return landmark;
 })
