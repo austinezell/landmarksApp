@@ -3,8 +3,8 @@ platforms/
 plugins/
 .env
 public/lib
-.DS_Store
 public/js/
 public/css/
 public/html/
 data.json
+.DS_Store
