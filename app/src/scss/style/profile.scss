@@ -9,7 +9,7 @@
 }
 
 #name {
-  float: left;
+  float: absolute;
 }
 
 .content {
@@ -18,8 +18,4 @@
 
 .unique {
   color: $green;
-}
-
-.uniqueImg {
-  border: solid 5px $green;
 }
