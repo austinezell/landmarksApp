@@ -2,7 +2,8 @@ var app = angular.module('landmarksApp');
 
 
 
-app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $ionicModal) {
+app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $ionicModal, $rootScope, auth) {
+  auth.getCurrentUserInfo()
   $scope.$on('$ionicView.enter', function() {
     initialize();
   });
@@ -243,6 +244,11 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
 
     $scope.showLandmark = (displayLandmark) =>{
       $scope.displayLandmark = displayLandmark;
+      $scope.hideVisitButton = false;
+      console.log($rootScope.user.visited.indexOf(landmark._id));
+      if ($rootScope.user.visited.indexOf(landmark._id) !== -1){
+        $scope.hideVisitButton = true;
+      }
       $scope.landmarkModal.show();
     }
 
