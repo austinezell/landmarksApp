@@ -24,9 +24,12 @@ function formatLandmarkCoordinates(location){
   } else {
     var latParts = location.latitude.split(/[^\d\w]+/);
     var lngParts = location.longitude.split(/[^\d\w]+/);
-    var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]) * .1;
-    var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]) * .1;
-    var coordinates = {lat: lat, lng: lng};
+    var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]).toString();
+    var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]).toString();
+
+    var latFormat = parseFloat(lat.replace(/0\./, "."));
+    var lngFormat = parseFloat(lng.replace(/0\./, "."));
+    var coordinates = {lat: latFormat, lng: lngFormat};
   }
   return coordinates;
 }

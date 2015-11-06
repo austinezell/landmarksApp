@@ -203,7 +203,9 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
   function initialize() {
     $scope.locations = [];
     var locationCoords = [];
+    var markers = [];
     var inProcess = false;
+    var isMiles = true;
     var landmarksMap;
     var myLatlng;
     var bounds;
@@ -224,30 +226,49 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       }
       inProcess = true;
       boundsAndCenter(landmarksMap);
-      calcArea(center, bounds);
+      calcRadius(center, bounds);
       getLandmarks();
-      console.log("center: ", center);
+    }
+
+    function haversineDistance(coords1, coords2, isMiles) {
+      function toRad(x) {
+        return x * Math.PI / 180;
+      }
+
+      var lat1 = parseFloat(coords1[0]);
+      var lon1 = parseFloat(coords1[1]);
+
+      var lat2 = parseFloat(coords2[0]);
+      var lon2 = parseFloat(coords2[1]);
+
+      var R = 6371; // km
+
+      var x1 = lat2 - lat1;
+      var dLat = toRad(x1);
+      var x2 = lon2 - lon1;
+      var dLon = toRad(x2);
+      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      var d = R * c;
+
+      if (isMiles) d /= 1.60934;
+
+      return d;
     }
 
     function boundsAndCenter(landmarksMap) {
       var boundsObj = landmarksMap.getBounds();
-      console.log(boundsObj);
       var sw = boundsObj.getSouthWest().toString();
       var ne = boundsObj.getNorthEast().toString();
-
       bounds = { NE: ne, SW: sw };
       center = landmarksMap.getCenter().toString();
     }
 
-    function calcArea(center, bounds) {
+    function calcRadius(center, bounds) {
+      var centerCoord = formatCoord(center);
       var neBounds = formatCoord(bounds.NE);
-      var swBounds = formatCoord(bounds.SW);
-      console.log("swBounds: ", swBounds);
-      console.log("neBounds: ", neBounds);
-      var distanceEq = Math.pow(parseFloat(swBounds[0]) - parseFloat(neBounds[0]), 2) + Math.pow(parseInt(swBounds[1]) - parseInt(neBounds[1]), 2);
-      var distance = Math.sqrt(distanceEq);
-      radius = distance / 2;
-      console.log("radius", radius);
+      radius = haversineDistance(centerCoord, neBounds, isMiles);
+      console.log("radius: ", radius);
     }
 
     function formatCoord(coord) {
@@ -264,7 +285,10 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
           counter++;
           landmarkFromCenter(location);
           if (counter === locations.length) {
-            showLocationMarkers();
+            collectMarkers();
+            setTimeout(function () {
+              popMarkers();
+            }, 2000);
             inProcess = false;
           }
         });
@@ -275,39 +299,39 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
 
     function landmarkFromCenter(location) {
       var centerCoord = formatCoord(center);
-      var distanceEq = Math.pow(parseFloat(location.coords.lat) - parseFloat(centerCoord[0]), 2) + Math.pow(parseInt(location.coords.lng) - parseInt(centerCoord[1]), 2);
-      var distance = Math.sqrt(distanceEq);
-      console.log("distance: ", distance, " radius: ", radius);
+      var landmarkCoords = [location.coords.lat, location.coords.lng];
+      var distance = haversineDistance(landmarkCoords, centerCoord, isMiles);
       if (distance < radius) {
         $scope.locations.push(location);
       }
     }
 
-    function showLocationMarkers() {
+    function collectMarkers() {
       var landmarks = $scope.locations;
       console.log("locations: ", landmarks);
-      // var newLandmark = new google.maps.LatLng(landmarkCoord.lat, (landmarkCoord.lng * -1));
-      //
       var marker;
 
       for (var i = 0; i < landmarks.length; i++) {
         marker = new google.maps.Marker({
           map: landmarksMap,
-          draggable: true,
-          animation: google.maps.Animation.DROP,
           position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng)
         });
-
         marker.addListener('click', toggleBounce);
-        marker.setMap(landmarksMap);
+        markers.push(marker);
       }
+    }
 
-      function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
+    function popMarkers() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(landmarksMap);
+      }
+    }
+
+    function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
       }
     }
 
@@ -329,7 +353,7 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
     }, function (callback) {
       var mapOptions = {
         center: myLatlng,
-        zoom: 16,
+        zoom: 12,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: styles
       };
@@ -339,19 +363,19 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       landmarksMap.addListener('zoom_changed', function () {
         setTimeout(function () {
           readjustView();
-        }, 1000);
+        }, 500);
       });
 
-      landmarksMap.addListener('dragend', function () {
+      landmarksMap.addListener('idle', function () {
         setTimeout(function () {
           readjustView();
-        }, 1000);
+        }, 500);
       });
 
       google.maps.event.addListenerOnce(landmarksMap, 'idle', function () {
         setTimeout(function () {
           readjustView();
-        }, 1000);
+        }, 500);
       });
 
       callback();

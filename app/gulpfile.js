@@ -12,7 +12,7 @@ var babel = require('gulp-babel');
 var dirs = {
   src: {
     js: "src/js/**/*.js",
-    scss: "src/scss/**/*.scss",
+    scss: "src/scss/*.scss",
     html: "src/templates/**/*.html"
   },
   out: {
@@ -27,6 +27,7 @@ gulp.task('sass', function(done) {
   gulp.src(dirs.src.scss)
     .pipe(sass())
     .on('error', sass.logError)
+    .pipe(concat('style.css'))
     .pipe(gulp.dest(dirs.out.css))
     .pipe(minifyCss({
       keepSpecialComments: 0
