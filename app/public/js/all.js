@@ -196,7 +196,7 @@ app.controller('LandingCtrl', function ($scope, $stateParams) {});
 
 var app = angular.module('landmarksApp');
 
-app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
+app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark, $ionicModal) {
   $scope.$on('$ionicView.enter', function () {
     initialize();
   });
@@ -314,11 +314,24 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       for (var i = 0; i < landmarks.length; i++) {
         marker = new google.maps.Marker({
           map: landmarksMap,
-          position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng)
+          position: new google.maps.LatLng(landmarks[i].coords.lat, landmarks[i].coords.lng),
+          title: landmarks[i].name,
+          landmark: landmarks[i]
         });
-        marker.addListener('click', toggleBounce);
+        marker.addListener('click', function () {
+          toggleInfoWindow(this);
+        });
         markers.push(marker);
       }
+    }
+
+    function toggleInfoWindow(marker) {
+      $scope.showLandmark(marker.landmark);
+      // var contentString = '<p id="firstHeading" class="firstHeading">'+marker.title+'</p><br><div align=center><button class="infoWindowButton" ng-click=$scope.showLandmark('+marker.landmark+')>View</button></div>';
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: contentString
+      // });
+      // infowindow.open(landmarksMap, marker);
     }
 
     function popMarkers() {
@@ -327,12 +340,20 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       }
     }
 
-    function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-      }
+    function getCurrentLocation() {
+      console.log("hit");
+      // $scope.loading = $ionicLoading.show({
+      //   content: 'Getting current location...',
+      //   showBackdrop: false
+      // });
+      //
+      // navigator.geolocation.getCurrentPosition(function(pos) {
+      //   console.log(pos);
+      //   myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+      //   $scope.loading.hide();
+      // }, function(error){
+      //   alert('Unable to get location: ' + error.messgage);
+      // });
     }
 
     async.series([function (callback) {
@@ -385,6 +406,37 @@ app.controller('MapCtrl', function ($scope, $ionicLoading, $compile, landmark) {
       }
       $scope.map = landmarksMap;
     });
+
+    $ionicModal.fromTemplateUrl('html/landmark.html', {
+      scope: $scope
+    }).then(function (landmarkModal) {
+      $scope.landmarkModal = landmarkModal;
+    });
+
+    $scope.closeLandmark = function () {
+      $scope.landmarkModal.hide();
+    };
+
+    $scope.showLandmark = function (displayLandmark) {
+      $scope.displayLandmark = displayLandmark;
+      $scope.landmarkModal.show();
+    };
+
+    $scope.addToVisited = function (displayLandmark) {
+      landmark.addToVisited(displayLandmark._id)['catch'](function (err) {
+        console.log(err);
+      }).then(function (user) {
+        console.log(user);
+        swal({
+          title: "Success!",
+          text: "You've visited " + displayLandmark.name,
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        });
+        $scope.landmarkModal.hide();
+      });
+    };
   }
 });
 'use strict';
@@ -417,11 +469,9 @@ app.controller('PlaylistsCtrl', function ($scope) {});
 var app = angular.module('landmarksApp');
 
 app.controller('ProfileCtrl', function ($scope, auth, $http, $state) {
-  // console.log(!auth.isLoggedIn);
-  // if(!auth.isLoggedIn()) {
-  //   $state.go('app.landing')
-  //   console.log('hey');
-  // } else {
+  $scope.$on('$ionicView.enter', function () {
+    initialize();
+  });
   $scope.getCurrentUserInfo = function () {
     auth.getCurrentUserInfo().success(function (data) {
       console.log(data);
@@ -492,11 +542,21 @@ app.factory('auth', function ($window, $http, tokenStorageKey) {
 
 var app = angular.module('landmarksApp');
 
-app.factory('landmark', function ($window, $http) {
+app.factory('landmark', function ($window, $http, auth) {
   var landmark = {};
 
   landmark.getAll = function () {
     return $http.get('/landmarks');
+  };
+
+  landmark.getOne = function (id) {
+    return $http.get('/landmarks/' + id);
+  };
+
+  landmark.addToVisited = function (id) {
+    console.log('hit');
+    $http.defaults.headers.common.Authorization = 'Bearer ' + auth.getToken();
+    return $http.post('/users/visited/' + id);
   };
 
   return landmark;

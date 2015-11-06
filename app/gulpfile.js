@@ -12,7 +12,7 @@ var babel = require('gulp-babel');
 var dirs = {
   src: {
     js: "src/js/**/*.js",
-    scss: "src/scss/*.scss",
+    scss: "src/scss/**/*.scss",
     html: "src/templates/**/*.html"
   },
   out: {
@@ -24,7 +24,7 @@ var dirs = {
 gulp.task('default', ['sass', 'scripts', 'templates', 'watch']);
 
 gulp.task('sass', function(done) {
-  gulp.src(dirs.src.scss)
+  gulp.src('src/scss/style.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(concat('style.css'))

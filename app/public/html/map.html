@@ -6,9 +6,13 @@
       <input ng-model="searchInput" type="search" placeholder="Search">
     </label>
     <ion-list>
-      <ion-item class="item-california locations" ng-repeat="location in locations | filter:searchInput track by $index" href="#/app/locations/{{location.id}}">
+      <ion-item class="item-california locations" ng-repeat="location in locations | filter:searchInput track by $index" href="">
         <img class="landmarkIcon" src="../assets/Bear_Filled-50.png" alt="">
-        <p>{{location.name}}</p>
+        <span class=".locationName">
+          {{location.name}}
+        </span>
+        <img class='leftArrow' src="../assets/left.png"/>
+        <ion-option-button class="button-california" ng-click='showLandmark(location)'>View</ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
