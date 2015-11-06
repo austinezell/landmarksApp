@@ -1,6 +1,6 @@
-var app = angular.module('landmarksApp')
+var app = angular.module('landmarksApp');
 
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
+app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $state) {
   $scope.Login = true;
   $scope.isLoggedIn = auth.isLoggedIn();
 
@@ -83,7 +83,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
         })
       }
     }
-  }
+  };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function(user) {
@@ -99,6 +99,8 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
       });
       $scope.isLoggedIn = auth.isLoggedIn();
       $scope.closeLogin();
+        $state.go("app.profile");
+
     })
     .error(function(err) {
       swal({
@@ -111,4 +113,4 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth) {
     })
   };
 
-})
+});

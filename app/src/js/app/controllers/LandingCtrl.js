@@ -1,4 +1,4 @@
-var app = angular.module('landmarksApp')
+var app = angular.module('landmarksApp');
 
 
 
