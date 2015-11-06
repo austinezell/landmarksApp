@@ -245,8 +245,9 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
     $scope.showLandmark = (displayLandmark) =>{
       $scope.displayLandmark = displayLandmark;
       $scope.hideVisitButton = false;
-      console.log($rootScope.user.visited.indexOf(landmark._id));
-      if ($rootScope.user.visited.indexOf(landmark._id) !== -1){
+      console.log($rootScope.user.visited.indexOf(displayLandmark._id));
+      console.log($rootScope.user.visited);
+      if ($rootScope.user.visited.indexOf(displayLandmark._id) !== -1){
         $scope.hideVisitButton = true;
       }
       $scope.landmarkModal.show();

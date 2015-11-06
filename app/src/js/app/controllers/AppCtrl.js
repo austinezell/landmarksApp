@@ -1,10 +1,9 @@
 var app = angular.module('landmarksApp');
 
-<<<<<<< HEAD
-app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory) {
-=======
-app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootScope, $location) {
->>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
+
+app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory, $rootScope) {
+
+
   $scope.Login = true;
   $scope.isLoggedIn = auth.isLoggedIn();
 
@@ -45,14 +44,11 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootSco
     auth.logout();
     $rootScope.user = null;
     $scope.isLoggedIn = auth.isLoggedIn();
-<<<<<<< HEAD
     $ionicHistory.nextViewOptions({
       historyRoot: true
     });
     $state.go("app.landing");
-=======
     $location.path("/home");
->>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
   };
 
   $scope.register = function(user) {
@@ -111,21 +107,18 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, auth, $rootSco
         showConfirmButton: false
       });
       $scope.isLoggedIn = auth.isLoggedIn();
-<<<<<<< HEAD
-        $scope.closeLogin();
 
-        //redirect to the profile page after login form is closed
-        $ionicHistory.nextViewOptions({
-          historyRoot: true
-        });
+      $scope.closeLogin();
 
-        $state.go("app.profile");
+      //redirect to the profile page after login form is closed
+      $ionicHistory.nextViewOptions({
+        historyRoot: true
+      });
 
-      })
-=======
+      $state.go("app.profile");
+
       $scope.closeLogin();
     })
->>>>>>> 3900071c9ae10ddcdd8d73d90fee8e5c7e6ae89e
     .error(function(err) {
       swal({
         title: "Error",
