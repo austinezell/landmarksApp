@@ -24,7 +24,7 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
   })();
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('html/login.html', {
+  $ionicModal.fromTemplateUrl('../html/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;

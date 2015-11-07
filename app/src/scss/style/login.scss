@@ -1,20 +1,36 @@
-#loginForm{
+#loginForm {
   background-color: $secondary;
   border: 2px solid grey;
-  .list{
+
+  #iconRow{
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .californiaIcon{
+    height: 50px;
+    width: 50px;
+    background-image: url("../assets/glossy-black-bear.png");
+    background-size: cover;
+    margin: auto;
+  }
+
+  .list {
     background-color: $secondary;
-    button{
+    button {
       background-color: $highlight;
       box-shadow: 0px 5px 5px #888888;
       color: white;
     }
-    button::active{
+    button::active {
       background-color: $highlight;
     }
-    a{
+    a {
       color: $cool;
     }
-    label{
+    label {
       background-color: $secondary;
     }
   }
