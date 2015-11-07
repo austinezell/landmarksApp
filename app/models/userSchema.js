@@ -5,22 +5,45 @@ var crypto = require('crypto');
 var constants = require('../config/constants.js');
 
 var UserSchema = new mongoose.Schema({
-  username: {type: String,  unique: true, required: true},
+  username: {
+    type: String,
+    unique: true,
+    required: true
+  },
   fullName: String,
-  email: {type: String, unique: true, required: true},
+  email: {
+    type: String,
+    unique: true,
+    required: true
+  },
   hash: String,
   salt: String,
-  points: {type: Number, default: 0},
-  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark'}],
-  visited: [{ type: mongoose.Schema.ObjectId, ref: 'Landmark'}],
+  points: {
+    type: Number,
+    default: 0
+  },
+  favorites: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Landmark'
+  }],
+  visited: [{
+    landmark: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Landmark'
+    },
+    dateVisited: {
+      type: Date,
+      default: new Date()
+    }
+  }],
   badges: []
 })
 
 // unique: true,
 
-UserSchema.methods.setPassword = function(password){
-    this.salt = crypto.randomBytes(16).toString('hex');
-    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+UserSchema.methods.setPassword = function(password) {
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 };
 
 UserSchema.methods.validPassword = function(password) {
