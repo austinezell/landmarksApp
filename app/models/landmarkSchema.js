@@ -11,7 +11,7 @@ var landmarkSchema = new mongoose.Schema({
   latitude: String,
   image: {type: String, default: "https://placeholdit.imgix.net/~text?txtsize=28&txt=No+Image+Available&w=150&h=150&txttrack=0"},
   yearOfSignificance: Number,
-  blurb: String,
+  blurb: {type: String, default: "No information available"},
   stories: [{type: String}],
   registryNumber: Number
 })

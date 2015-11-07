@@ -27,15 +27,13 @@ function formatLandmarkCoordinates(location){
     var lat = ConvertDMSToDD(latParts[0], latParts[1], latParts[2], latParts[3]).toString();
     var lng = ConvertDMSToDD(lngParts[0], lngParts[1], lngParts[2], lngParts[3]).toString();
 
-    var latFormat = parseFloat(lat.replace(/0\./, "."));
-    var lngFormat = parseFloat(lng.replace(/0\./, "."));
-    var coordinates = {lat: latFormat, lng: lngFormat};
+    var coordinates = {lat, lng};
   }
   return coordinates;
 }
 
 function ConvertDMSToDD(degrees, minutes, seconds, direction) {
-  var dd = parseFloat(degrees + minutes/60 + seconds/(60*60));
+  var dd = parseFloat(degrees) + parseFloat(minutes/60) + parseFloat(seconds/(60*60));
 
   if (direction == "S" || direction == "W") {
       dd = dd * -1;
