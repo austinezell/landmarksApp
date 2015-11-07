@@ -52,10 +52,11 @@ router.post('/favorites/:lid', auth, function (req, res){
 
   User.findById(userID, function (err,user){
     if(err){
-      res.send(err)
+      res.status(400).send(err)
     }else{
       if (user.favorites.indexOf(landmarkID) === -1){
         user.favorites.push(landmarkID);
+        user.points += 15;
         user.save();
         res.send(user)
       }else{
@@ -72,10 +73,11 @@ router.post('/visited/:lid', auth, function (req, res){
 
   User.findById(userID, function (err,user){
     if(err){
-      res.send(err)
+      res.status(400).send(err)
     }else{
       if (user.visited.indexOf(landmarkID) === -1){
         user.visited.push(landmarkID);
+        user.points += 15
         user.save();
         res.send(user)
       }else{

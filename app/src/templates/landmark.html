@@ -17,7 +17,8 @@
         {{displayLandmark.blurb}}
       </div>
       <div align='center'>
-        <button class="button button-visited" ng-click="addToVisited(displayLandmark)">Visited</button>
+        <button ng-hide="hideVisitButton" class="button button-visited" ng-click="addToVisited(displayLandmark)">Visited</button>
+        <!-- <button ng-hide="hideFavoritesButton" class="button button-visited" ng-click="addToFavorites(displayLandmark)">Visited</button> -->
       </div>
     </div>
     <div align="center">

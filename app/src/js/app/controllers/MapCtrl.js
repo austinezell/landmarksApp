@@ -2,7 +2,8 @@ var app = angular.module('landmarksApp');
 
 
 
-app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $ionicModal) {
+app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $ionicModal, $rootScope, auth) {
+  auth.getCurrentUserInfo()
   $scope.$on('$ionicView.enter', function() {
     initialize();
   });
@@ -230,6 +231,25 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       $scope.map = landmarksMap;
     });
 
+    $scope.getCurrentLocation = () => {
+      $scope.loading = $ionicLoading.show({
+        content: 'Getting current location...',
+        showBackdrop: false
+      });
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+        landmarksMap.setCenter(pos);
+        $scope.loading.hide();
+      }, function(error){
+        alert('Unable to get location: ' + error.messgage);
+      });
+      readjustView();
+    }
+
 
     $ionicModal.fromTemplateUrl('html/landmark.html', {
       scope: $scope
@@ -243,6 +263,12 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
 
     $scope.showLandmark = (displayLandmark) =>{
       $scope.displayLandmark = displayLandmark;
+      $scope.hideVisitButton = true;
+      if ($rootScope.user){
+
+        $scope.hideVisitButton = landmark.testIndex($rootScope.user.visited, displayLandmark._id);
+        // $scope.hide
+      }
       $scope.landmarkModal.show();
     }
 
@@ -253,6 +279,7 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       })
       .then(user => {
         console.log(user);
+        auth.getCurrentUserInfo()
         swal({
           title: "Success!",
           text: "You've visited " + displayLandmark.name,

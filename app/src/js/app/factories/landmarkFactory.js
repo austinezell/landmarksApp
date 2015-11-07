@@ -12,9 +12,16 @@ app.factory('landmark', function($window, $http, auth){
   }
 
   landmark.addToVisited = (id) => {
-    console.log('hit');
     $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
     return $http.post(`/users/visited/${id}`)
+  }
+
+  landmark.testIndex = (arr, id) =>{
+    let index = false;
+    arr.forEach(landmark => {
+      if (landmark._id === id) index = true
+    })
+    return index
   }
 
   return landmark;

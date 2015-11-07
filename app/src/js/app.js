@@ -45,25 +45,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }
   })
 
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: '../html/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: '../html/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
   .state('app.landing', {
     url: '/landing',
     views: {
@@ -73,6 +54,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     }
   })
+  
   .state('app.map', {
     url: '/map',
     views: {
