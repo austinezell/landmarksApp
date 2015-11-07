@@ -48,7 +48,6 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
       historyRoot: true
     });
     $state.go("app.landing");
-    $location.path("/home");
   };
 
   $scope.register = function(user) {
@@ -57,10 +56,8 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
         title: "Error",
         text: "Email, username, and password are required fields",
         type: 'warning',
-        timer: 3000,
-        showConfirmButton: false,
-        showCancelButton: true,
-        closeOnCancel: true
+        timer: 1500,
+        showConfirmButton: false
       })
     } else if (/(\w+\.)*\w+@(\w+\.)+\w+/.test(user.email)) {
       auth.register(user)
@@ -76,8 +73,8 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
           title: "Error",
           text: (error || err),
           type: 'warning',
-          timer: 3000,
-          showCancelButton: true
+          timer: 1500,
+          showConfirmButton: false
         })
       })
     } else {
@@ -85,10 +82,8 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
         title: "Error",
         text: "Please enter a valid email",
         type: 'warning',
-        timer: 3000,
-        showConfirmButton: false,
-        showCancelButton: true,
-        closeOnCancel: true
+        timer: 1500,
+        showConfirmButton: false
       })
     }
   };
@@ -114,9 +109,7 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
       $ionicHistory.nextViewOptions({
         historyRoot: true
       });
-
       $state.go("app.profile");
-
       $scope.closeLogin();
     })
     .error(function(err) {
@@ -124,10 +117,8 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
         title: "Error",
         text: err,
         type: 'warning',
-        timer: 3000,
-        showConfirmButton: false,
-        showCancelButton: true,
-        closeOnCancel: true
+        timer: 1500,
+        showConfirmButton: false
       })
     })
   };

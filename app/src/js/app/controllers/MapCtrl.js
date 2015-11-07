@@ -264,10 +264,9 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
     $scope.showLandmark = (displayLandmark) =>{
       $scope.displayLandmark = displayLandmark;
       $scope.hideVisitButton = true;
+      $scope.hideFavoritesButton = true;
       if ($rootScope.user){
-
-        $scope.hideVisitButton = landmark.testIndex($rootScope.user.visited, displayLandmark._id);
-        // $scope.hide
+        $scope.hideVisitButton = landmark.testIndex($rootScope.user.favorites, displayLandmark._id);
       }
       $scope.landmarkModal.show();
     }
@@ -278,7 +277,6 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
         console.log(err);
       })
       .then(user => {
-        console.log(user);
         auth.getCurrentUserInfo()
         swal({
           title: "Success!",

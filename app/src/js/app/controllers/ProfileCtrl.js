@@ -1,6 +1,6 @@
 var app = angular.module('landmarksApp');
 
-app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
+app.controller('ProfileCtrl', function($scope, auth, $ionicModal, landmark, $rootScope) {
   auth.getCurrentUserInfo();
 
   $ionicModal.fromTemplateUrl('html/landmark.html', {
@@ -16,6 +16,7 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
   $scope.showLandmark = (displayLandmark) =>{
     $scope.displayLandmark = displayLandmark;
     $scope.hideVisitButton = true;
+    $scope.hideFavoritesButton = landmark.testIndex($rootScope.user.favorites, displayLandmark._id);
     $scope.landmarkModal.show();
   }
 
@@ -26,6 +27,7 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
     })
     .then(user => {
       console.log(user);
+      auth.getCurrentUserInfo()
       swal({
         title: "Success!",
         text:  `${displayLandmark.name} has been added to your favorites!`,
@@ -36,8 +38,4 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal) {
       $scope.landmarkModal.hide();
     })
   }
-
-
-
-
 });

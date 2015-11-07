@@ -17,17 +17,11 @@
           <div class="content">
             <h4 class="stats">Points: <span class="unique">{{user.points}}</span></h4>
             <h4 class="stats">Visited: <span class="unique">{{user.visited.length}}</span></h4>
-            <h4 class="stats"><span>Favorites: </span><a  ng-repeat='place in user.favorites' href='{{place.name}}'> {{place.name}}<br></a> </h4>
+            <h4 class="stats"><span>Favorites: </span> <span ng-repeat='place in user.favorites' ><a href='{{place.name}}'> {{place.name}}</a> |</span><br> </h4>
             <h4 class="stats">Your travels:</h4>
             <img class="uniqueImg" src="http://images.singletracks.com/blog/wp-content/uploads/2012/01/Map-300x199.png" alt="mySlimeTrail">
           </div>
         </div>
-
-
-
-
-
-
     </div>
     <h4 align=center>Locations visited</h4>
     <ion-list>

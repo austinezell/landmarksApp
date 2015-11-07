@@ -16,6 +16,11 @@ app.factory('landmark', function($window, $http, auth){
     return $http.post(`/users/visited/${id}`)
   }
 
+  landmark.addToFavorites = (id) => {
+    $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
+    return $http.post(`/users/favorites/${id}`)
+  }
+
   landmark.testIndex = (arr, id) =>{
     let index = false;
     arr.forEach(landmark => {
