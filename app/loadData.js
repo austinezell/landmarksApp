@@ -7,7 +7,6 @@ var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
 obj.landmarks.forEach(item => {
   item.coords = formatLandmarkCoordinates(item);
-  console.log(item);
   Landmark.create(item, (err, landmark)=>{
     if(err) {
       console.log("err ", err);

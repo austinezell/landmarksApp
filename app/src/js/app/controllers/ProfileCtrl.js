@@ -26,7 +26,6 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal, landmark, $roo
       console.log(err);
     })
     .then(user => {
-      console.log(user);
       auth.getCurrentUserInfo()
       swal({
         title: "Success!",

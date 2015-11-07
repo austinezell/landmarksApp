@@ -86,7 +86,6 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       var centerCoord = formatCoord(center);
       var neBounds = formatCoord(bounds.NE);
       radius = haversineDistance(centerCoord, neBounds, isMiles);
-      console.log("radius: ", radius);
     }
 
     function formatCoord(coord){
@@ -128,7 +127,6 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
 
     function collectMarkers(){
       var landmarks = $scope.locations;
-      console.log("locations: ", landmarks);
       var marker;
 
       for(var i = 0; i < landmarks.length; i++){
@@ -147,33 +145,12 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
 
     function toggleInfoWindow(marker) {
       $scope.showLandmark(marker.landmark);
-      // var contentString = '<p id="firstHeading" class="firstHeading">'+marker.title+'</p><br><div align=center><button class="infoWindowButton" ng-click=$scope.showLandmark('+marker.landmark+')>View</button></div>';
-      // var infowindow = new google.maps.InfoWindow({
-      //   content: contentString
-      // });
-      // infowindow.open(landmarksMap, marker);
     }
 
     function popMarkers(){
       for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(landmarksMap);
       }
-    }
-
-    function getCurrentLocation(){
-      console.log("hit");
-      // $scope.loading = $ionicLoading.show({
-      //   content: 'Getting current location...',
-      //   showBackdrop: false
-      // });
-      //
-      // navigator.geolocation.getCurrentPosition(function(pos) {
-      //   console.log(pos);
-      //   myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-      //   $scope.loading.hide();
-      // }, function(error){
-      //   alert('Unable to get location: ' + error.messgage);
-      // });
     }
 
     async.series([
@@ -184,7 +161,6 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
         });
 
         navigator.geolocation.getCurrentPosition(function(pos) {
-          console.log(pos);
           myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
           $scope.loading.hide();
           callback();
@@ -263,10 +239,10 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
 
     $scope.showLandmark = (displayLandmark) =>{
       $scope.displayLandmark = displayLandmark;
-      $scope.hideVisitButton = true;
+      $scope.hideVisitButton = false;
       $scope.hideFavoritesButton = true;
       if ($rootScope.user){
-        $scope.hideVisitButton = landmark.testIndex($rootScope.user.favorites, displayLandmark._id);
+        $scope.hideVisitButton = landmark.testIndex($rootScope.user.visited, displayLandmark._id);
       }
       $scope.landmarkModal.show();
     }

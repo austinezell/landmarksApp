@@ -4,7 +4,7 @@ var app = angular.module('landmarksApp');
 app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory, $rootScope) {
 
 
-  $scope.Login = true;
+  $scope.Login = false;
   $scope.isLoggedIn = auth.isLoggedIn();
 
   // With the new view caching in Ionic, Controllers are only called
