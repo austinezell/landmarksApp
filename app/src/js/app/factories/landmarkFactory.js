@@ -21,12 +21,20 @@ app.factory('landmark', function($window, $http, auth){
     return $http.post(`/users/favorites/${id}`)
   }
 
-  landmark.testIndex = (arr, id) =>{
-    let index = false;
+  landmark.testIndexFavorites = (arr, id) =>{
+    let contains = false;
     arr.forEach(landmark => {
-      if (landmark._id === id) index = true
+      if (landmark._id === id) contains = true
     })
-    return index
+    return contains
+  }
+
+  landmark.testIndexVisited = (arr, id) => {
+    let contains = false;
+    arr.forEach(landmark => {
+      if (landmark.landmark._id === id) contains = true;
+    })
+    return contains;
   }
 
   return landmark;

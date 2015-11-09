@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userSchema.js');
+let Landmark = require('../models/landmarkSchema.js')
 var auth = require('../config/auth.js');
 let atob = require('atob')
 
@@ -69,14 +70,17 @@ router.post('/favorites/:lid', auth, function (req, res){
 router.post('/visited/:lid', auth, function (req, res){
   let jwt = req.headers.authorization.replace(/Bearer /, "")
   let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
-  let landmarkID = req.params.lid
+  let visit = new Visit();
 
-  User.findById(userID, function (err,user){
+  visit.landmark = req.params.lid
+
+  User.findById(userID), function (err,user){
     if(err){
       res.status(400).send(err)
     }else{
-      if (user.visited.indexOf(landmarkID) === -1){
-        user.visited.push(landmarkID);
+      if (user.visited.indexOf(req.params.lid) === -1){
+        user.visited.push(visit);
+        visi
         user.points += 15
         user.save();
         res.send(user)
@@ -91,8 +95,12 @@ router.get('/me/', auth, (req, res) => {
   let jwt = req.headers.authorization.replace(/Bearer /, "")
   let userID = (JSON.parse(atob(jwt.split('.')[1])))._id
 
-  User.findById(userID).populate('favorites').populate('visited').exec(function (err, data){
-    err ? res.status(401).send(err) : res.send(data)
+  User.findById(userID).populate('favorites').populate('visited').exec(function (err, user){
+    user.visited.forEach(landmark => {
+      Landmark.findById(landmark._id)
+    })
+
+    err ? res.status(401).send(err) : res.send(user)
   })
 });
 

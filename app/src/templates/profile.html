@@ -27,7 +27,7 @@
     <ion-list>
       <ion-item ng-repeat='landmark in user.visited'>
         <img src="../assets/checked.png" title="Checked" width="26">
-        <span>{{landmark.name}}</span>
+        <span>{{landmark.landmark.name}}</span> {{landmark}}
         <img class='leftArrow' src="../assets/left.png"/>
         <ion-option-button class="button-california" ng-click='showLandmark(landmark)'>View</ion-option-button>
       </ion-item>

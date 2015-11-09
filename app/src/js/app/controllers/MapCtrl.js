@@ -242,7 +242,7 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
       $scope.hideVisitButton = false;
       $scope.hideFavoritesButton = true;
       if ($rootScope.user){
-        $scope.hideVisitButton = landmark.testIndex($rootScope.user.visited, displayLandmark._id);
+        $scope.hideVisitButton = landmark.testIndexVisited($rootScope.user.visited, displayLandmark._id);
       }
       $scope.landmarkModal.show();
     }

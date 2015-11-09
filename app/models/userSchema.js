@@ -27,15 +27,9 @@ var UserSchema = new mongoose.Schema({
     ref: 'Landmark'
   }],
   visited: [{
-    landmark: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Landmark'
-    },
-    dateVisited: {
-      type: Date,
-      default: new Date()
-    }
-  }],
+    type: mongoose.Schema.ObjectId,
+    ref: 'Visit'
+  }, ],
   badges: []
 })
 
@@ -63,9 +57,5 @@ UserSchema.methods.generateJWT = function() {
     exp: parseInt(exp.getTime() / 1000),
   }, constants.SECRET);
 };
-
-// User.methods.validateEmail = function(email) {
-//   return /(\w+\.)*\w+@(\w+\.)+\w+/.test(email)
-// }
 
 module.exports = mongoose.model('User', UserSchema)

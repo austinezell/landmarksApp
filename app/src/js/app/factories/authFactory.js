@@ -39,6 +39,7 @@ app.factory('auth', function($window, $http, tokenStorageKey, $rootScope) {
     $http.defaults.headers.common.Authorization = `Bearer ${auth.getToken()}`;
     $http.get('/users/me')
     .success( data => {
+      console.log(data);
       $rootScope.user = data;
     })
     .error( err => {
