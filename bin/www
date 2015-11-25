@@ -1,11 +1,11 @@
-#!/usr/bin/env nod
+#!/usr/bin/env node
 /**
  * Module dependencies.
  */
 
 require('dotenv').load();
 var app = require('../app');
-var debug = require('debug')('backend:server');
+var debug = require('debug')('landmarksApp:server');
 var http = require('http');
 
 /**
