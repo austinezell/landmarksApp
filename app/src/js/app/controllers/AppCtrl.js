@@ -1,22 +1,12 @@
 var app = angular.module('landmarksApp');
 
 
-app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory, $rootScope) {
-
+app.controller('AppCtrl', ['$scope', '$timeout', '$state', 'auth',  '$ionicModal', '$ionicHistory', '$rootScope', function($scope, $timeout, $state, auth,  $ionicModal, $ionicHistory, $rootScope) {
 
   $scope.Login = false;
   $scope.isLoggedIn = auth.isLoggedIn();
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-
-  ($scope.registerState = function() {
+  ($scope.switchState = function() {
     $scope.Login = !$scope.Login;
     $scope.Login ? $scope.state = "Login" : $scope.state = "Create Account";
     $scope.Login ? $scope.stateSwitch = "Create Account" : $scope.stateSwitch = "Login";
@@ -123,4 +113,4 @@ app.controller('AppCtrl', function($scope, $timeout, $state, auth,  $ionicModal,
     })
   };
 
-});
+}]);

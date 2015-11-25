@@ -31,7 +31,7 @@ app.controller('ProfileCtrl', function($scope, auth, $ionicModal, landmark, $roo
         title: "Success!",
         text:  `${displayLandmark.name} has been added to your favorites!`,
         type: "success",
-        timer: 2000,
+        timer: 1000,
         showConfirmButton: false
       });
       $scope.landmarkModal.hide();

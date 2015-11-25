@@ -1,6 +1,7 @@
 #profile {
-  padding: 5%;
+  padding: 10px;
   background-color: $secondary;
+  text-align: center;
 }
 
 #profileThumbnail {
@@ -12,7 +13,8 @@
 }
 
 #name {
-  float: left;
+  float: right;
+
 }
 
 .content {
@@ -25,4 +27,13 @@
 
 .uniqueImg {
   border: solid 5px $green;
+}
+
+.name{
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.checked{
+  margin-right: 1em;
 }
