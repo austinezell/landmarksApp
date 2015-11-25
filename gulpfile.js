@@ -13,15 +13,17 @@ var dirs = {
   src: {
     js: "src/js/**/*.js",
     scss: "src/scss/**/*.scss",
-    html: "src/templates/**/*.html"
+    html: "src/templates/**/*.html",
+    lib: "src/lib/***/**/*"
   },
   out: {
     html: 'public/html',
     css: 'public/css',
-    js: 'public/js'
+    js: 'public/js',
+    lib: 'public/lib'
   }
 }
-gulp.task('default', ['scripts', 'templates','sass']);
+gulp.task('default', ['scripts', 'templates','sass','library']);
 
 gulp.task('sass', function(done) {
   gulp.src('src/scss/style.scss')
@@ -35,6 +37,11 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest(dirs.out.css))
     .on('end', done);
+});
+
+gulp.task('library', function(done) {
+  gulp.src(dirs.src.lib)
+    .pipe(gulp.dest(dirs.out.lib))
 });
 
 gulp.task('scripts', function(){
