@@ -2,9 +2,7 @@ node_modules/
 platforms/
 plugins/
 .env
-public/lib
-public/js/
-public/css/
-public/html/
+public
 data.json
 .DS_Store
+public/lib/*
