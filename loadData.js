@@ -1,6 +1,6 @@
 "use strict"
 
-require('mongoose').connect('mongodb://localhost/landmarks')
+require('mongoose').connect(process.env.MONGOLAB_URI)
 var Landmark = require('./models/landmarkSchema.js')
 
 var fs = require('fs');
