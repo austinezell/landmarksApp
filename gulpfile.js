@@ -14,7 +14,7 @@ var dirs = {
     js: "src/js/**/*.js",
     scss: "src/scss/**/*.scss",
     html: "src/templates/**/*.html",
-    lib: "src/lib/***/**/*"
+    lib: "src/lib/**/*"
   },
   out: {
     html: 'public/html',
