@@ -5,12 +5,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/landmarks");
 
-
-var fs = require('fs');
 
 var app = express();
 
