@@ -39,7 +39,7 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
-gulp.task('library', function(done) {
+gulp.task('library', function() {
   gulp.src(dirs.src.lib)
     .pipe(gulp.dest(dirs.out.lib))
 });
