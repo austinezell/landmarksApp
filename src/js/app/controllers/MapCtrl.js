@@ -128,7 +128,10 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
     function collectMarkers(){
       var landmarks = $scope.locations;
       var marker;
-
+      for(i = 0; i < markers.length; i++){
+        markers[i].setMap(null);
+      }
+      markers = [];
       for(var i = 0; i < landmarks.length; i++){
         marker = new google.maps.Marker({
           map: landmarksMap,
@@ -159,9 +162,9 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
           content: 'Getting current location...',
           showBackdrop: false
         });
-
         navigator.geolocation.getCurrentPosition(function(pos) {
-          myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+          console.log(pos);
+          myLatlng = new google.maps.LatLng(37.7833, -122.4167);
           $scope.loading.hide();
           callback();
         }, function(error) {
@@ -176,6 +179,7 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: styles
         };
+
 
         landmarksMap = new google.maps.Map(document.getElementById("map"),
         mapOptions);
