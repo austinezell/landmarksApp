@@ -2,7 +2,7 @@ var app = angular.module('landmarksApp');
 
 
 
-app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $ionicModal, $rootScope, auth) {
+app.controller('MapCtrl', ["$scope", "$state", "$ionicLoading", "$compile", "landmark", "$ionicModal", "$rootScope", "auth", function($scope, $state, $ionicLoading, $compile, landmark, $ionicModal, $rootScope, auth) {
   auth.getCurrentUserInfo()
   $scope.$on('$ionicView.enter', function() {
     initialize();
@@ -252,21 +252,33 @@ app.controller('MapCtrl', function($scope, $ionicLoading, $compile, landmark, $i
     }
 
     $scope.addToVisited = (displayLandmark) => {
-      landmark.addToVisited(displayLandmark._id)
-      .catch(err => {
-        console.log(err);
-      })
-      .then(user => {
-        auth.getCurrentUserInfo()
-        swal({
-          title: "Success!",
-          text: "You've visited " + displayLandmark.name,
-          type: "success",
-          timer: 2000,
-          showConfirmButton: false
-        });
+      if(!auth.isLoggedIn()){
         $scope.landmarkModal.hide();
-      })
+        swal({
+          title: "Not Authorized",
+          text: "You must be loggedIn to complete this action",
+          type: "warning",
+          confirmButtonColor: '#F16156',
+          confirmButtonText: "Close",
+          closeOnConfirm: false
+        })
+      } else {
+        landmark.addToVisited(displayLandmark._id)
+        .catch(err => {
+          console.log(err);
+        })
+        .then(user => {
+          auth.getCurrentUserInfo()
+          swal({
+            title: "Success!",
+            text: "You've visited " + displayLandmark.name,
+            type: "success",
+            timer: 2000,
+            showConfirmButton: false
+          });
+          $scope.landmarkModal.hide();
+        })
+      }
     }
   }
-});
+}]);
