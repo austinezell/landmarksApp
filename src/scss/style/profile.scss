@@ -13,12 +13,17 @@
 }
 
 #name {
-  float: right;
-
+  font-size: 40px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content {
   text-align: left;
+  margin: 20px;
+  .stats{
+    font-size: 40px;
+  }
 }
 
 .unique {
@@ -27,11 +32,6 @@
 
 .uniqueImg {
   border: solid 5px $green;
-}
-
-.name{
-  margin-bottom: 5px;
-  font-size: 15px;
 }
 
 .checked{
