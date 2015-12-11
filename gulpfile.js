@@ -23,7 +23,7 @@ var dirs = {
     lib: 'public/lib'
   }
 }
-gulp.task('default', ['scripts', 'templates','sass','library']);
+gulp.task('default', ['scripts', 'templates','sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('src/scss/style.scss')
