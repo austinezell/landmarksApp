@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "bower i && gulp",
+    "postinstall": "bower i && gulp dev",
     "test": "mocha test/*",
-    "setup": "rm -rf node_modules && touch .env && printf \"MONGO_URL=\nSECRET=\" > .env && npm i && bower i && gulp"
+    "setup": "rm -rf node_modules && touch .env && printf \"MONGO_URL=\nJWT_SECRET=\" > .env && npm i && bower i && gulp"
   },
   "dependencies": {
     "async": "^1.5.0",
@@ -19,11 +19,6 @@
     "dotenv": "^1.2.0",
     "express": "latest",
     "express-jwt": "^3.1.0",
-    "gulp": "^3.5.6",
-    "gulp-concat": "^2.2.0",
-    "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.0.4",
     "jsonwebtoken": "^5.4.1",
     "mongoose": "^4.2.3",
     "morgan": "~1.6.1",
@@ -43,5 +38,13 @@
   ],
   "cordovaPlatforms": [
     "ios"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "bower": "^1.7.0"
+  }
 }

@@ -1,5 +1,6 @@
 'use strict';
-var jwt = require('express-jwt');
-var auth = jwt({secret: process.env.SECRET, userProperty: 'payload'});
+let jwt = require('express-jwt');
+const constants = require('./constants.js')
+var auth = jwt({secret: constants.JWT_SECRET, userProperty: 'payload'});
 
 module.exports = auth;

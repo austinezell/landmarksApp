@@ -14,16 +14,19 @@ var dirs = {
     js: "src/js/**/*.js",
     scss: "src/scss/**/*.scss",
     html: "src/templates/**/*.html",
-    lib: "src/lib/**/*"
+    lib: "src/assets/**/*"
   },
   out: {
     html: 'public/html',
     css: 'public/css',
     js: 'public/js',
-    lib: 'public/lib'
+    lib: 'public/'
   }
 }
-gulp.task('default', ['scripts', 'templates','sass','library']);
+
+gulp.task('default', ['scripts', 'templates','sass','library', 'watch']);
+
+gulp.task('dev', ['scripts', 'templates','sass','library'])
 
 gulp.task('sass', function(done) {
   gulp.src('src/scss/style.scss')
