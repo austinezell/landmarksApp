@@ -3,6 +3,5 @@ platforms/
 plugins/
 .env
 public
-data.json
 .DS_Store
 public/lib/*
